@@ -8,12 +8,13 @@ const User = require('../../models/user');
 
 const router = new Router();
 
-router.get('/sign-up', (req, res, next) => {
-  res.render('authentication/sign-up');
+//Handle user egistration: render registration form upon GET request
+router.get('/register', (req, res, next) => {
+  res.render('authentication/register');
 });
 
-router.post('/sign-up', (req, res, next) => {
-  const { name, email, password } = req.body;
+router.post('/register', (req, res, next) => {
+  const { name, email, phoneNumber, password } = req.body;
   bcryptjs
     .hash(password, 10)
     .then((hash) => {

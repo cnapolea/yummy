@@ -1,5 +1,12 @@
 <h1>Private</h1>
 <p>This page should only be accessible to authenticated users.</p>
-<span><strong>Name</strong>: {{user.name}}</span>
-<br />
-<span><strong>Email</strong>: {{user.email}}</span>
+
+<h1>{{user.name}}'s Profile</h1>
+
+<form action='/profile/{{user._id}}/edit' method='POST'>
+  <button>Edit Profile</button>
+</form>
+
+<form action='/profile/{{user._id}}/delete' method='POST'>
+  <button>Delete Profile</button>
+</form>
