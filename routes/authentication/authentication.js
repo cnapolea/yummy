@@ -1,11 +1,8 @@
 'use strict';
 // jshint esversion:10
-
 const { Router } = require('express');
-
 const bcryptjs = require('bcryptjs');
 const User = require('../../models/user');
-
 const router = new Router();
 
 //Handle user egistration: render registration form upon GET request

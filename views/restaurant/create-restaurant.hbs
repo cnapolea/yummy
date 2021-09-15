@@ -1,0 +1,41 @@
+<h1>New Restaurant</h1>
+
+<form action='' method='post' enctype='multipart/form-data'>
+
+  <label for='name-input'>Name</label>
+  <input
+    type='text'
+    name='name'
+    id='name-input'
+    placeholder="Insert restaurant's name"
+  />
+  <input type='text' name='longitude' id='input-longitude' hidden />
+  <input type='text' name='latitude' id='input-latitude' hidden />
+
+  <label for='input-cousine'>Cousine</label>
+  <input type='text' name='cousine' id='input-cousine' />
+
+  <label for='input-rating'>Rating</label>
+  <input type='radio' name='rate' id='input-rating-1' value='1' />
+  <label for='input-rating-1'>1</label>
+  <input type='radio' name='rate' id='input-rating-2' value='2' />
+  <label for='input-rating-2'>2</label>
+  <input type='radio' name='rate' id='input-rating-3' value='3' />
+  <label for='input-rating-3'>3</label>
+  <input type='radio' name='rate' id='input-rating-4' value='4' />
+  <label for='input-rating-4'>4</label>
+  <input type='radio' name='rate' id='input-rating-5' value='5' />
+  <label for='input-rating-5'>5</label>
+
+  <select name='price' id='select-price'>
+    <option value='$'>$</option>
+    <option value='$$'>$$</option>
+    <option value='$$$'>$$$</option>
+    <option value='$$$$'>$$$$</option>
+    <option value='$$$$$'>$$$$$</option>
+  </select>
+
+  <label for='input-picture'>Restaurant Image</label>
+  <input type='file' name='image' id='input-picture' />
+
+</form>

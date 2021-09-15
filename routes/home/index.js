@@ -5,7 +5,7 @@ const router = express.Router();
 const routeGuard = require('../../middleware/route-guard');
 
 // Importing restaurant model in order to perform CRUD operations
-// const Restaurant = require('../../models/restaurant');
+const Restaurant = require('../../models/restaurant');
 
 router.get('/', (req, res, next) => {
   res.render('home/index', { title: 'Tummy In My Tummy!' });
