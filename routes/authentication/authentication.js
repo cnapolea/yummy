@@ -2,28 +2,42 @@
 // jshint esversion:10
 const { Router } = require('express');
 const bcryptjs = require('bcryptjs');
-const User = require('../../models/user');
+const User = require('../../models/user'); //provides user model
+const upload = require('../../middleware/file-upload'); //handles file uploades
 const router = new Router();
 
-//Handle user egistration: render registration form upon GET request
+//Handle user registration: render registration form upon GET request
 router.get('/register', (req, res, next) => {
   res.render('authentication/register');
 });
 
-router.post('/register', (req, res, next) => {
-  const { name, email, phoneNumber, password } = req.body;
+//Handle user registration: render registration form upon POST request
+router.post('/register', upload.single('profilePicture'), (req, res, next) => {
+  //get first name, last name, email, phone number and password from request body
+  const { firstName, lastName, email, phoneNumber, password } = req.body;
+
+  //save uploaded profile picture, otherwise use default profile picture
+  let profilePicture;
+  if (req.file) {
+    profilePicture = req.file.path;
+  }
+
   bcryptjs
     .hash(password, 10)
     .then((hash) => {
       return User.create({
-        name,
+        name: { firstName, lastName },
         email,
-        passwordHashAndSalt: hash
+        passwordHashAndSalt: hash,
+        phoneNumber,
+        profilePicture
       });
     })
     .then((user) => {
       req.session.userId = user._id;
-      res.redirect('/private');
+      //res.redirect('/private');
+      console.log(user);
+      res.redirect('/');
     })
     .catch((error) => {
       next(error);
