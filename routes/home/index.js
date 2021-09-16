@@ -8,7 +8,7 @@ const routeGuard = require('../../middleware/route-guard');
 const Restaurant = require('../../models/restaurant');
 
 router.get('/', (req, res, next) => {
-  res.render('home/index', { title: 'Tummy In My Tummy!' });
+  res.render('home/index', { title: 'Yummy In My Tummy!' });
 });
 
 // Post request for the form in the homepage
@@ -20,7 +20,7 @@ router.post('/', (req, res, next) => {
   Restaurant.find({city}).or();
   */
 
-  res.render('home/index', { title: 'Tummy In My Tummy!' });
+  res.render('home/index', { title: 'Yummy In My Tummy!' });
 });
 
 router.get('/private', routeGuard, (req, res, next) => {
