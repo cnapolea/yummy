@@ -1,6 +1,6 @@
 const { Restaurant } = require('../../models/restaurant');
-const express = require('express');
-const router = express.Router();
+const { Router } = require('express');
+const router = Router();
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 
