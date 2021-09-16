@@ -1,0 +1,29 @@
+<h1>{{user.name.firstName}}'s Profile</h1>
+
+<div id='div-update-profile-picture'>
+  <div>
+    <h3>Current Profile Picture
+    </h3>
+    <img
+      src='{{user.profilePicture}}'
+      alt='{{user.name.firstName}} {{user.name.lastName}}'
+    />
+
+  </div>
+
+  <form
+    action='/profile/{{user._id}}/change-picture'
+    method='POST'
+    enctype='multipart/form-data'
+  >
+    <label for='input-picture'>New Profile Picture</label>
+    <input
+      id='input-picture'
+      type='file'
+      name='profilePicture'
+      accept='image/*'
+    />
+
+    <button>Upload picture</button>
+  </form>
+</div>

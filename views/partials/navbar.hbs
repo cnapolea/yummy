@@ -2,7 +2,7 @@
   <a href='/'>Yummy in my Tummy</a>
   {{#if user}}
     <a href='/'>Home</a>
-    <a href='/profile'>My Profile</a>
+    <a href='/profile/{{user._id}}'>My Profile</a>
     <a href='/discover'>Discover</a>
     <form action='/authentication/sign-out' method='POST'>
       <button>Sign Out</button>

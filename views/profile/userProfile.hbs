@@ -1,0 +1,42 @@
+<div id='div-profile'>
+  <div id='div-profile-picture'>
+    <img
+      src='{{user.profilePicture}}'
+      alt='{{user.name.firstName}} {{user.name.lastName}}'
+    />
+    <form class='btn-edit' action='/profile/{{user._id}}/change-picture'>
+      <button>Change Profile Picture</button>
+    </form>
+  </div>
+
+  <div id='div-user-info'>
+    <div id='div-profile-header'>
+      <h1>{{user.name.firstName}} {{user.name.lastName}}</h1>
+      <div id='div-profile-btn'>
+        <form class='btn-edit' action='/profile/{{user._id}}/edit'>
+          <button>Edit Profile</button>
+        </form>
+
+        <form
+          class='btn-delete'
+          action='/profile/{{user._id}}/delete'
+          method='POST'
+        >
+          <button>Delete Profile</button>
+        </form>
+      </div>
+    </div>
+    <p><strong>Email: </strong><span>{{user.email}}</span></p>
+
+    <p><strong>Phone Number: </strong>
+
+      {{#if user.phoneNumber}}
+        <span>{{user.phoneNumber}}</span>
+      {{else}}
+        <span> - </span>
+      {{/if}}
+    </p>
+    <p><strong>Level: </strong><span>{{user.level}}</span></p>
+  </div>
+
+</div>
