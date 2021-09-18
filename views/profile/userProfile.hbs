@@ -1,44 +1,45 @@
-<div id='div-profile'>
-  <div id='div-profile-picture'>
-    <img
-      src='{{user.profilePicture}}'
-      alt='{{user.name.firstName}} {{user.name.lastName}}'
-    />
-    <form class='btn-edit' action='/profile/{{user._id}}/change-picture'>
-      <button>Change Profile Picture</button>
-    </form>
-  </div>
-
-  <div id='div-user-info'>
+<section section id='scn-profile'>
+  <div id='div-header'>
+    <div id='div-banner'>
+      <form action='/profile/{{user._id}}/edit'>
+        <button id='btn-edit'>Edit Profile</button>
+      </form>
+    </div>
     <div id='div-profile-header'>
-      <h1>{{user.name.firstName}} {{user.name.lastName}}</h1>
-      <div id='div-profile-btn'>
-        <form class='btn-edit' action='/profile/{{user._id}}/edit'>
-          <button>Edit Profile</button>
-        </form>
-
-        <form
-          class='btn-delete'
-          action='/profile/{{user._id}}/delete'
-          method='POST'
-        >
-          <button>Delete Profile</button>
+      <div>
+        <img
+          src='{{user.profilePicture}}'
+          alt='{{user.name.firstName}} {{user.name.lastName}}'
+        />
+        <form action='/profile/{{user._id}}/change-picture'>
+          <button id='btn-change'>Change Picture</button>
         </form>
       </div>
+
+      <div id='div-user-info'>
+        <h1>{{user.name.firstName}}
+          {{user.name.lastName}}
+          <img
+            class='img-icon'
+            src='/icons/guarantee.png'
+            alt='Location Icon'
+          /></h1>
+
+        <div>
+          <p><img
+              class='img-icon'
+              src='/icons/location.png'
+              alt='Location Icon'
+            /><span>{{user.place}}</span></p>
+          <p><strong>6</strong><span> discoveries, </span><strong
+            >12</strong><span>
+              reviews</span></p>
+        </div>
+      </div>
+
     </div>
-    <p><strong>Email: </strong><span>{{user.email}}</span></p>
-
-    <p><strong>Phone Number: </strong>
-
-      {{#if user.phoneNumber}}
-        <span>{{user.phoneNumber}}</span>
-      {{else}}
-        <span> - </span>
-      {{/if}}
-    </p>
-    <p><strong>Level: </strong><span>{{user.level}}</span></p>
   </div>
-</div>
+</section>
 
 <section>
   <h2>{{user.name.firstName}}'s Yummy Discoveries</h2>
@@ -53,6 +54,14 @@
   {{/if}}
 
   <form action='/restaurants/create'>
-    <button>Add new discovery</button>
+    <button id='btn-add'>Add new discovery</button>
   </form>
 </section>
+
+<div>Icons made by
+  <a href='https://www.freepik.com' title='Freepik'>Freepik</a>
+  from
+  <a
+    href='https://www.flaticon.com/'
+    title='Flaticon'
+  >www.flaticon.com</a></div>

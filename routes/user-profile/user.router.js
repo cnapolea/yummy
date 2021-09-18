@@ -107,5 +107,37 @@ profileRouter.post(
 );
 
 //03: Delete user profile
+//GET: render page where user is asked if he/she really wants to delete profile (only when user is authticated), otherwise throw error
+profileRouter.get('/:userId/delete', routeGuardMiddleware, (req, res, next) => {
+  const { userId } = req.params;
+  let userProfile;
+  User.findById(userId)
+    .then((document) => {
+      userProfile = document;
+      res.render('profile/delete', { user: document });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+//POST: delete user (only when user is authticated) and redirect to home page, otherwise throw error
+profileRouter.post(
+  '/:userId/delete',
+  routeGuardMiddleware,
+  (req, res, next) => {
+    const { userId } = req.params;
+    User.findByIdAndDelete(userId)
+      .then(() => {
+        req.session.destroy();
+        res.user = null;
+        res.clearCookie('connect.sid', { path: '/' });
+        res.redirect('/');
+      })
+      .catch((error) => {
+        next(error);
+      });
+  }
+);
 
 module.exports = profileRouter;

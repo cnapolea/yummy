@@ -3,6 +3,7 @@
 const { Router } = require('express');
 const bcryptjs = require('bcryptjs');
 const User = require('../../models/user'); //provides user model
+const routeGuardMiddleware = require('../../middleware/route-guard');
 const upload = require('../../middleware/file-upload'); //handles file uploades
 const router = new Router();
 
@@ -21,6 +22,7 @@ router.post('/register', upload.single('profilePicture'), (req, res, next) => {
   if (req.file) {
     profilePicture = req.file.path;
   }
+  let place;
 
   bcryptjs
     .hash(password, 10)
@@ -30,7 +32,8 @@ router.post('/register', upload.single('profilePicture'), (req, res, next) => {
         email,
         passwordHashAndSalt: hash,
         phoneNumber,
-        profilePicture
+        profilePicture,
+        place
       });
     })
     .then((user) => {
@@ -73,8 +76,10 @@ router.post('/sign-in', (req, res, next) => {
     });
 });
 
-router.post('/sign-out', (req, res, next) => {
+router.post('/sign-out', routeGuardMiddleware, (req, res, next) => {
+  res.user = null;
   req.session.destroy();
+  res.clearCookie('connect.sid', { path: '/' }); //removes cookie from browser history
   res.redirect('/');
 });
 

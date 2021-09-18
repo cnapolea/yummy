@@ -1,0 +1,23 @@
+<h1>Explore the YUMMY Community</h1>
+
+{{#if users}}
+  {{#each users}}
+    <form action='/profile/{{_id}}'>
+      <button class='btn-transparent'>
+        <div class='div-overview-profile'>
+          <img
+            src='{{profilePicture}}'
+            alt='{{name.firstName}} {{name.lastName}}'
+          />
+          <div>
+            <h3>{{name.firstName}} {{name.lastName}}</h3>
+          </div>
+        </div>
+      </button>
+
+    </form>
+
+  {{/each}}
+{{else}}
+  <p>No users found.</p>
+{{/if}}

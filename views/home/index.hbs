@@ -32,6 +32,11 @@
 </div>
 
 <div>
+  {{#if user}}
+    <form action='/explore-users'>
+      <button>Explore other users</button>
+    </form>
+  {{/if}}
   <section id='recommendations'></section>
   <section id='top-restaurants'></section>
   <section id='top-user-choices'></section>

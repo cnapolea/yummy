@@ -34,6 +34,12 @@ const userSchema = new mongoose.Schema({
     default: ''
   },
 
+  place: {
+    type: String,
+    required: true,
+    default: 'Somewhere in Food Heaven'
+  },
+
   level: {
     type: Number,
     required: true,

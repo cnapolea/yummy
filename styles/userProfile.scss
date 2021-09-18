@@ -4,16 +4,18 @@ $medium-space: 3em;
   align-items: center;
 }
 
-#div-profile {
-  @include display-flex-center;
+@mixin display-flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+#scn-profile {
+  /*@include display-flex-center;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-start;*/
   margin-bottom: $medium-space;
   width: 100%;
-
-  > div {
-    margin-left: $medium-space;
-  }
+  border-bottom: 1px solid $grey;
 }
 
 #div-user-info {
@@ -25,25 +27,13 @@ $medium-space: 3em;
   }
 }
 
-#div-profile-btn {
-  @include display-flex-center;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-#div-profile-picture {
-  @include display-flex-center;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
 #div-update-profile-picture {
   @include display-flex-center;
   flex-direction: row;
   justify-content: space-between;
 }
 
-img {
+img:not(.img-icon) {
   margin-top: 2em;
   width: 200px;
   height: 200px;
@@ -51,9 +41,110 @@ img {
   border-radius: 50%;
 }
 
-.btn-edit,
-.btn-delete {
-  button {
-    witdh: 50px;
+.img-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5em;
+}
+
+#div-header {
+  width: 100%;
+  position: relative;
+}
+
+#div-banner {
+  height: 10em;
+  background: rgb(242, 97, 91);
+  background: linear-gradient(
+    135deg,
+    rgba(242, 97, 91, 0.8) 0%,
+    rgba(248, 150, 93, 0.8) 60%,
+    rgba(255, 205, 95, 0.8) 100%
+  );
+  width: inherit;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  form {
+    margin-right: 1em;
   }
+}
+
+#div-profile-header {
+  /*@include display-flex-center;*/
+  @include display-flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+  margin-top: -140px;
+  margin-left: 3em;
+  z-index: 500;
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+  }
+
+  > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  > div:nth-child(2) {
+    margin-top: 4em;
+    margin-left: 4em;
+    @include display-flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > div {
+      @include display-flex-start;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      p {
+        margin: 0;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+button {
+  border-radius: 20px;
+  font-style: inherit;
+  border: 0;
+  margin: 0.8em;
+  padding: 0.5em 1em;
+}
+
+#btn-change,
+#btn-add {
+  background-color: rgb(248, 81, 76);
+  color: white;
+}
+
+#btn-edit {
+  background-color: rgb(241, 236, 236);
+  color: rgb(44, 43, 43);
+}
+
+h1,
+h2 {
+  font-family: 'Bebas Neue';
+}
+
+h2 {
+  font-size: 2em;
+}
+
+#btn-add {
+  width: fit-content;
+  margin-left: 0;
 }
