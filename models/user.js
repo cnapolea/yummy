@@ -43,8 +43,15 @@ const userSchema = new mongoose.Schema({
   profilePicture: {
     type: String,
     required: true,
-    default: 'hello.jpg'
-  }
+    default:
+      'https://res.cloudinary.com/dnsqwd8bw/image/upload/v1631811444/heather-ford-6f6G4U6Y6Vs-unsplash_zwiplg.jpg'
+  },
+  discoveries: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'restaurant'
+    }
+  ]
 });
 
 const User = mongoose.model('User', userSchema);

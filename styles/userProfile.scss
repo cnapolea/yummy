@@ -1,0 +1,59 @@
+$medium-space: 3em;
+@mixin display-flex-center {
+  display: flex;
+  align-items: center;
+}
+
+#div-profile {
+  @include display-flex-center;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: $medium-space;
+  width: 100%;
+
+  > div {
+    margin-left: $medium-space;
+  }
+}
+
+#div-user-info {
+  width: 60%;
+  > div {
+    @include display-flex-center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+#div-profile-btn {
+  @include display-flex-center;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#div-profile-picture {
+  @include display-flex-center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#div-update-profile-picture {
+  @include display-flex-center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+img {
+  margin-top: 2em;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btn-edit,
+.btn-delete {
+  button {
+    witdh: 50px;
+  }
+}
