@@ -55,4 +55,11 @@ const restaurantSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('restaurant', restaurantSchema);
+const Restaurant = mongoose.model('restaurant', restaurantSchema);
+
+Restaurant.createIndexes({
+  name: 'text',
+  menu: 'text'
+});
+
+module.exports = Restaurant;

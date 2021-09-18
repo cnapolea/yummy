@@ -12,14 +12,24 @@ const GEOCODING_URL = require('./getLngLat');
 // import middlewares
 const routeGuard = require('../../middleware/route-guard');
 
-
-router.get('/', (req, res, next) => {}
-  Restaurant.find({limit: 10})
+// GET request to display restaurants (divided into sections)
+router.get('/', (req, res, next) => {
+  Restaurant.find({ limit: 10 })
     .then((restaurants) => {
       res.render('restaurants', { restaurants });
     })
     .catch((error) => next(error));
-);
+});
+
+router.post('/', (req, res, next) => {
+  const { searchedText, city, rating, price } = req.body;
+
+  Restaurant.find({ city, rating, price, $text: { $search: searchedText } })
+    .then((restaurants) => {
+      res.render('restaurants', { restaurants });
+    })
+    .catch((error) => next(error));
+});
 
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
@@ -29,15 +39,6 @@ router.get('/:id', (req, res, next) => {
     })
     .catch((error) => next(error));
 });
-
-router.get('/', (req, res, next) => {}
-  Restaurant.find({limit: 10})
-    .then((restaurants) => {
-      res.render('restaurants', { restaurants });
-    })
-    .catch((error) => next(error));
-);
-
 
 // GET request to take to the create form view
 router.get('/create', (req, res, next) => {
