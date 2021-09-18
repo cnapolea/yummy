@@ -31,7 +31,8 @@ router.post('/create', (req, res, next) => {
           coordinates: [lng, lat]
         },
         cousine,
-        price
+        price,
+        creator: req.user._id
       });
     })
     .then(() => {

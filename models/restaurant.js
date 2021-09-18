@@ -1,50 +1,58 @@
 const mongoose = require('mongoose');
 
-const restaurantSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    maxLength: 120,
-    minLength: 3
-  },
-
-  image: {
-    type: String,
-    default: 'https://source.unsplash.com/random'
-  },
-
-  position: {
-    type: {
+const restaurantSchema = new mongoose.Schema(
+  {
+    name: {
       type: String,
-      default: 'Point'
+      required: true,
+      maxLength: 120,
+      minLength: 3
     },
-    coordinates: [
-      {
-        type: Number
-      }
-    ]
-  },
 
-  cousine: {
-    type: String,
-    required: true
-  },
+    image: {
+      type: String,
+      default: 'https://source.unsplash.com/random'
+    },
 
-  menu: {
-    type: [String]
-  },
+    position: {
+      type: {
+        type: String,
+        default: 'Point'
+      },
+      coordinates: [
+        {
+          type: Number
+        }
+      ]
+    },
 
-  price: {
-    type: String,
-    enum: ['$', '$$', '$$$', '$$$$', '$$$$$'],
-    required: true
-  },
+    cousine: {
+      type: String,
+      required: true
+    },
 
-  rate: {
-    type: Number,
-    max: 5,
-    min: 1
+    menu: {
+      type: [String]
+    },
+
+    price: {
+      type: String,
+      enum: ['$', '$$', '$$$', '$$$$', '$$$$$'],
+      required: true
+    },
+
+    rate: {
+      type: Number,
+      max: 5,
+      min: 1
+    },
+    creator: {
+      type: mongoose.Types.ObjectId
+    }
+  },
+  {
+    timestamps: { createdAt: 'created_at' }
   }
-});
+);
 
 module.exports = mongoose.model('restaurant', restaurantSchema);
