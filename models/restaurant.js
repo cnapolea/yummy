@@ -36,7 +36,7 @@ const restaurantSchema = new mongoose.Schema({
 
   price: {
     type: String,
-    enum: ['$, $$, $$$, $$$$, $$$$$'],
+    enum: ['$', '$$', '$$$', '$$$$', '$$$$$'],
     required: true
   },
 
