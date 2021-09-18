@@ -38,5 +38,21 @@
     </p>
     <p><strong>Level: </strong><span>{{user.level}}</span></p>
   </div>
-
 </div>
+
+<section>
+  <h2>{{user.name.firstName}}'s Yummy Discoveries</h2>
+  {{#if user.discoveries}}
+    {{#each user.discoveries}}
+      <div>
+        {{discovery}}
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No discoveries yet.</p>
+  {{/if}}
+
+  <form action='/restaurants/create'>
+    <button>Add new discovery</button>
+  </form>
+</section>
