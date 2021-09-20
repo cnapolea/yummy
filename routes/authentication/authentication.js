@@ -6,6 +6,14 @@ const User = require('../../models/user'); //provides user model
 const routeGuardMiddleware = require('../../middleware/route-guard');
 const upload = require('../../middleware/file-upload'); //handles file uploades
 const router = new Router();
+const nodemailer = require('nodemailer');
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'test.ih.rmwdpt2021@gmail.com',
+    pass: 'Ironhack2021'
+  }
+});
 
 //Handle user registration: render registration form upon GET request
 router.get('/register', (req, res, next) => {
@@ -23,17 +31,44 @@ router.post('/register', upload.single('profilePicture'), (req, res, next) => {
     profilePicture = req.file.path;
   }
   let place;
+  let verificationCode = String(Math.random()).replace('.', '');
+  let verificationCodeHash;
+
+  /*bcryptjs
+    generate hashed verification code for user
+    .hash(verificationCode, 10)
+    .then((verificationHash) => {
+      verificationCodeHash = verificationHash;
+      next();
+    })
+    .catch((error) => {
+      next(error);
+    });*/
 
   bcryptjs
     .hash(password, 10)
     .then((hash) => {
       return User.create({
         name: { firstName, lastName },
+        //accountVerification: { code: verificationCodeHash },
         email,
         passwordHashAndSalt: hash,
         phoneNumber,
         profilePicture,
         place
+      });
+    })
+    .then((user) => {
+      req.session.userId = user._id;
+      //res.redirect('/private');
+      let receiver = 'test.ih.rmwdpt2021@gmail.com';
+
+      //send verification mail to user.
+      return transporter.sendMail({
+        to: receiver,
+        subject: 'Please verify your yummy email adress',
+        html: `<h1>PLEASE CONFIRM YOUR EMAIL ADRESS :) </h1>
+        <form action='/profile/{{user.accountVerification.code}}/confirm' method="POST"><button>Confirm Email adress</button></form>`
       });
     })
     .then((user) => {

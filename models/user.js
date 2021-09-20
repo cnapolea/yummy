@@ -28,6 +28,18 @@ const userSchema = new mongoose.Schema({
     required: true
   },
 
+  accountVerification: {
+    code: {
+      type: String,
+      required: true
+    },
+    verified: {
+      type: Boolean,
+      default: false,
+      required: true
+    }
+  },
+
   phoneNumber: {
     type: String,
     trim: true,
@@ -56,6 +68,12 @@ const userSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'restaurant'
+    }
+  ],
+  reviews: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Review'
     }
   ]
 });

@@ -1,9 +1,11 @@
 <section section id='scn-profile'>
   <div id='div-header'>
     <div id='div-banner'>
-      <form action='/profile/{{user._id}}/edit'>
-        <button id='btn-edit'>Edit Profile</button>
-      </form>
+      {{#if ownProfile}}
+        <form action='/profile/{{user._id}}/edit'>
+          <button id='btn-edit'>Edit Profile</button>
+        </form>
+      {{/if}}
     </div>
     <div id='div-profile-header'>
       <div>
@@ -11,19 +13,28 @@
           src='{{user.profilePicture}}'
           alt='{{user.name.firstName}} {{user.name.lastName}}'
         />
-        <form action='/profile/{{user._id}}/change-picture'>
-          <button id='btn-change'>Change Picture</button>
-        </form>
+        {{#if ownProfile}}
+          <form action='/profile/{{user._id}}/change-picture'>
+            <button id='btn-change'>Change Picture</button>
+          </form>
+        {{/if}}
       </div>
 
       <div id='div-user-info'>
-        <h1>{{user.name.firstName}}
-          {{user.name.lastName}}
-          <img
-            class='img-icon'
-            src='/icons/guarantee.png'
-            alt='Location Icon'
-          /></h1>
+
+        {{#if ownProfile}}
+          <h1>Hello {{user.name.firstName}}</h1>
+        {{else}}
+          <h1>
+
+            {{user.name.firstName}}
+            {{user.name.lastName}}
+            <img
+              class='img-icon'
+              src='/icons/guarantee.png'
+              alt='Location Icon'
+            /></h1>
+        {{/if}}
 
         <div>
           <p><img
@@ -31,8 +42,9 @@
               src='/icons/location.png'
               alt='Location Icon'
             /><span>{{user.place}}</span></p>
-          <p><strong>6</strong><span> discoveries, </span><strong
-            >12</strong><span>
+          <p><strong>{{numberOfDiscoveries}}</strong><span>
+              discoveries,
+            </span><strong>{{numberOfReviews}}</strong><span>
               reviews</span></p>
         </div>
       </div>
@@ -42,20 +54,31 @@
 </section>
 
 <section>
-  <h2>{{user.name.firstName}}'s Yummy Discoveries</h2>
+  {{#if ownProfile}}
+    <h2>Your Yummy Discoveries</h2>
+  {{else}}
+    <h2>{{user.name.firstName}}'s Yummy Discoveries</h2>
+    <form action='/profile/{{user._id}}/reviews'>
+      <button>See {{user.name.firstName}}'s Reviews </button>
+    </form>
+  {{/if}}
   {{#if user.discoveries}}
     {{#each user.discoveries}}
       <div>
-        {{discovery}}
+        <h3>{{name}}</h3>
+        <p>{{descriptioin}}</p>
+        <img src='{{image}}' alt='Image of {{name}}' />
       </div>
     {{/each}}
   {{else}}
     <p>No discoveries yet.</p>
   {{/if}}
 
-  <form action='/restaurants/create'>
-    <button id='btn-add'>Add new discovery</button>
-  </form>
+  {{#if ownProfile}}
+    <form action='/restaurants/create'>
+      <button id='btn-add'>Add new discovery</button>
+    </form>
+  {{/if}}
 </section>
 
 <div>Icons made by

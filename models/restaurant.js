@@ -26,6 +26,13 @@ const restaurantSchema = new mongoose.Schema(
       ]
     },
 
+    description: {
+      type: String,
+      maxLength: 150,
+      default: 'No description available.',
+      required: true
+    },
+
     cousine: {
       type: String,
       required: true
@@ -46,9 +53,24 @@ const restaurantSchema = new mongoose.Schema(
       max: 5,
       min: 1
     },
+
     creator: {
-      type: mongoose.Types.ObjectId
-    }
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+
+    likes: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+
+    reviews: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Review'
+      }
+    ]
   },
   {
     timestamps: { createdAt: 'created_at' }

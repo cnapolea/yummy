@@ -5,6 +5,7 @@
 
 const express = require('express');
 const User = require('./../../models/user');
+const Review = require('./../../models/review');
 const routeGuardMiddleware = require('../../middleware/route-guard');
 const upload = require('../../middleware/file-upload'); //handles file uploades
 const profileRouter = express.Router();
@@ -14,10 +15,21 @@ profileRouter.get('/:userId', routeGuardMiddleware, (req, res, next) => {
   const { userId } = req.params;
   let userProfile;
   User.findById(userId)
+    .populate('discoveries')
     .then((document) => {
       userProfile = document;
-      console.log(document);
-      res.render('profile/userProfile', { user: document });
+      let ownProfile =
+        req.user && String(req.user._id) === String(userProfile._id);
+      console.log(`IS OWN PROFILE?: ${ownProfile}`);
+      let numberOfDiscoveries = document.discoveries.length;
+      let numberOfReviews = document.reviews.length;
+      console.log(`${numberOfDiscoveries} | ${numberOfReviews}`);
+      res.render('profile/userProfile', {
+        user: document,
+        ownProfile,
+        numberOfDiscoveries,
+        numberOfReviews
+      });
     })
     .catch((error) => {
       next(error);
@@ -32,7 +44,6 @@ profileRouter.get('/:userId/edit', routeGuardMiddleware, (req, res, next) => {
   User.findById(userId)
     .then((document) => {
       userProfile = document;
-      console.log(document);
       res.render('profile/edit', { user: document });
     })
     .catch((error) => {
@@ -133,6 +144,27 @@ profileRouter.post(
         res.user = null;
         res.clearCookie('connect.sid', { path: '/' });
         res.redirect('/');
+      })
+      .catch((error) => {
+        next(error);
+      });
+  }
+);
+
+//04: Show all reviews of a user
+//GET: render page where all reviews of certain user are displayed (if authorized), otherwise throw error
+profileRouter.get(
+  '/:userId/reviews',
+  routeGuardMiddleware,
+  (req, res, next) => {
+    const { userId } = req.params;
+    let userProfile;
+    User.findById(userId)
+      .populate('reviews')
+      .populate('reviews.restaurant')
+      .then((document) => {
+        userProfile = document;
+        res.render('profile/reviews', { reviews: document.reviews });
       })
       .catch((error) => {
         next(error);
