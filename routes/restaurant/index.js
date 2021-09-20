@@ -4,8 +4,7 @@ require('dotenv').config();
 const Restaurant = require('../../models/restaurant');
 const { Router } = require('express');
 const router = Router();
-const multer = require('multer');
-const cloudinary = require('cloudinary');
+const upload = require('../../middleware/file-upload');
 const axios = require('axios');
 
 // Function that formats GEOCODING URL
@@ -42,10 +41,14 @@ router.get('/create', routeGuard, (req, res, next) => {
 });
 
 // POST request to create a restaurant document in the DB
-router.post('/create', routeGuard, (req, res, next) => {
+router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
   const { name, address1, postalCode, city, country, cousine, price, rating } =
     req.body;
-  const { image } = req.body;
+  let image;
+  console.log(req.file);
+  if (req.file) {
+    image = req.file.path;
+  }
 
   axios
     .get(GEOCODING_URL(req.body))
