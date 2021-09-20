@@ -1,0 +1,41 @@
+<section id='search-form'>
+  <h1>Yummy In Your Tummy!</h1>
+
+  <form action='' method='get'>
+    <input type='text' name='search' id='input-search' />
+    <input type='text' name='city' id='input-city' />
+    <button>Search Restaurant</button>
+  </form>
+
+</section>
+
+<section id='top-rated'>
+  <div>
+    <h2>Top Rated Discoveries</h2>
+
+    {{#each restaurants}}
+      <div class='restaurant-card'>
+        <h3>{{name}}</h3>
+        <img src='{{image}}' alt='restaurant image' />
+        <small>{{rating}}</small>
+        <p>
+          <img src='' alt='' />
+        </p>
+      </div>
+    {{/each}}
+  </div>
+</section>
+
+<section id='near-you'>
+  <div>
+    <h2>Discoveries Near You</h2>
+    <div class='restaurant-card'>
+      <img src='' alt='' />
+      {{! rating }}
+      <p>
+        <img src='' alt='' />
+        Lorem ipsum
+      </p>
+    </div>
+  </div>
+</section>

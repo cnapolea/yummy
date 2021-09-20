@@ -1,3 +1,5 @@
+// jshint esversion:10
+
 require('dotenv').config();
 const Restaurant = require('../../models/restaurant');
 const { Router } = require('express');
@@ -14,9 +16,12 @@ const routeGuard = require('../../middleware/route-guard');
 
 // GET request to display restaurants (divided into sections)
 router.get('/', (req, res, next) => {
-  Restaurant.find({ limit: 10 })
+  Restaurant.find()
+    .limit(10)
+    .sort({ rating: -1 })
     .then((restaurants) => {
-      res.render('restaurants', { restaurants });
+      console.log(restaurants);
+      res.render('restaurant/restaurants', { restaurants });
     })
     .catch((error) => next(error));
 });
@@ -31,23 +36,14 @@ router.post('/', (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.get('/:id', (req, res, next) => {
-  const { id } = req.params;
-  Restaurant.findById(id)
-    .then((restaurant) => {
-      res.render('restaurant', { restaurant });
-    })
-    .catch((error) => next(error));
-});
-
 // GET request to take to the create form view
-router.get('/create', (req, res, next) => {
+router.get('/create', routeGuard, (req, res, next) => {
   res.render('restaurant/create-restaurant');
 });
 
 // POST request to create a restaurant document in the DB
 router.post('/create', routeGuard, (req, res, next) => {
-  const { name, address1, postalCode, city, country, cousine, price } =
+  const { name, address1, postalCode, city, country, cousine, price, rating } =
     req.body;
   const { image } = req.body;
 
@@ -63,7 +59,8 @@ router.post('/create', routeGuard, (req, res, next) => {
         },
         cousine,
         price,
-        creator: req.user._id
+        creator: req.user._id,
+        rating
       });
     })
     .then(() => {
@@ -73,6 +70,15 @@ router.post('/create', routeGuard, (req, res, next) => {
       console.log(error);
       next(error);
     });
+});
+
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params;
+  Restaurant.findById(id)
+    .then((restaurant) => {
+      res.render('restaurant', { restaurant });
+    })
+    .catch((error) => next(error));
 });
 
 module.exports = router;

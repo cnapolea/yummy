@@ -70,7 +70,12 @@ const restaurantSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review'
       }
-    ]
+    ],
+
+    rating: {
+      type: Number,
+      required: true
+    }
   },
   {
     timestamps: { createdAt: 'created_at' }
@@ -81,7 +86,8 @@ const Restaurant = mongoose.model('restaurant', restaurantSchema);
 
 Restaurant.createIndexes({
   name: 'text',
-  menu: 'text'
+  menu: 'text',
+  cousine: 'text'
 });
 
 module.exports = Restaurant;
