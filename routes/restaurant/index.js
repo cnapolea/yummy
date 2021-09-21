@@ -15,11 +15,11 @@ const routeGuard = require('../../middleware/route-guard');
 
 // GET request to display restaurants (divided into sections)
 router.get('/', (req, res, next) => {
+  // console.log(req.query);
   Restaurant.find()
     .limit(10)
     .sort({ rating: -1 })
     .then((restaurants) => {
-      console.log(restaurants);
       res.render('restaurant/restaurants', { restaurants });
     })
     .catch((error) => next(error));
@@ -75,7 +75,12 @@ router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
     });
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/location', (req, res, next) => {
+  console.log(req.query);
+  res.json({ user: 'Cristiano' });
+});
+
+router.get('/restaurant/:id', (req, res, next) => {
   const { id } = req.params;
   Restaurant.findById(id)
     .then((restaurant) => {
