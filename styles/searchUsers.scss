@@ -16,3 +16,7 @@
     background-color: transparent;
   }
 }
+
+.div-user-profile:not(:last-of-type) {
+  border-bottom: 1px dotted $grey;
+}

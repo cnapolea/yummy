@@ -14,7 +14,7 @@ const profileRouter = express.Router();
 profileRouter.get('/confirm/:confirmationCode', (req, res, next) => {
   const { confirmationCode } = req.params;
   console.log(`Verification code: ${confirmationCode}`);
-  User.find({ accountVerification: { code: confirmationCode } })
+  User.find({ 'accountVerification.code': confirmationCode })
     .then((user) => {
       user.accountVerification.verified = true;
       console.log(user);

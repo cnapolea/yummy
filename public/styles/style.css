@@ -113,6 +113,10 @@ button {
   color: #2c2b2b;
 }
 
+.btn-transparent {
+  background-color: transparent;
+}
+
 #scn-profile {
   /*@include display-flex-center;
   flex-direction: row;
@@ -263,6 +267,10 @@ h2 {
 
 .div-overview-profile form {
   background-color: transparent;
+}
+
+.div-user-profile:not(:last-of-type) {
+  border-bottom: 1px dotted #e6e6e6;
 }
 
 /*# sourceMappingURL=style.css.map */
