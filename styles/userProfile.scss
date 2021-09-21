@@ -18,26 +18,30 @@ $medium-space: 3em;
   border-bottom: 1px solid $grey;
 }
 
-#div-user-info {
-  width: 60%;
-  > div {
-    @include display-flex-center;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
 #div-update-profile-picture {
   @include display-flex-center;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.img-rounded-edges {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+.div-img-circle {
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .div-img-circle {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+}
+
+.img-rounded-edges {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .img-icon {
@@ -75,16 +79,15 @@ $medium-space: 3em;
 
 #div-profile-header {
   /*@include display-flex-center;*/
-  @include display-flex-start;
-  flex-direction: row;
+  @include display-flex-center;
+  flex-direction: column;
   justify-content: flex-start;
   position: relative;
   margin-top: -105px;
-  margin-left: 3em;
   z-index: 500;
 
   h1 {
-    font-size: 3em;
+    font-size: 2em;
     margin-bottom: 0;
     margin-top: -0.8em;
   }
@@ -95,39 +98,72 @@ $medium-space: 3em;
     align-items: center;
     justify-content: flex-start;
   }
+}
 
-  > div:nth-child(2) {
-    margin-top: 4em;
-    margin-left: 4em;
+@media (min-width: 450px) {
+  #div-profile-header {
     @include display-flex-start;
+    flex-direction: row;
+    margin-left: 1.5em;
+
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  #div-profile-header {
+    margin-left: 3em;
+    h1 {
+      font-size: 3em;
+    }
+  }
+}
+
+#div-user-info {
+  width: 60%;
+  margin: 2.5em auto 1.5em;
+  @include display-flex-center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > div {
+    @include display-flex-center;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+
+    p {
+      margin: 0;
+      line-height: 2;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  #div-user-info {
+    @include display-flex-start;
+    margin-top: 5em;
+    margin-left: 2em;
 
     > div {
       @include display-flex-start;
-      flex-direction: column;
-      justify-content: flex-end;
 
       p {
-        margin: 0;
-        line-height: 2;
+        text-align: left;
       }
     }
   }
 }
 
-/*
-#btn-change,
-#btn-add {
-  background-color: rgb(248, 81, 76);
-  color: white;
+@media (min-width: 600px) {
+  #div-user-info {
+    margin-top: 4em;
+    margin-left: 4em;
+  }
 }
 
-#btn-edit {
-  background-color: rgb(241, 236, 236);
-  color: rgb(44, 43, 43);
-}
-*/
 h1,
 h2 {
   font-family: 'Bebas Neue';

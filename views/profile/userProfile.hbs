@@ -9,11 +9,13 @@
     </div>
     <div id='div-profile-header'>
       <div>
-        <img
-          src='{{user.profilePicture}}'
-          alt='{{user.name.firstName}} {{user.name.lastName}}'
-          class='img-rounded-edges'
-        />
+        <div class='div-img-circle'>
+          <img
+            src='{{user.profilePicture}}'
+            alt='{{user.name.firstName}} {{user.name.lastName}}'
+            class='img-rounded-edges'
+          />
+        </div>
         {{#if ownProfile}}
           <form action='/profile/{{user._id}}/change-picture'>
             <button id='btn-change' class='btn-pink'>Change Picture</button>
