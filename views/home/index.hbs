@@ -1,6 +1,8 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
+<img src='images/yummy.png' alt='Logo of Yummy' />
+
 <div>
   <form action='/search-restaurant' method='post'>
 
@@ -26,7 +28,7 @@
         id='location'
         placeholder='City. ex: Lisbon'
       />
-      <button></button>
+      <button class='btn-pink'>Search</button>
     </div>
   </form>
 </div>
@@ -34,7 +36,7 @@
 <div>
   {{#if user}}
     <form action='/explore-users'>
-      <button>Explore other users</button>
+      <button class='btn-pink'>Explore other users</button>
     </form>
   {{/if}}
   <section id='recommendations'></section>

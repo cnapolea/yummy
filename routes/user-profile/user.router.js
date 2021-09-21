@@ -10,6 +10,22 @@ const routeGuardMiddleware = require('../../middleware/route-guard');
 const upload = require('../../middleware/file-upload'); //handles file uploades
 const profileRouter = express.Router();
 
+//00: Verify user once the link in the verification mail is clicked
+profileRouter.get('/confirm/:confirmationCode', (req, res, next) => {
+  const { confirmationCode } = req.params;
+  console.log(`Verification code: ${confirmationCode}`);
+  User.find({ accountVerification: { code: confirmationCode } })
+    .then((user) => {
+      user.accountVerification.verified = true;
+      console.log(user);
+      console.log(`User ${user.name} has been verified.`);
+      res.redirect('/');
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
 //01: Show user profile
 profileRouter.get('/:userId', routeGuardMiddleware, (req, res, next) => {
   const { userId } = req.params;
@@ -21,11 +37,13 @@ profileRouter.get('/:userId', routeGuardMiddleware, (req, res, next) => {
       let ownProfile =
         req.user && String(req.user._id) === String(userProfile._id);
       console.log(`IS OWN PROFILE?: ${ownProfile}`);
+      console.log(`Registered user: ${req.user._id}`);
+      console.log(`ID of user profile: ${userProfile._id}`);
       let numberOfDiscoveries = document.discoveries.length;
       let numberOfReviews = document.reviews.length;
       console.log(`${numberOfDiscoveries} | ${numberOfReviews}`);
       res.render('profile/userProfile', {
-        user: document,
+        userProfile: document,
         ownProfile,
         numberOfDiscoveries,
         numberOfReviews

@@ -32,7 +32,7 @@ router.post('/register', upload.single('profilePicture'), (req, res, next) => {
   }
   let place;
   let verificationCode = String(Math.random()).replace('.', '');
-  let verificationCodeHash;
+  //let verificationCodeHash;
 
   /*bcryptjs
     generate hashed verification code for user
@@ -50,7 +50,7 @@ router.post('/register', upload.single('profilePicture'), (req, res, next) => {
     .then((hash) => {
       return User.create({
         name: { firstName, lastName },
-        //accountVerification: { code: verificationCodeHash },
+        accountVerification: { code: verificationCode },
         email,
         passwordHashAndSalt: hash,
         phoneNumber,
@@ -62,19 +62,18 @@ router.post('/register', upload.single('profilePicture'), (req, res, next) => {
       req.session.userId = user._id;
       //res.redirect('/private');
       let receiver = 'test.ih.rmwdpt2021@gmail.com';
+      console.log(user.accountVerification.code);
 
       //send verification mail to user.
       return transporter.sendMail({
         to: receiver,
         subject: 'Please verify your yummy email adress',
         html: `<h1>PLEASE CONFIRM YOUR EMAIL ADRESS :) </h1>
-        <form action='/profile/{{user.accountVerification.code}}/confirm' method="POST"><button>Confirm Email adress</button></form>`
+        <a href='http://localhost:3000/profile/confirm/${user.accountVerification.code}'>
+        Confirm Email adress</a>`
       });
     })
-    .then((user) => {
-      req.session.userId = user._id;
-      //res.redirect('/private');
-      console.log(user);
+    .then(() => {
       res.redirect('/');
     })
     .catch((error) => {

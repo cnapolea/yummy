@@ -3,7 +3,7 @@
     <div id='div-banner'>
       {{#if ownProfile}}
         <form action='/profile/{{user._id}}/edit'>
-          <button id='btn-edit'>Edit Profile</button>
+          <button id='btn-edit' class='btn-lightgrey'>Edit Profile</button>
         </form>
       {{/if}}
     </div>
@@ -12,10 +12,11 @@
         <img
           src='{{user.profilePicture}}'
           alt='{{user.name.firstName}} {{user.name.lastName}}'
+          class='img-rounded-edges'
         />
         {{#if ownProfile}}
           <form action='/profile/{{user._id}}/change-picture'>
-            <button id='btn-change'>Change Picture</button>
+            <button id='btn-change' class='btn-pink'>Change Picture</button>
           </form>
         {{/if}}
       </div>
@@ -23,12 +24,12 @@
       <div id='div-user-info'>
 
         {{#if ownProfile}}
-          <h1>Hello {{user.name.firstName}}</h1>
+          <h1>Hello {{userProfile.name.firstName}}</h1>
         {{else}}
           <h1>
 
-            {{user.name.firstName}}
-            {{user.name.lastName}}
+            {{userProfile.name.firstName}}
+            {{userProfile.name.lastName}}
             <img
               class='img-icon'
               src='/icons/guarantee.png'
@@ -41,7 +42,7 @@
               class='img-icon'
               src='/icons/location.png'
               alt='Location Icon'
-            /><span>{{user.place}}</span></p>
+            /><span>{{userProfile.place}}</span></p>
           <p><strong>{{numberOfDiscoveries}}</strong><span>
               discoveries,
             </span><strong>{{numberOfReviews}}</strong><span>
@@ -57,13 +58,15 @@
   {{#if ownProfile}}
     <h2>Your Yummy Discoveries</h2>
   {{else}}
-    <h2>{{user.name.firstName}}'s Yummy Discoveries</h2>
-    <form action='/profile/{{user._id}}/reviews'>
-      <button>See {{user.name.firstName}}'s Reviews </button>
+    <h2>{{userProfile.name.firstName}}'s Yummy Discoveries</h2>
+    <form action='/profile/{{userProfile._id}}/reviews'>
+      <button class='btn-pink'>See
+        {{userProfile.name.firstName}}'s Reviews
+      </button>
     </form>
   {{/if}}
-  {{#if user.discoveries}}
-    {{#each user.discoveries}}
+  {{#if userProfile.discoveries}}
+    {{#each userProfile.discoveries}}
       <div>
         <h3>{{name}}</h3>
         <p>{{descriptioin}}</p>
@@ -76,7 +79,7 @@
 
   {{#if ownProfile}}
     <form action='/restaurants/create'>
-      <button id='btn-add'>Add new discovery</button>
+      <button id='btn-add' class='btn-pink'>Add new discovery</button>
     </form>
   {{/if}}
 </section>

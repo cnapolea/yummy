@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;0,900;1,400;1,600&display=swap");
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -7,8 +8,9 @@ body {
   padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   line-height: 2;
+  color: #333333;
 }
 
 a {
@@ -22,7 +24,6 @@ nav {
 
 nav a,
 nav button {
-  padding: 1em 0;
   border: 0;
 }
 
@@ -34,6 +35,14 @@ nav button:not(:last-child) {
 nav a:first-child,
 nav button:first-child {
   margin-right: auto;
+}
+
+nav a {
+  padding: 1em 0;
+}
+
+nav button {
+  padding: 1em;
 }
 
 h1,
@@ -66,7 +75,6 @@ input:not([type='radio']),
 input:not([type='range']),
 textarea,
 select,
-button,
 .btn {
   padding: 1em;
   border: 1px solid #e6e6e6;
@@ -84,6 +92,177 @@ textarea {
 
 label {
   margin-bottom: 0.5em;
+}
+
+button {
+  border-radius: 20px;
+  font-style: inherit;
+  border: 0;
+  margin: 0.8em;
+  padding: 0.5em 1em;
+  width: fit-content;
+}
+
+.btn-pink {
+  background-color: #f8514c;
+  color: white;
+}
+
+.btn-lightgrey {
+  background-color: #f1ecec;
+  color: #2c2b2b;
+}
+
+#scn-profile {
+  /*@include display-flex-center;
+  flex-direction: row;
+  justify-content: flex-start;*/
+  margin-bottom: 3em;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#div-user-info {
+  width: 60%;
+}
+
+#div-user-info > div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#div-update-profile-picture {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img-rounded-edges {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.img-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5em;
+}
+
+#div-header {
+  width: 100%;
+  position: relative;
+}
+
+#div-banner {
+  height: 10em;
+  background: #f2615b;
+  background: linear-gradient(135deg, rgba(242, 97, 91, 0.8) 0%, rgba(248, 150, 93, 0.8) 60%, rgba(255, 205, 95, 0.8) 100%);
+  width: inherit;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#div-banner form {
+  margin-right: 1em;
+}
+
+#div-profile-header {
+  /*@include display-flex-center;*/
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+  margin-top: -105px;
+  margin-left: 3em;
+  z-index: 500;
+}
+
+#div-profile-header h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-top: -0.8em;
+}
+
+#div-profile-header > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#div-profile-header > div:nth-child(2) {
+  margin-top: 4em;
+  margin-left: 4em;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#div-profile-header > div:nth-child(2) > div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#div-profile-header > div:nth-child(2) > div p {
+  margin: 0;
+  line-height: 2;
+}
+
+/*
+#btn-change,
+#btn-add {
+  background-color: rgb(248, 81, 76);
+  color: white;
+}
+
+#btn-edit {
+  background-color: rgb(241, 236, 236);
+  color: rgb(44, 43, 43);
+}
+*/
+h1,
+h2 {
+  font-family: 'Bebas Neue';
+}
+
+h2 {
+  font-size: 2em;
+}
+
+#btn-add {
+  margin-left: 0;
+}
+
+.div-overview-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.div-overview-profile img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 3em;
+}
+
+.div-overview-profile form {
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */
