@@ -1,31 +1,33 @@
-window.addEventListener(
-  'load',
-  () => {
-    let userLocation;
-    let getPosition = () =>
-      new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject);
-      });
+(function () {
+  window.addEventListener(
+    'load',
+    () => {
+      let userLocation;
 
-    getPosition()
-      .then((location) => {
-        userLocation = location;
-        const { longitude, latitude } = location.coords;
-        console.log(location);
-        return fetch(`/restaurants/location?lon=${longitude}&lat=${latitude}`);
-      })
-      .then((e) => {
-        return e.json();
-      })
-      .then((data) => {
-        console.log(data);
-        // console.log(JSON.parse(data));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      let getPosition = () =>
+        new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
 
-    console.log(userLocation);
-  },
-  false
-);
+      getPosition()
+        .then((location) => {
+          userLocation = location;
+          const { longitude, latitude } = location.coords;
+          console.log(location);
+          return fetch(
+            `/restaurants/location?lon=${longitude}&lat=${latitude}`
+          );
+        })
+        .then((data) => {
+          return data.json();
+        })
+        .then((data) => {})
+        .catch((error) => {
+          console.log(error);
+        });
+
+      console.log(userLocation);
+    },
+    false
+  );
+})();
