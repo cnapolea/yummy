@@ -14,19 +14,23 @@
           userLocation = location;
           const { longitude, latitude } = location.coords;
           console.log(location);
+
           return fetch(
             `/restaurants/location?lon=${longitude}&lat=${latitude}`
           );
         })
         .then((data) => {
-          return data.json();
+          console.log(data.status);
+          if (data.status === 200) {
+            return data.json();
+          }
         })
-        .then((data) => {})
+        .then((data) => {
+          data.forEach(createRestaurantCard);
+        })
         .catch((error) => {
           console.log(error);
         });
-
-      console.log(userLocation);
     },
     false
   );

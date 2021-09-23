@@ -16,7 +16,7 @@
     {{#each restaurants}}
       <div class='restaurant-card'>
         <h3>{{name}}</h3>
-        <img src='{{image}}' alt='restaurant image' />
+        <img src='{{image}}' alt='{{name}}' />
         <small>{{rating}}</small>
         <p>
           <img src='' alt='' />
@@ -27,17 +27,9 @@
 </section>
 
 <section id='near-you'>
-  <div>
-    <h2>Discoveries Near You</h2>
-    <div class='restaurant-card'>
-      <img src='' alt='' />
-      {{! rating }}
-      <p>
-        <img src='' alt='' />
-        Lorem ipsum
-      </p>
-    </div>
-  </div>
+  <h2>Discoveries Near You</h2>
+
 </section>
 
+<script src='/scripts/nearYouDivs.js'></script>
 <script src='/scripts/script.js'></script>
