@@ -290,14 +290,11 @@ h2 {
   margin-left: 0;
 }
 
-<<<<<<< HEAD
-=======
 .img-restaurant-image {
   border-radius: 20px;
   max-width: 200px;
 }
 
->>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 .div-overview-profile {
   display: flex;
   flex-direction: row;
@@ -305,11 +302,7 @@ h2 {
   align-items: center;
 }
 
-<<<<<<< HEAD
-.div-overview-profile img {
-=======
 .div-overview-profile img:not(.img-icon) {
->>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -321,8 +314,6 @@ h2 {
   background-color: transparent;
 }
 
-<<<<<<< HEAD
-=======
 .div-overview-profile > div {
   text-align: left;
 }
@@ -378,13 +369,10 @@ h2 {
   }
 }
 
->>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 .div-user-profile:not(:last-of-type) {
   border-bottom: 1px dotted #e6e6e6;
 }
 
-<<<<<<< HEAD
-=======
 .div-user-profile {
   display: flex;
   flex-direction: column;
@@ -445,7 +433,6 @@ h3 {
   }
 }
 
->>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 #restaurants-title {
   margin: 15px 0 5px;
   text-align: center;
@@ -464,15 +451,12 @@ h3 {
   height: 40px;
   margin-bottom: 10px;
   width: 100%;
-<<<<<<< HEAD
   transition: outline 1s ease-out;
 }
 
 #restaurants-form input[type='text']:focus {
   border-color: transparent;
   outline: #f8514c solid 2px !important;
-=======
->>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 }
 
 #restaurants-form button {
@@ -483,7 +467,6 @@ h3 {
   width: 45%;
 }
 
-<<<<<<< HEAD
 #top-rated h2 {
   font-size: 1.3rem;
   margin: 0;
@@ -524,6 +507,4 @@ h3 {
   border-radius: 20px;
 }
 
-=======
->>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 /*# sourceMappingURL=style.css.map */
