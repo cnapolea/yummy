@@ -15,6 +15,12 @@
     height: 40px;
     margin-bottom: 10px;
     width: 100%;
+    transition: outline 1s ease-out;
+  }
+
+  input[type='text']:focus {
+    border-color: transparent;
+    outline: #f8514c solid 2px !important;
   }
 
   button {
@@ -23,5 +29,39 @@
     font-size: 1.05rem;
     margin: 10px 0 0;
     width: 45%;
+  }
+}
+
+#top-rated {
+  h2 {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+}
+
+#top-rated,
+#near-you {
+  margin: 2rem 0;
+
+  div {
+    display: flex;
+    overflow-x: hidden;
+    div {
+      border-radius: 20px;
+      flex-shrink: 0;
+      margin-right: 1em;
+      position: relative;
+      width: 100%;
+
+      h3,
+      small,
+      p {
+        position: absolute;
+      }
+      img {
+        height: 15rem;
+        border-radius: 20px;
+      }
+    }
   }
 }

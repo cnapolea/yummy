@@ -10,6 +10,7 @@ body {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   line-height: 2;
   color: #333333;
+  overflow-x: hidden;
 }
 
 @media (min-width: 600px) {
@@ -312,6 +313,11 @@ h2 {
   border-bottom: 1px dotted #e6e6e6;
 }
 
+#restaurants-title {
+  margin: 15px 0 5px;
+  text-align: center;
+}
+
 #restaurants-form {
   align-items: center;
   display: flex;
@@ -322,14 +328,63 @@ h2 {
 #restaurants-form input[type='text'] {
   border-radius: 50px;
   font-size: 1.05rem;
+  height: 40px;
+  margin-bottom: 10px;
   width: 100%;
+  transition: outline 1s ease-out;
+}
+
+#restaurants-form input[type='text']:focus {
+  border-color: transparent;
+  outline: #f8514c solid 2px !important;
 }
 
 #restaurants-form button {
   color: #fff;
   background-color: #f8514c;
   font-size: 1.05rem;
+  margin: 10px 0 0;
   width: 45%;
+}
+
+#top-rated h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+#top-rated,
+#near-you {
+  margin: 2rem 0;
+}
+
+#top-rated div,
+#near-you div {
+  display: flex;
+  overflow-x: hidden;
+}
+
+#top-rated div div,
+#near-you div div {
+  border-radius: 20px;
+  flex-shrink: 0;
+  margin-right: 1em;
+  position: relative;
+  width: 100%;
+}
+
+#top-rated div div h3,
+#top-rated div div small,
+#top-rated div div p,
+#near-you div div h3,
+#near-you div div small,
+#near-you div div p {
+  position: absolute;
+}
+
+#top-rated div div img,
+#near-you div div img {
+  height: 15rem;
+  border-radius: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

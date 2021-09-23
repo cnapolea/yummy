@@ -1,10 +1,10 @@
 function createRestaurantCard(restaurant) {
-  const nearYouSectionElement = document.getElementById('near-you');
-  let divElement = document.createElement('div');
+  let divElement = document.querySelector('.cards-container');
+  let restautantCardElement = document.createElement('div');
   let imgElement = document.createElement('img');
-  let pNameElement = document.createElement('p');
-  let pRatingElement = document.createElement('p');
-  let pPriceElement = document.createElement('p');
+  let h3NameElement = document.createElement('h3');
+  let smallRatingElement = document.createElement('small');
+  let smallPriceElement = document.createElement('small');
   let smallDistanceElement = document.createElement('small');
 
   const restaurantObj = restaurant[0];
@@ -13,19 +13,18 @@ function createRestaurantCard(restaurant) {
   imgElement.src = restaurantObj.image;
   imgElement.alt = restaurantObj.name;
 
-  pNameElement.innerText = restaurantObj.name;
-  pRatingElement.innerText = restaurantObj.rating;
-  pPriceElement.innerText = restaurantObj.price;
+  h3NameElement.innerText = restaurantObj.name;
+  smallRatingElement.innerText = restaurantObj.rating;
+  smallPriceElement.innerText = restaurantObj.price;
 
   smallDistanceElement.innerHTML = restaurantDistance;
 
-  divElement.className = 'restaurant-card';
+  restautantCardElement.className = 'restaurant-card';
 
-  nearYouSectionElement.appendChild(divElement);
-  divElement.appendChild(imgElement);
-  divElement.appendChild(pNameElement);
-  divElement.appendChild(pRatingElement);
-  divElement.appendChild(pPriceElement);
-
-  pNameElement.appendChild(smallDistanceElement);
+  divElement.appendChild(restautantCardElement);
+  restautantCardElement.appendChild(h3NameElement);
+  restautantCardElement.appendChild(imgElement);
+  restautantCardElement.appendChild(smallRatingElement);
+  restautantCardElement.appendChild(smallPriceElement);
+  restautantCardElement.appendChild(smallDistanceElement);
 }
