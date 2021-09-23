@@ -71,8 +71,12 @@
     {{#each userProfile.discoveries}}
       <div>
         <h3>{{name}}</h3>
-        <p>{{descriptioin}}</p>
-        <img src='{{image}}' alt='Image of {{name}}' />
+        <p><strong>Cuisine: </strong> <span>{{cousine}}</span></p>
+        <img
+          src='{{image}}'
+          alt='Image of {{name}}'
+          class='img-restaurant-image'
+        />
       </div>
     {{/each}}
   {{else}}

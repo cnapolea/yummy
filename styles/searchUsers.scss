@@ -1,5 +1,10 @@
 .div-overview-profile {
-  img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  img:not(.img-icon) {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -7,16 +12,77 @@
     margin-right: 3em;
   }
 
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-
   form {
     background-color: transparent;
+  }
+
+  > div {
+    text-align: left;
+
+    > p {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}
+
+.div-user-section {
+  box-sizing: border-box;
+  border: 1px solid $grey;
+  border-radius: 20px;
+  margin: 0.7em;
+}
+
+.div-user-section:hover {
+  background-color: rgba(248, 81, 76, 0.2);
+  transition: ease-in-out;
+}
+
+.div-user-section:active {
+  border: 1px solid $pink;
+}
+
+@media (min-width: 768px) {
+  .div-overview-profile {
+    flex-direction: column;
+
+    img:not(.img-icon) {
+      margin-right: 0;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 1em;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .div-overview-profile {
+    > div > p {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      font-size: small;
+    }
   }
 }
 
 .div-user-profile:not(:last-of-type) {
   border-bottom: 1px dotted $grey;
+}
+
+.div-user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
