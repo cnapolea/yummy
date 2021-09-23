@@ -312,4 +312,24 @@ h2 {
   border-bottom: 1px dotted #e6e6e6;
 }
 
+#restaurants-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#restaurants-form input[type='text'] {
+  border-radius: 50px;
+  font-size: 1.05rem;
+  width: 100%;
+}
+
+#restaurants-form button {
+  color: #fff;
+  background-color: #f8514c;
+  font-size: 1.05rem;
+  width: 45%;
+}
+
 /*# sourceMappingURL=style.css.map */
