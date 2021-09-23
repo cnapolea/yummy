@@ -36,12 +36,8 @@ profileRouter.get('/:userId', routeGuardMiddleware, (req, res, next) => {
       userProfile = document;
       let ownProfile =
         req.user && String(req.user._id) === String(userProfile._id);
-      console.log(`IS OWN PROFILE?: ${ownProfile}`);
-      console.log(`Registered user: ${req.user._id}`);
-      console.log(`ID of user profile: ${userProfile._id}`);
       let numberOfDiscoveries = document.discoveries.length;
       let numberOfReviews = document.reviews.length;
-      console.log(`${numberOfDiscoveries} | ${numberOfReviews}`);
       res.render('profile/userProfile', {
         userProfile: document,
         ownProfile,

@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const Restaurant = require('../../models/restaurant');
+const User = require('../../models/user');
 const { Router } = require('express');
 const router = Router();
 const upload = require('../../middleware/file-upload');
@@ -67,6 +68,8 @@ router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
     image = req.file.path;
   }
 
+  let restaurantID;
+
   axios
     .get(GEOCODING_URL(req.body))
     .then((address) => {
@@ -83,8 +86,20 @@ router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
         rating
       });
     })
-    .then(() => {
-      res.redirect('/');
+    .then((restaurant) => {
+      restaurantID = restaurant._id;
+      console.log(restaurantID);
+      return User.findByIdAndUpdate(
+        req.user._id,
+        {
+          $push: { discoveries: restaurantID }
+        },
+        { new: true }
+      );
+    })
+    .then((creator) => {
+      console.log(creator);
+      res.redirect('/restaurants');
     })
     .catch((error) => {
       console.log(error);

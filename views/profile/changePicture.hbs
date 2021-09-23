@@ -1,23 +1,24 @@
 <h1>{{user.name.firstName}}'s Profile</h1>
 
+<h3>Hey Georgeous, time for something new?
+</h3>
 <div id='div-update-profile-picture'>
-  <div>
-    <h3>Current Profile Picture
-    </h3>
+
+  <div class='div-img-circle'>
     <img
       src='{{user.profilePicture}}'
       alt='{{user.name.firstName}} {{user.name.lastName}}'
       class='img-rounded-edges'
     />
-
   </div>
 
   <form
     action='/profile/{{user._id}}/change-picture'
     method='POST'
     enctype='multipart/form-data'
+    id='form-upload-user-picture'
   >
-    <label for='input-picture'>New Profile Picture</label>
+    <label for='input-picture'>Upload your new Profile Picture</label>
     <input
       id='input-picture'
       type='file'
@@ -25,7 +26,12 @@
       accept='image/*'
     />
 
-    <button>Upload picture</button>
+    <div class='div-btn-bar'>
+      <button class='btn-pink'>Upload picture</button>
+      <form action='/profile/{{user._id}}'><button
+          class='btn-lightgrey'
+        >Cancel</button></form>
+    </div>
   </form>
-  <form action='/profile/{{user._id}}'><button>Cancel</button></form>
+
 </div>

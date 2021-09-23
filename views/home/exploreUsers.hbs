@@ -1,7 +1,12 @@
 <h1>Explore the YUMMY Community</h1>
 
 {{#if users}}
-  {{#each users}}
+
+<div class="container">
+<div class="row">
+  
+{{#each users}}
+<div class="col-sm-11 col-md-5 col-lg-3 div-user-section">
     <form action='/profile/{{_id}}' class='div-user-profile'>
       <button class='btn-transparent'>
         <div class='div-overview-profile'>
@@ -11,14 +16,26 @@
             class='img-rounded-edges'
           />
           <div>
-            <h3>{{name.firstName}} {{name.lastName}}</h3>
-          </div>
+            <h3>{{name.firstName}}</h3>
+            <p><img
+                class='img-icon'
+                src='/icons/location.png'
+                alt='Location Icon'
+              /><span>{{place}}</span></p>
+
         </div>
       </button>
 
     </form>
-
+</div>
   {{/each}}
+
+  </div>
+
+</div>
+
+</div>
+  
 {{else}}
   <p>No users found.</p>
 {{/if}}
