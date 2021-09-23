@@ -9,18 +9,26 @@ const axios = require('axios');
 
 // Function that formats GEOCODING URL
 const GEOCODING_URL = require('./getLngLat');
+// Function that sorts by proximity
+const restaurantsSorted = require('./sortByProximity');
+
+const EARTH_RADIUS = 3963.2;
 
 // import middlewares
 const routeGuard = require('../../middleware/route-guard');
 
 // GET request to display restaurants (divided into sections)
 router.get('/', (req, res, next) => {
+  // console.log(req.query);
   Restaurant.find()
     .limit(10)
-    .sort({ rating: -1 })
+    .sort({
+      rating: -1
+    })
     .then((restaurants) => {
-      console.log(restaurants);
-      res.render('restaurant/restaurants', { restaurants });
+      res.render('restaurant/restaurants', {
+        restaurants
+      });
     })
     .catch((error) => next(error));
 });
@@ -28,9 +36,18 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const { searchedText, city, rating, price } = req.body;
 
-  Restaurant.find({ city, rating, price, $text: { $search: searchedText } })
+  Restaurant.find({
+    city,
+    rating,
+    price,
+    $text: {
+      $search: searchedText
+    }
+  })
     .then((restaurants) => {
-      res.render('restaurants', { restaurants });
+      res.render('restaurants', {
+        restaurants
+      });
     })
     .catch((error) => next(error));
 });
@@ -75,11 +92,37 @@ router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
     });
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/location', (req, res, next) => {
+  const { lon, lat } = req.query;
+
+  // Using this route to handle all request from the client side regarding user's current location.
+
+  // Using MongoDB geoWithin and centerSphere to be able to get restaurants locations within a radious of 10 miles -- to be changed to meters
+
+  Restaurant.find({
+    position: {
+      $geoWithin: {
+        $centerSphere: [[lon, lat], 10 / EARTH_RADIUS]
+      }
+    }
+  })
+    .then((restaurants) => {
+      // Adding distance from user location in order to sort data and send it to client side
+      res.json(restaurantsSorted(restaurants, lon, lat));
+      res.end();
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+router.get('/restaurant/:id', (req, res, next) => {
   const { id } = req.params;
   Restaurant.findById(id)
     .then((restaurant) => {
-      res.render('restaurant', { restaurant });
+      res.render('restaurant', {
+        restaurant
+      });
     })
     .catch((error) => next(error));
 });

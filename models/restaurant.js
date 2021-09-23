@@ -90,4 +90,6 @@ Restaurant.createIndexes({
   cousine: 'text'
 });
 
+Restaurant.ensureIndexes({ position: '2dsphere' });
+
 module.exports = Restaurant;
