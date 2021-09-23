@@ -290,6 +290,14 @@ h2 {
   margin-left: 0;
 }
 
+<<<<<<< HEAD
+=======
+.img-restaurant-image {
+  border-radius: 20px;
+  max-width: 200px;
+}
+
+>>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 .div-overview-profile {
   display: flex;
   flex-direction: row;
@@ -297,7 +305,11 @@ h2 {
   align-items: center;
 }
 
+<<<<<<< HEAD
 .div-overview-profile img {
+=======
+.div-overview-profile img:not(.img-icon) {
+>>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -309,10 +321,131 @@ h2 {
   background-color: transparent;
 }
 
+<<<<<<< HEAD
+=======
+.div-overview-profile > div {
+  text-align: left;
+}
+
+.div-overview-profile > div > p {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.div-user-section {
+  box-sizing: border-box;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+  margin: 0.7em;
+}
+
+.div-user-section:hover {
+  background-color: rgba(248, 81, 76, 0.2);
+  transition: ease-in-out;
+}
+
+.div-user-section:active {
+  border: 1px solid #f8514c;
+}
+
+@media (min-width: 768px) {
+  .div-overview-profile {
+    flex-direction: column;
+  }
+  .div-overview-profile img:not(.img-icon) {
+    margin-right: 0;
+  }
+  .div-overview-profile h3 {
+    text-align: center;
+  }
+  .div-overview-profile > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 1em;
+  }
+}
+
+@media (min-width: 992px) {
+  .div-overview-profile > div > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: small;
+  }
+}
+
+>>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 .div-user-profile:not(:last-of-type) {
   border-bottom: 1px dotted #e6e6e6;
 }
 
+<<<<<<< HEAD
+=======
+.div-user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-btn-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-btn-bar button:nth-of-type(1) {
+  margin: 0;
+}
+
+.div-btn-bar button:nth-of-type(2) {
+  margin: 0 1em;
+}
+
+#form-upload-user-picture label {
+  font-size: larger;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+#div-update-profile-picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#div-update-profile-picture > div:first-of-type {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 700px) {
+  #div-update-profile-picture {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  h3 {
+    text-align: left;
+  }
+  #form-upload-user-picture {
+    width: 50%;
+  }
+  #form-upload-user-picture label {
+    text-align: left;
+  }
+  .div-btn-bar {
+    justify-content: flex-start;
+  }
+}
+
+>>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 #restaurants-title {
   margin: 15px 0 5px;
   text-align: center;
@@ -331,12 +464,15 @@ h2 {
   height: 40px;
   margin-bottom: 10px;
   width: 100%;
+<<<<<<< HEAD
   transition: outline 1s ease-out;
 }
 
 #restaurants-form input[type='text']:focus {
   border-color: transparent;
   outline: #f8514c solid 2px !important;
+=======
+>>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 }
 
 #restaurants-form button {
@@ -347,6 +483,7 @@ h2 {
   width: 45%;
 }
 
+<<<<<<< HEAD
 #top-rated h2 {
   font-size: 1.3rem;
   margin: 0;
@@ -387,4 +524,6 @@ h2 {
   border-radius: 20px;
 }
 
+=======
+>>>>>>> 9ec6b68af9f14bf338c17fc67bc6db61f53d0850
 /*# sourceMappingURL=style.css.map */
