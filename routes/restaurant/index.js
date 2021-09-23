@@ -109,7 +109,7 @@ router.get('/location', (req, res, next) => {
     .then((restaurants) => {
       // Adding distance from user location in order to sort data and send it to client side
       res.json(restaurantsSorted(restaurants, lon, lat));
-      res.end();
+      // res.end();
     })
     .catch((error) => {
       next(error);
