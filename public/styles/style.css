@@ -564,4 +564,27 @@ h3 {
   z-index: -2;
 }
 
+nav .navbar-nav {
+  align-items: center;
+}
+
+nav .navbar-nav .nav-item a {
+  font-size: 1.3rem;
+}
+
+nav .navbar-nav a:first-child,
+nav .navbar-nav button:first-child {
+  margin: 0;
+}
+
+nav .navbar-nav .nav-item {
+  text-align: center;
+  width: 100%;
+}
+
+nav .navbar-nav .nav-item form button {
+  font-size: 1rem;
+  padding: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
