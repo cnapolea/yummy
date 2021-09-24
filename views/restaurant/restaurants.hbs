@@ -7,33 +7,40 @@
       name='search'
       id='input-search'
       placeholder='Restaurant Name, Cousine, Food'
+      autocomplete='off'
     />
-    <input type='text' name='city' id='input-city' placeholder='City' />
+    <input
+      type='text'
+      name='city'
+      id='input-city'
+      placeholder='City'
+      autocomplete='off'
+    />
     <button>Search Restaurant</button>
   </form>
 
 </section>
 
 <section id='top-rated'>
+  <h2>Top Rated Discoveries</h2>
   <div>
-    <h2>Top Rated Discoveries</h2>
 
     {{#each restaurants}}
       <div class='restaurant-card'>
         <h3>{{name}}</h3>
         <img src='{{image}}' alt='{{name}}' />
         <small>{{rating}}</small>
-        <p>
-          <img src='' alt='' />
-        </p>
-      </div>3
+        <small>{{price}}</small>
+      </div>
     {{/each}}
   </div>
 </section>
 
 <section id='near-you'>
   <h2>Discoveries Near You</h2>
+  <div class='cards-container'>
 
+  </div>
 </section>
 
 <script src='/scripts/nearYouDivs.js'></script>
