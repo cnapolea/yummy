@@ -32,6 +32,7 @@ profileRouter.get('/:userId', routeGuardMiddleware, (req, res, next) => {
   let userProfile;
   User.findById(userId)
     .populate('discoveries')
+    .populate('reviews')
     .then((document) => {
       userProfile = document;
       let ownProfile =
@@ -178,7 +179,7 @@ profileRouter.get(
       .populate('reviews.restaurant')
       .then((document) => {
         userProfile = document;
-        res.render('profile/reviews', { reviews: document.reviews });
+        res.render('profile/reviewsOfUser', { reviews: document.reviews });
       })
       .catch((error) => {
         next(error);

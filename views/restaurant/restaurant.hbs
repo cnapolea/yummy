@@ -1,0 +1,38 @@
+<h1>{{restaurant.name}}</h1>
+<img src='{{restaurant.image}}' alt='Image of {{restaurant.name}}' />
+<p><strong>Cuisine: </strong><span>{{restaurant.cousine}}</span></p>
+<p><strong>Price: </strong><span>{{restaurant.price}}</span></p>
+<p><strong>3</strong><span> likes, </span><strong>3 </strong><span
+  >reviews</span></p>
+<!-- all previous reviews here -->
+
+<h3>Reviews</h3>
+{{#if restaurant.reviews}}
+  {{#each restaurant.reviews}}
+    <div class='div-restaurant-review'>
+      <p>{{content}}</p>
+      <p><span>Posted by </span> <strong>A person</strong> at {{created_at}}</p>
+      <!--
+      <form action='' method='POST'>
+        <button>Like</button>
+      </form>
+      -->
+    </div>
+
+  {{/each}}
+{{else}}
+  <p>No reviews yet.</p>
+{{/if}}
+
+<form action='/restaurants/restaurant/{{restaurant._id}}/review' method='POST'>
+  <div id='rater'></div>
+  <label for='input-review-restaurant'>How was your experience in this
+    restaurant?</label>
+  <input
+    type='text'
+    name='reviewRestaurant'
+    id='input-review-restaurant'
+    placeholder='Type your review here...'
+  />
+  <button class='btn-no-mg-left'>Send your Review</button>
+</form>

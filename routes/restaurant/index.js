@@ -3,10 +3,12 @@
 require('dotenv').config();
 const Restaurant = require('../../models/restaurant');
 const User = require('../../models/user');
+const Review = require('../../models/review');
 const { Router } = require('express');
 const router = Router();
 const upload = require('../../middleware/file-upload');
 const axios = require('axios');
+const routeGuardMiddleware = require('../../middleware/route-guard');
 
 // Function that formats GEOCODING URL
 const GEOCODING_URL = require('./getLngLat');
@@ -135,12 +137,55 @@ router.get('/location', (req, res, next) => {
 router.get('/restaurant/:id', (req, res, next) => {
   const { id } = req.params;
   Restaurant.findById(id)
+    .populate('reviews')
     .then((restaurant) => {
-      res.render('restaurant', {
+      res.render('restaurant/restaurant', {
         restaurant
       });
     })
     .catch((error) => next(error));
 });
+
+//Add review to a restaurant upon POST request
+router.post(
+  '/restaurant/:id/review',
+  routeGuardMiddleware,
+  (req, res, next) => {
+    const { id } = req.params;
+    let creator = req.user.id;
+    let newReview;
+
+    Review.create({
+      content: req.body.reviewRestaurant,
+      restaurant: id,
+      creator: creator,
+      likes: 0
+    })
+      .then((review) => {
+        newReview = review;
+        console.log(review);
+        return Restaurant.findByIdAndUpdate(
+          id,
+          {
+            $push: { reviews: review }
+          },
+          { new: true }
+        );
+      })
+      .then(() => {
+        return User.findByIdAndUpdate(
+          creator,
+          {
+            $push: { reviews: newReview }
+          },
+          { new: true }
+        );
+      })
+      .then(() => {
+        res.redirect(`/restaurants/restaurant/${id}`);
+      })
+      .catch((error) => next(error));
+  }
+);
 
 module.exports = router;

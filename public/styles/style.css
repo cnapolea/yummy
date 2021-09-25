@@ -592,4 +592,19 @@ nav .navbar-nav .nav-item form button {
   padding: 0;
 }
 
+.div-restaurant-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.btn-no-mg-left {
+  margin-left: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -61,23 +61,26 @@
     <h2>Your Yummy Discoveries</h2>
   {{else}}
     <h2>{{userProfile.name.firstName}}'s Yummy Discoveries</h2>
+    <!--
     <form action='/profile/{{userProfile._id}}/reviews'>
       <button class='btn-pink'>See
         {{userProfile.name.firstName}}'s Reviews
       </button>
-    </form>
+    </form>-->
   {{/if}}
   {{#if userProfile.discoveries}}
     {{#each userProfile.discoveries}}
-      <div>
-        <h3>{{name}}</h3>
-        <p><strong>Cuisine: </strong> <span>{{cousine}}</span></p>
-        <img
-          src='{{image}}'
-          alt='Image of {{name}}'
-          class='img-restaurant-image'
-        />
-      </div>
+      <form action='/restaurants/restaurant/{{_id}}'><button>
+          <div>
+            <h3>{{name}}</h3>
+            <p><strong>Cuisine: </strong> <span>{{cousine}}</span></p>
+            <img
+              src='{{image}}'
+              alt='Image of {{name}}'
+              class='img-restaurant-image'
+            />
+          </div>
+        </button></form>
     {{/each}}
   {{else}}
     <p>No discoveries yet.</p>
@@ -87,6 +90,22 @@
     <form action='/restaurants/create'>
       <button id='btn-add' class='btn-pink'>Add new discovery</button>
     </form>
+  {{/if}}
+
+  {{#if ownProfile}}
+    <h2>Your Yummy Reviews</h2>
+  {{else}}
+    <h2>{{userProfile.name.firstName}}'s Yummy Reviews</h2>
+  {{/if}}
+
+  {{#if userProfile.reviews}}
+    {{#each userProfile.reviews}}
+      <div>
+        <p>{{content}}</p>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No reviews yet.</p>
   {{/if}}
 </section>
 
