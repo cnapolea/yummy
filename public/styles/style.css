@@ -564,6 +564,11 @@ h3 {
   z-index: -2;
 }
 
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
 nav .navbar-nav {
   align-items: center;
 }

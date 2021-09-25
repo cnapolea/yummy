@@ -49,7 +49,6 @@
     overflow-x: hidden;
 
     div {
-      background-color: #5a595954;
       z-index: -1;
     }
 
@@ -62,14 +61,17 @@
 
       .restaurant-information {
         align-items: flex-start;
+        background: #00000038;
         color: #fff;
         display: flex;
+        left: 0;
         flex-direction: column;
         font-weight: 500;
         height: 100%;
         justify-content: end;
         padding: 0 0 15px 15px;
         position: absolute;
+        top: 0;
 
         h3 {
           font-weight: bold;
@@ -118,4 +120,9 @@
       }
     }
   }
+}
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
 }

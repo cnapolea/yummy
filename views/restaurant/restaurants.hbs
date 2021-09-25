@@ -23,37 +23,55 @@
 
 <section id='top-rated'>
   <h2>Top Rated Discoveries</h2>
-  <div>
+    <div class='glider'> 
+      {{#each restaurants}}
+        <div class='restaurant-card'>
+          <img src='{{image}}' alt='{{name}}' />
+          <div class='restaurant-information'>
+            <h3>{{name}}</h3>
+            <small class='rating'>{{rating}}
+              <img
+                class='rating-img'
+                src='/images/star.svg'
+                alt='rating star'
+              /></small>
+            <div class='restaurant-details'>
 
-    {{#each restaurants}}
-      <div class='restaurant-card'>
-        <img src='{{image}}' alt='{{name}}' />
-        <div class='restaurant-information'>
-          <h3>{{name}}</h3>
-          <small class='rating'>{{rating}}
-            <img
-              class='rating-img'
-              src='/images/star.svg'
-              alt='rating star'
-            /></small>
-          <div class='restaurant-details'>
-
-            <small>{{price}}</small>
+              <small>{{price}}</small>
+            </div>
           </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 </section>
 
 <section id='near-you'>
   <h2>Discoveries Near You</h2>
-  <div class='cards-container'>
+  <div class='cards-container glider'>
 
   </div>
 </section>
 
-<script src='/scripts/nearYouDivs.js'></script>
-<script src='/scripts/script.js'></script>
+{{!-- <div class="glider">
+  <div> 1 </div>
+  <div> 2 </div>
+  <div> 3 </div>
+  <div> 4 </div>
+  <div> 5 </div>
+  <div> 6 </div>
+</div> --}}
 
+<script src='/scripts/nearYouDivs.js'></script>
+<script>
+  new Glider(document.querySelector('.glider'), {
+  slidesToShow: 1,
+  dots: '#dots',
+  draggable: true,
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  }
+});
+</script>
 {{! <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> }}
