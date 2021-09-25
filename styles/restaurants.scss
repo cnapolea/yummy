@@ -41,7 +41,9 @@
 }
 
 #top-rated,
-#near-you {
+#near-you,
+#scn-own-discoveries,
+#scn-own-reviews {
   margin: 2rem 0;
 
   div:not(.dots) {
@@ -125,6 +127,18 @@
 .splide__slide img {
   width: 100%;
   height: auto;
+<<<<<<< HEAD
+}
+.div-restaurant-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid $grey;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: 1em;
+=======
   .div-restaurant-review {
     display: flex;
     flex-direction: column;
@@ -139,6 +153,7 @@
   .btn-no-mg-left {
     margin-left: 0;
   }
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
 }
 
 .glider-dots {

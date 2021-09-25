@@ -56,7 +56,7 @@
   </div>
 </section>
 
-<section>
+<section id='scn-own-discoveries'>
   {{#if ownProfile}}
     <h2>Your Yummy Discoveries</h2>
   {{else}}
@@ -69,48 +69,45 @@
     </form>-->
   {{/if}}
   {{#if userProfile.discoveries}}
-    {{#each userProfile.discoveries}}
-      <form action='/restaurants/restaurant/{{_id}}'><button>
-          <div>
-            <img
-              src='{{image}}'
-              alt='Image of {{name}}'
-              class='img-restaurant-image'
-            />
-            <div>
-              <h3>{{name}}</h3>
-              <p><strong>Cuisine: </strong> <span>{{cousine}}</span></p>
+    <div class='glider'>
+      {{#each userProfile.discoveries}}
+        <div class='restaurant-card'>
+
+          <img src='{{image}}' alt='Image of {{name}}' />
+
+          <div class='restaurant-information'>
+            <h3>{{name}}</h3>
+            <small class='rating'>{{rating}}
+              <img
+                class='rating-img'
+                src='/images/star.svg'
+                alt='rating star'
+              /></small>
+
+            <div class='restaurant-details'>
+              <small>{{price}}</small>
             </div>
+
+            <form action='/restaurants/restaurant/{{_id}}'><button
+                class='btn-lightgrey btn-no-mg-left'
+              >View details</button></form>
           </div>
-        </button></form>
-    {{/each}}
+
+        </div>
+      {{/each}}
+    </div>
   {{else}}
     <p>No discoveries yet.</p>
   {{/if}}
-  <!--
-       <div class='restaurant-card'>
-        <img src='{{image}}' alt='{{name}}' />
-        <div class='restaurant-information'>
-          <h3>{{name}}</h3>
-          <small class='rating'>{{rating}}
-            <img
-              class='rating-img'
-              src='/images/star.svg'
-              alt='rating star'
-            /></small>
-          <div class='restaurant-details'>
+</section>
 
-            <small>{{price}}</small>
-          </div>
-        </div>
-      </div>
--->
-  {{#if ownProfile}}
-    <form action='/restaurants/create'>
-      <button id='btn-add' class='btn-pink'>Add new discovery</button>
-    </form>
-  {{/if}}
+{{#if ownProfile}}
+  <form action='/restaurants/create'>
+    <button id='btn-add' class='btn-pink'>Add new discovery</button>
+  </form>
+{{/if}}
 
+<section id='scn-own-reviews'>
   {{#if ownProfile}}
     <h2>Your Yummy Reviews</h2>
   {{else}}
@@ -118,15 +115,43 @@
   {{/if}}
 
   {{#if userProfile.reviews}}
-    {{#each userProfile.reviews}}
-      <div>
-        <p>{{content}}</p>
-      </div>
-    {{/each}}
+    <div class='glider-2'>
+      {{#each userProfile.reviews}}
+        <div class='restaurant-card'>
+          <img
+            src='{{restaurant.image}}'
+            alt='Image'
+            class='img-reviews-card'
+          />
+
+          <div class='restaurant-information'>
+            <div class='reviews-details'>
+              <p><i>" {{content}} "</i></p>
+              <p>
+                <strong>{{restaurant.name}}</strong>
+                <small>, {{created_at}}</small>
+              </p>
+            </div>
+            <form action='/restaurants/restaurant/{{restaurant._id}}'><button
+                class='btn-lightgrey btn-no-mg-left'
+              >View details</button></form>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
   {{else}}
     <p>No reviews yet.</p>
   {{/if}}
 </section>
+
+<script>
+  new Glider(document.querySelector('.glider'), { slidesToShow: 1, dots:
+  '#dots', draggable: true, arrows: { prev: '.glider-prev', next: '.glider-next'
+  } }); new Glider(document.querySelector('.glider-2'), { slidesToShow: 1, dots:
+  '#dots', draggable: true, arrows: { prev: '.glider-prev', next: '.glider-next'
+  } });
+</script>
 
 <div>Icons made by
   <a href='https://www.freepik.com' title='Freepik'>Freepik</a>

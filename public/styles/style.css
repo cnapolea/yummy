@@ -295,6 +295,19 @@ h2 {
   max-width: 200px;
 }
 
+.reviews-details {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#scn-own-discoveries,
+#scn-own-reviews {
+  margin-top: 1.5em;
+}
+
 .div-overview-profile {
   display: flex;
   flex-direction: row;
@@ -474,16 +487,33 @@ h3 {
 }
 
 #top-rated,
-#near-you {
+#near-you,
+#scn-own-discoveries,
+#scn-own-reviews {
   margin: 2rem 0;
 }
 
+#top-rated div,
+#near-you div,
+#scn-own-discoveries div,
+#scn-own-reviews div {
 #top-rated div:not(.dots),
 #near-you div:not(.dots) {
   display: flex;
   overflow-x: hidden;
 }
 
+#top-rated div div,
+#near-you div div,
+#scn-own-discoveries div div,
+#scn-own-reviews div div {
+  z-index: -1;
+}
+
+#top-rated div div,
+#near-you div div,
+#scn-own-discoveries div div,
+#scn-own-reviews div div {
 #top-rated div:not(.dots) div:not(.dots),
 #near-you div:not(.dots) div:not(.dots) {
   z-index: -1;
@@ -498,6 +528,10 @@ h3 {
   width: 100%;
 }
 
+#top-rated div div .restaurant-information,
+#near-you div div .restaurant-information,
+#scn-own-discoveries div div .restaurant-information,
+#scn-own-reviews div div .restaurant-information {
 #top-rated div:not(.dots) div:not(.dots) .restaurant-information,
 #near-you div:not(.dots) div:not(.dots) .restaurant-information {
   align-items: flex-start;
@@ -514,12 +548,20 @@ h3 {
   top: 0;
 }
 
+#top-rated div div .restaurant-information h3,
+#near-you div div .restaurant-information h3,
+#scn-own-discoveries div div .restaurant-information h3,
+#scn-own-reviews div div .restaurant-information h3 {
 #top-rated div:not(.dots) div:not(.dots) .restaurant-information h3,
 #near-you div:not(.dots) div:not(.dots) .restaurant-information h3 {
   font-weight: bold;
   margin: 0;
 }
 
+#top-rated div div .restaurant-information .rating,
+#near-you div div .restaurant-information .rating,
+#scn-own-discoveries div div .restaurant-information .rating,
+#scn-own-reviews div div .restaurant-information .rating {
 #top-rated div:not(.dots) div:not(.dots) .restaurant-information .rating,
 #near-you div:not(.dots) div:not(.dots) .restaurant-information .rating {
   align-items: center;
@@ -531,12 +573,20 @@ h3 {
   top: 8px;
 }
 
+#top-rated div div .restaurant-information .rating-img,
+#near-you div div .restaurant-information .rating-img,
+#scn-own-discoveries div div .restaurant-information .rating-img,
+#scn-own-reviews div div .restaurant-information .rating-img {
 #top-rated div:not(.dots) div:not(.dots) .restaurant-information .rating-img,
 #near-you div:not(.dots) div:not(.dots) .restaurant-information .rating-img {
   width: 1rem;
   height: 15px;
 }
 
+#top-rated div div .restaurant-information .distance-to-user,
+#near-you div div .restaurant-information .distance-to-user,
+#scn-own-discoveries div div .restaurant-information .distance-to-user,
+#scn-own-reviews div div .restaurant-information .distance-to-user {
 #top-rated div:not(.dots) div:not(.dots) .restaurant-information .distance-to-user,
 #near-you div:not(.dots) div:not(.dots) .restaurant-information .distance-to-user {
   position: absolute;
@@ -546,6 +596,10 @@ h3 {
   font-weight: 500;
 }
 
+#top-rated div div .restaurant-information .restaurant-details,
+#near-you div div .restaurant-information .restaurant-details,
+#scn-own-discoveries div div .restaurant-information .restaurant-details,
+#scn-own-reviews div div .restaurant-information .restaurant-details {
 #top-rated div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details,
 #near-you div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details {
   align-items: center;
@@ -553,12 +607,20 @@ h3 {
   display: flex;
 }
 
+#top-rated div div .restaurant-information .restaurant-details *,
+#near-you div div .restaurant-information .restaurant-details *,
+#scn-own-discoveries div div .restaurant-information .restaurant-details *,
+#scn-own-reviews div div .restaurant-information .restaurant-details * {
 #top-rated div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details *,
 #near-you div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details * {
   font-size: 1.1rem;
   font-weight: bold;
 }
 
+#top-rated div div img,
+#near-you div div img,
+#scn-own-discoveries div div img,
+#scn-own-reviews div div img {
 #top-rated div:not(.dots) div:not(.dots) img,
 #near-you div:not(.dots) div:not(.dots) img {
   height: 15rem;
@@ -566,6 +628,32 @@ h3 {
   z-index: -2;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
+=======
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
+.div-restaurant-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.btn-no-mg-left {
+  margin-left: 0;
+<<<<<<< HEAD
+=======
+>>>>>>> 9d5356cf7a7bbf2998aa600797c89c74b412780d
 .splide__slide img {
   width: 100%;
   height: auto;
@@ -592,6 +680,7 @@ h3 {
 
 .glider-dots .glider-dot.active {
   background: #f8514c;
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
 }
 
 nav .navbar-nav {

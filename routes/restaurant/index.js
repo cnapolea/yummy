@@ -136,11 +136,14 @@ router.get('/location', (req, res, next) => {
 
 router.get('/restaurant/:id', (req, res, next) => {
   const { id } = req.params;
+  let numberOfReviews;
   Restaurant.findById(id)
     .populate('reviews')
     .then((restaurant) => {
+      let numberOfReviews = restaurant.reviews.length;
       res.render('restaurant/restaurant', {
-        restaurant
+        restaurant,
+        numberOfReviews
       });
     })
     .catch((error) => next(error));
