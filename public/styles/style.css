@@ -566,6 +566,19 @@ h3 {
   z-index: -2;
 }
 
+.div-restaurant-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.btn-no-mg-left {
+  margin-left: 0;
 .splide__slide img {
   width: 100%;
   height: auto;
