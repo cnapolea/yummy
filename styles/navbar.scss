@@ -1,0 +1,24 @@
+nav {
+  .navbar-nav {
+    align-items: center;
+
+    .nav-item a {
+      font-size: 1.3rem;
+    }
+
+    a:first-child,
+    button:first-child {
+      margin: 0;
+    }
+
+    .nav-item {
+      text-align: center;
+      width: 100%;
+
+      form button {
+        font-size: 1rem;
+        padding: 0;
+      }
+    }
+  }
+}

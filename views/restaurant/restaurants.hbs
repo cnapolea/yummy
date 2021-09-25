@@ -27,10 +27,20 @@
 
     {{#each restaurants}}
       <div class='restaurant-card'>
-        <h3>{{name}}</h3>
         <img src='{{image}}' alt='{{name}}' />
-        <small>{{rating}}</small>
-        <small>{{price}}</small>
+        <div class='restaurant-information'>
+          <h3>{{name}}</h3>
+          <small class='rating'>{{rating}}
+            <img
+              class='rating-img'
+              src='/images/star.svg'
+              alt='rating star'
+            /></small>
+          <div class='restaurant-details'>
+
+            <small>{{price}}</small>
+          </div>
+        </div>
       </div>
     {{/each}}
   </div>
@@ -45,3 +55,5 @@
 
 <script src='/scripts/nearYouDivs.js'></script>
 <script src='/scripts/script.js'></script>
+
+{{! <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> }}
