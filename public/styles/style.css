@@ -295,6 +295,19 @@ h2 {
   max-width: 200px;
 }
 
+.reviews-details {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#scn-own-discoveries,
+#scn-own-reviews {
+  margin-top: 1.5em;
+}
+
 .div-overview-profile {
   display: flex;
   flex-direction: row;
@@ -474,24 +487,31 @@ h3 {
 }
 
 #top-rated,
-#near-you {
+#near-you,
+#scn-own-discoveries,
+#scn-own-reviews {
   margin: 2rem 0;
 }
 
 #top-rated div,
-#near-you div {
+#near-you div,
+#scn-own-discoveries div,
+#scn-own-reviews div {
   display: flex;
   overflow-x: hidden;
 }
 
 #top-rated div div,
-#near-you div div {
-  background-color: #5a595954;
+#near-you div div,
+#scn-own-discoveries div div,
+#scn-own-reviews div div {
   z-index: -1;
 }
 
 #top-rated div div,
-#near-you div div {
+#near-you div div,
+#scn-own-discoveries div div,
+#scn-own-reviews div div {
   border-radius: 20px;
   flex-shrink: 0;
   margin-right: 1em;
@@ -500,26 +520,35 @@ h3 {
 }
 
 #top-rated div div .restaurant-information,
-#near-you div div .restaurant-information {
+#near-you div div .restaurant-information,
+#scn-own-discoveries div div .restaurant-information,
+#scn-own-reviews div div .restaurant-information {
   align-items: flex-start;
+  background: #00000038;
   color: #fff;
   display: flex;
+  left: 0;
   flex-direction: column;
   font-weight: 500;
   height: 100%;
   justify-content: end;
   padding: 0 0 15px 15px;
   position: absolute;
+  top: 0;
 }
 
 #top-rated div div .restaurant-information h3,
-#near-you div div .restaurant-information h3 {
+#near-you div div .restaurant-information h3,
+#scn-own-discoveries div div .restaurant-information h3,
+#scn-own-reviews div div .restaurant-information h3 {
   font-weight: bold;
   margin: 0;
 }
 
 #top-rated div div .restaurant-information .rating,
-#near-you div div .restaurant-information .rating {
+#near-you div div .restaurant-information .rating,
+#scn-own-discoveries div div .restaurant-information .rating,
+#scn-own-reviews div div .restaurant-information .rating {
   align-items: center;
   display: flex;
   font-size: 1rem;
@@ -530,13 +559,17 @@ h3 {
 }
 
 #top-rated div div .restaurant-information .rating-img,
-#near-you div div .restaurant-information .rating-img {
+#near-you div div .restaurant-information .rating-img,
+#scn-own-discoveries div div .restaurant-information .rating-img,
+#scn-own-reviews div div .restaurant-information .rating-img {
   width: 1rem;
   height: 15px;
 }
 
 #top-rated div div .restaurant-information .distance-to-user,
-#near-you div div .restaurant-information .distance-to-user {
+#near-you div div .restaurant-information .distance-to-user,
+#scn-own-discoveries div div .restaurant-information .distance-to-user,
+#scn-own-reviews div div .restaurant-information .distance-to-user {
   position: absolute;
   top: 8px;
   left: 17px;
@@ -545,26 +578,36 @@ h3 {
 }
 
 #top-rated div div .restaurant-information .restaurant-details,
-#near-you div div .restaurant-information .restaurant-details {
+#near-you div div .restaurant-information .restaurant-details,
+#scn-own-discoveries div div .restaurant-information .restaurant-details,
+#scn-own-reviews div div .restaurant-information .restaurant-details {
   align-items: center;
   background-color: transparent;
   display: flex;
 }
 
 #top-rated div div .restaurant-information .restaurant-details *,
-#near-you div div .restaurant-information .restaurant-details * {
+#near-you div div .restaurant-information .restaurant-details *,
+#scn-own-discoveries div div .restaurant-information .restaurant-details *,
+#scn-own-reviews div div .restaurant-information .restaurant-details * {
   font-size: 1.1rem;
   font-weight: bold;
 }
 
 #top-rated div div img,
-#near-you div div img {
+#near-you div div img,
+#scn-own-discoveries div div img,
+#scn-own-reviews div div img {
   height: 15rem;
   border-radius: 20px;
   z-index: -2;
 }
 
-<<<<<<< HEAD
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
 .div-restaurant-review {
   display: flex;
   flex-direction: column;
@@ -578,11 +621,6 @@ h3 {
 
 .btn-no-mg-left {
   margin-left: 0;
-=======
-.splide__slide img {
-  width: 100%;
-  height: auto;
->>>>>>> d2608978a4a75117d6a349791c8ad5d7154dd6a4
 }
 
 nav .navbar-nav {

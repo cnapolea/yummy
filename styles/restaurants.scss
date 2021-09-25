@@ -41,7 +41,9 @@
 }
 
 #top-rated,
-#near-you {
+#near-you,
+#scn-own-discoveries,
+#scn-own-reviews {
   margin: 2rem 0;
 
   div {
@@ -125,6 +127,7 @@
 .splide__slide img {
   width: 100%;
   height: auto;
+}
 .div-restaurant-review {
   display: flex;
   flex-direction: column;

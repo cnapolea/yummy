@@ -6,6 +6,7 @@
 const express = require('express');
 const User = require('./../../models/user');
 const Review = require('./../../models/review');
+const Restaurant = require('./../../models/restaurant');
 const routeGuardMiddleware = require('../../middleware/route-guard');
 const upload = require('../../middleware/file-upload'); //handles file uploades
 const profileRouter = express.Router();
@@ -33,8 +34,18 @@ profileRouter.get('/:userId', routeGuardMiddleware, (req, res, next) => {
   User.findById(userId)
     .populate('discoveries')
     .populate('reviews')
+    .populate({
+      path: 'reviews',
+      populate: [
+        {
+          path: 'restaurant',
+          model: 'restaurant'
+        }
+      ]
+    })
     .then((document) => {
       userProfile = document;
+      console.log(document);
       let ownProfile =
         req.user && String(req.user._id) === String(userProfile._id);
       let numberOfDiscoveries = document.discoveries.length;
