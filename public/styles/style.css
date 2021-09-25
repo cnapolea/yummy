@@ -564,6 +564,21 @@ h3 {
   z-index: -2;
 }
 
+.div-restaurant-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.btn-no-mg-left {
+  margin-left: 0;
+}
+
 nav .navbar-nav {
   align-items: center;
 }
@@ -585,21 +600,6 @@ nav .navbar-nav .nav-item {
 nav .navbar-nav .nav-item form button {
   font-size: 1rem;
   padding: 0;
-}
-
-.div-restaurant-review {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  margin-bottom: 1em;
-  padding: 1em;
-}
-
-.btn-no-mg-left {
-  margin-left: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

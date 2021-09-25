@@ -72,20 +72,39 @@
     {{#each userProfile.discoveries}}
       <form action='/restaurants/restaurant/{{_id}}'><button>
           <div>
-            <h3>{{name}}</h3>
-            <p><strong>Cuisine: </strong> <span>{{cousine}}</span></p>
             <img
               src='{{image}}'
               alt='Image of {{name}}'
               class='img-restaurant-image'
             />
+            <div>
+              <h3>{{name}}</h3>
+              <p><strong>Cuisine: </strong> <span>{{cousine}}</span></p>
+            </div>
           </div>
         </button></form>
     {{/each}}
   {{else}}
     <p>No discoveries yet.</p>
   {{/if}}
+  <!--
+       <div class='restaurant-card'>
+        <img src='{{image}}' alt='{{name}}' />
+        <div class='restaurant-information'>
+          <h3>{{name}}</h3>
+          <small class='rating'>{{rating}}
+            <img
+              class='rating-img'
+              src='/images/star.svg'
+              alt='rating star'
+            /></small>
+          <div class='restaurant-details'>
 
+            <small>{{price}}</small>
+          </div>
+        </div>
+      </div>
+-->
   {{#if ownProfile}}
     <form action='/restaurants/create'>
       <button id='btn-add' class='btn-pink'>Add new discovery</button>
