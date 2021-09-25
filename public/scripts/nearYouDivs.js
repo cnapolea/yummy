@@ -1,15 +1,16 @@
 function createRestaurantCard(restaurant) {
-  let cardsContainerElement = document.querySelector('.cards-container');
-  let restautantCardElement = document.createElement('div');
-  let restaurantImageElement = document.createElement('img');
-  let restaurantInformationElement = document.createElement('div');
-  let h3NameElement = document.createElement('h3');
-  let smallRatingElement = document.createElement('small');
-  let ratingImageElement = document.createElement('img');
-  let restaurantDetailsElement = document.createElement('div');
-  let smallPriceElement = document.createElement('small');
-  let smallDistanceElement = document.createElement('small');
-  let distanceSpanElement = document.createElement('span');
+  const cardsContainerElement =
+    document.querySelectorAll('.cards-container')[1];
+  const restautantCardElement = document.createElement('div');
+  const restaurantImageElement = document.createElement('img');
+  const restaurantInformationElement = document.createElement('div');
+  const h3NameElement = document.createElement('h3');
+  const smallRatingElement = document.createElement('small');
+  const ratingImageElement = document.createElement('img');
+  const restaurantDetailsElement = document.createElement('div');
+  const smallPriceElement = document.createElement('small');
+  const smallDistanceElement = document.createElement('small');
+  const distanceSpanElement = document.createElement('span');
 
   const restaurantObj = restaurant[0];
   const restaurantDistance = restaurant[1];

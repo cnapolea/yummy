@@ -493,14 +493,20 @@ h3 {
   margin: 2rem 0;
 }
 
+<<<<<<< HEAD
 #top-rated div,
 #near-you div,
 #scn-own-discoveries div,
 #scn-own-reviews div {
+=======
+#top-rated div:not(.dots),
+#near-you div:not(.dots) {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   display: flex;
   overflow-x: hidden;
 }
 
+<<<<<<< HEAD
 #top-rated div div,
 #near-you div div,
 #scn-own-discoveries div div,
@@ -512,6 +518,15 @@ h3 {
 #near-you div div,
 #scn-own-discoveries div div,
 #scn-own-reviews div div {
+=======
+#top-rated div:not(.dots) div:not(.dots),
+#near-you div:not(.dots) div:not(.dots) {
+  z-index: -1;
+}
+
+#top-rated div:not(.dots) div:not(.dots),
+#near-you div:not(.dots) div:not(.dots) {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   border-radius: 20px;
   flex-shrink: 0;
   margin-right: 1em;
@@ -519,10 +534,15 @@ h3 {
   width: 100%;
 }
 
+<<<<<<< HEAD
 #top-rated div div .restaurant-information,
 #near-you div div .restaurant-information,
 #scn-own-discoveries div div .restaurant-information,
 #scn-own-reviews div div .restaurant-information {
+=======
+#top-rated div:not(.dots) div:not(.dots) .restaurant-information,
+#near-you div:not(.dots) div:not(.dots) .restaurant-information {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   align-items: flex-start;
   background: #00000038;
   color: #fff;
@@ -537,18 +557,28 @@ h3 {
   top: 0;
 }
 
+<<<<<<< HEAD
 #top-rated div div .restaurant-information h3,
 #near-you div div .restaurant-information h3,
 #scn-own-discoveries div div .restaurant-information h3,
 #scn-own-reviews div div .restaurant-information h3 {
+=======
+#top-rated div:not(.dots) div:not(.dots) .restaurant-information h3,
+#near-you div:not(.dots) div:not(.dots) .restaurant-information h3 {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   font-weight: bold;
   margin: 0;
 }
 
+<<<<<<< HEAD
 #top-rated div div .restaurant-information .rating,
 #near-you div div .restaurant-information .rating,
 #scn-own-discoveries div div .restaurant-information .rating,
 #scn-own-reviews div div .restaurant-information .rating {
+=======
+#top-rated div:not(.dots) div:not(.dots) .restaurant-information .rating,
+#near-you div:not(.dots) div:not(.dots) .restaurant-information .rating {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   align-items: center;
   display: flex;
   font-size: 1rem;
@@ -558,18 +588,28 @@ h3 {
   top: 8px;
 }
 
+<<<<<<< HEAD
 #top-rated div div .restaurant-information .rating-img,
 #near-you div div .restaurant-information .rating-img,
 #scn-own-discoveries div div .restaurant-information .rating-img,
 #scn-own-reviews div div .restaurant-information .rating-img {
+=======
+#top-rated div:not(.dots) div:not(.dots) .restaurant-information .rating-img,
+#near-you div:not(.dots) div:not(.dots) .restaurant-information .rating-img {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   width: 1rem;
   height: 15px;
 }
 
+<<<<<<< HEAD
 #top-rated div div .restaurant-information .distance-to-user,
 #near-you div div .restaurant-information .distance-to-user,
 #scn-own-discoveries div div .restaurant-information .distance-to-user,
 #scn-own-reviews div div .restaurant-information .distance-to-user {
+=======
+#top-rated div:not(.dots) div:not(.dots) .restaurant-information .distance-to-user,
+#near-you div:not(.dots) div:not(.dots) .restaurant-information .distance-to-user {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   position: absolute;
   top: 8px;
   left: 17px;
@@ -577,37 +617,55 @@ h3 {
   font-weight: 500;
 }
 
+<<<<<<< HEAD
 #top-rated div div .restaurant-information .restaurant-details,
 #near-you div div .restaurant-information .restaurant-details,
 #scn-own-discoveries div div .restaurant-information .restaurant-details,
 #scn-own-reviews div div .restaurant-information .restaurant-details {
+=======
+#top-rated div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details,
+#near-you div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   align-items: center;
   background-color: transparent;
   display: flex;
 }
 
+<<<<<<< HEAD
 #top-rated div div .restaurant-information .restaurant-details *,
 #near-you div div .restaurant-information .restaurant-details *,
 #scn-own-discoveries div div .restaurant-information .restaurant-details *,
 #scn-own-reviews div div .restaurant-information .restaurant-details * {
+=======
+#top-rated div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details *,
+#near-you div:not(.dots) div:not(.dots) .restaurant-information .restaurant-details * {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   font-size: 1.1rem;
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 #top-rated div div img,
 #near-you div div img,
 #scn-own-discoveries div div img,
 #scn-own-reviews div div img {
+=======
+#top-rated div:not(.dots) div:not(.dots) img,
+#near-you div:not(.dots) div:not(.dots) img {
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
   height: 15rem;
   border-radius: 20px;
   z-index: -2;
 }
 
+<<<<<<< HEAD
 .splide__slide img {
   width: 100%;
   height: auto;
 }
 
+=======
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
 .div-restaurant-review {
   display: flex;
   flex-direction: column;
@@ -621,6 +679,35 @@ h3 {
 
 .btn-no-mg-left {
   margin-left: 0;
+<<<<<<< HEAD
+=======
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
+.splide__slide img .div-restaurant-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.splide__slide img .btn-no-mg-left {
+  margin-left: 0;
+}
+
+.glider-dots {
+  margin: 1rem 0 auto;
+}
+
+.glider-dots .glider-dot.active {
+  background: #f8514c;
+>>>>>>> f995f056fd1cc9886e48510a26604c10f8b52272
 }
 
 nav .navbar-nav {
