@@ -69,7 +69,7 @@
     </form>-->
   {{/if}}
   {{#if userProfile.discoveries}}
-    <div class='glider'>
+    <div class='glider cards-container'>
       {{#each userProfile.discoveries}}
         <div class='restaurant-card'>
 
@@ -95,6 +95,7 @@
 
         </div>
       {{/each}}
+      <div class='dots'></div>
     </div>
   {{else}}
     <p>No discoveries yet.</p>

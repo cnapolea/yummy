@@ -630,8 +630,18 @@ h3 {
   padding: 1em;
 }
 
+<<<<<<< HEAD
 .div-restaurant-review .btn-no-mg-left {
+=======
+.btn-no-mg-left {
+>>>>>>> cfa48571b86a4446bdaf385041ad23f2b7dd6eea
   margin-left: 0;
+}
+
+.btn-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .glider-dots {

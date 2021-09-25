@@ -23,34 +23,42 @@
 
 <section id='top-rated'>
   <h2>Top Rated Discoveries</h2>
-    <div class='cards-container glider'> 
-      {{#each restaurants}}
-        <div class='restaurant-card'>
-          <img src='{{image}}' alt='{{name}}' />
-          <div class='restaurant-information'>
-            <h3>{{name}}</h3>
-            <small class='rating'>{{rating}}
-              <img
-                class='rating-img'
-                src='/images/star.svg'
-                alt='rating star'
-              /></small>
-            <div class='restaurant-details'>
+  <div class='cards-container glider'>
+    {{#each restaurants}}
+      <div class='restaurant-card'>
+        <img src='{{image}}' alt='{{name}}' />
+        <div class='restaurant-information'>
+          <h3>{{name}}</h3>
+          <small class='rating'>{{rating}}
+            <img
+              class='rating-img'
+              src='/images/star.svg'
+              alt='rating star'
+            /></small>
+          <div class='restaurant-details'>
 
-              <small>{{price}}</small>
-            </div>
+            <small>{{price}}</small>
+
           </div>
+          <form action='/restaurants/restaurant/{{_id}}'><button
+              class='btn-lightgrey btn-no-mg-left'
+            >View details</button></form>
         </div>
-      {{/each}}
-    </div>
-    <div class="dots"></div>
+      </div>
+    {{/each}}
+  </div>
+  <div class='dots'></div>
+  <div class='btn-center'>
+    <form action='/restaurants/create'>
+      <button id='btn-add' class='btn-pink'>Add new discovery</button>
+    </form>
   </div>
 </section>
 
 <section id='near-you'>
   <h2>Discoveries Near You</h2>
-  <div id="glider-2" class='cards-container glider'>
+  <div id='glider-2' class='cards-container glider'>
   </div>
-
+</section>
 
 {{! <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> }}
