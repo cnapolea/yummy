@@ -44,15 +44,15 @@
 #near-you {
   margin: 2rem 0;
 
-  div {
+  div:not(.dots) {
     display: flex;
     overflow-x: hidden;
 
-    div {
+    div:not(.dots) {
       z-index: -1;
     }
 
-    div {
+    div:not(.dots) {
       border-radius: 20px;
       flex-shrink: 0;
       margin-right: 1em;
@@ -125,17 +125,26 @@
 .splide__slide img {
   width: 100%;
   height: auto;
-.div-restaurant-review {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  border: 1px solid $grey;
-  border-radius: 10px;
-  margin-bottom: 1em;
-  padding: 1em;
+  .div-restaurant-review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid $grey;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+
+  .btn-no-mg-left {
+    margin-left: 0;
+  }
 }
 
-.btn-no-mg-left {
-  margin-left: 0;
+.glider-dots {
+  margin: 1rem 0 auto;
+
+  .glider-dot.active {
+    background: #f8514c;
+  }
 }
