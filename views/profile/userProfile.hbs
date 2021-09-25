@@ -95,8 +95,8 @@
 
         </div>
       {{/each}}
-      <div class='dots'></div>
     </div>
+    <div class='dots'></div>
   {{else}}
     <p>No discoveries yet.</p>
   {{/if}}
@@ -116,7 +116,7 @@
   {{/if}}
 
   {{#if userProfile.reviews}}
-    <div class='glider-2'>
+    <div class='glider2 cards-container'>
       {{#each userProfile.reviews}}
         <div class='restaurant-card'>
           <img
@@ -140,18 +140,20 @@
         </div>
       {{/each}}
     </div>
-
+    <div class='dots'></div>
   {{else}}
     <p>No reviews yet.</p>
   {{/if}}
 </section>
 
 <script>
-  new Glider(document.querySelector('.glider'), { slidesToShow: 1, dots:
-  '#dots', draggable: true, arrows: { prev: '.glider-prev', next: '.glider-next'
-  } }); new Glider(document.querySelector('.glider-2'), { slidesToShow: 1, dots:
-  '#dots', draggable: true, arrows: { prev: '.glider-prev', next: '.glider-next'
-  } });
+  const glider = document.querySelector('.glider'); new Glider(glider, {
+  slidesToShow: 1, itemWidth: 200, dots:
+  glider.parentElement.querySelector('.dots'), draggable: true, arrows: { prev:
+  '.glider-prev', next: '.glider-next' } }); const glider2 =
+  document.querySelector('.glider2'); new Glider(glider2, { slidesToShow: 1,
+  itemWidth: 200, dots: glider2.parentElement.querySelector('.dots'), draggable:
+  true, arrows: { prev: '.glider-prev', next: '.glider-next' } });
 </script>
 
 <div>Icons made by

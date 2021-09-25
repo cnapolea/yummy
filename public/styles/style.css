@@ -308,6 +308,10 @@ h2 {
   margin-top: 1.5em;
 }
 
+.img-reviews-card {
+  filter: brightness(0.25);
+}
+
 .div-overview-profile {
   display: flex;
   flex-direction: row;
