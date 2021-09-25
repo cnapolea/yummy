@@ -564,6 +564,7 @@ h3 {
   z-index: -2;
 }
 
+<<<<<<< HEAD
 .div-restaurant-review {
   display: flex;
   flex-direction: column;
@@ -577,6 +578,11 @@ h3 {
 
 .btn-no-mg-left {
   margin-left: 0;
+=======
+.splide__slide img {
+  width: 100%;
+  height: auto;
+>>>>>>> d2608978a4a75117d6a349791c8ad5d7154dd6a4
 }
 
 nav .navbar-nav {
