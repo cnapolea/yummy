@@ -33,6 +33,31 @@
     name='reviewRestaurant'
     id='input-review-restaurant'
     placeholder='Type your review here...'
+    required
+  />
+
+  <label for='input-restaurant-rating' class='form-label'>How would you rate
+    this place?</label>
+  <input
+    type='range'
+    class='form-range'
+    min='1'
+    max='5'
+    step='1'
+    id='input-restaurant-rating'
+    required
+  />
+
+  <label for='input-restaurant-price' class='form-label'>How expensive is this
+    place?</label>
+  <input
+    type='range'
+    class='form-range'
+    min='1'
+    max='5'
+    step='1'
+    id='input-restaurant-price'
+    required
   />
   <button class='btn-no-mg-left'>Send your Review</button>
 </form>
