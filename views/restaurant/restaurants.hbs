@@ -1,58 +1,12 @@
 <h1 id='restaurants-title'>Yummy In Your Tummy!</h1>
 <section id='search-form'>
-
-  <form id='restaurants-form' action='' method='get'>
-    <input
-      type='text'
-      name='search'
-      id='input-search'
-      placeholder='Restaurant Name, Cousine, Food'
-      autocomplete='off'
-    />
-    <input
-      type='text'
-      name='city'
-      id='input-city'
-      placeholder='City'
-      autocomplete='off'
-    />
-    <button>Search Restaurant</button>
-  </form>
-
+  {{>searchRestaurantForm}}
 </section>
 
 <section id='top-rated'>
   <h2>Top Rated Discoveries</h2>
-  <div class='cards-container glider'>
-    {{#each restaurants}}
-      <div class='restaurant-card'>
-        <img src='{{image}}' alt='{{name}}' />
-        <div class='restaurant-information'>
-          <h3>{{name}}</h3>
-          <small class='rating'>{{rating}}
-            <img
-              class='rating-img'
-              src='/images/star.svg'
-              alt='rating star'
-            /></small>
-          <div class='restaurant-details'>
-
-            <small>{{price}}</small>
-
-          </div>
-          <form action='/restaurants/restaurant/{{_id}}'><button
-              class='btn-lightgrey btn-no-mg-left'
-            >View details</button></form>
-        </div>
-      </div>
-    {{/each}}
-  </div>
-  <div class='dots'></div>
-  <div class='btn-center'>
-    <form action='/restaurants/create'>
-      <button id='btn-add' class='btn-pink'>Add new discovery</button>
-    </form>
-  </div>
+  {{>restaurantCaroussel}}
+  <div class="dots"></div>
 </section>
 
 <section id='near-you'>
@@ -60,5 +14,10 @@
   <div id='glider-2' class='cards-container glider'>
   </div>
 </section>
+<div class='btn-center'>
+  <form action='/restaurants/create'>
+    <button id='btn-add' class='btn-pink'>Add new discovery</button>
+  </form>
+</div>
 
 {{! <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> }}

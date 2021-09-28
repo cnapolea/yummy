@@ -38,11 +38,6 @@ nav button:not(:last-child) {
   margin-right: 1em;
 }
 
-nav a:first-child,
-nav button:first-child {
-  margin-right: auto;
-}
-
 nav a {
   padding: 1em 0;
 }
@@ -477,7 +472,7 @@ h3 {
   background-color: #f8514c;
   font-size: 1.05rem;
   margin: 10px 0 0;
-  width: 45%;
+  width: 50%;
 }
 
 #top-rated h2,
@@ -630,11 +625,7 @@ h3 {
   padding: 1em;
 }
 
-<<<<<<< HEAD
-.div-restaurant-review .btn-no-mg-left {
-=======
 .btn-no-mg-left {
->>>>>>> cfa48571b86a4446bdaf385041ad23f2b7dd6eea
   margin-left: 0;
 }
 
@@ -642,6 +633,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 0 1rem;
 }
 
 .glider-dots {
@@ -660,18 +652,21 @@ nav .navbar-nav .nav-item a {
   font-size: 1.3rem;
 }
 
-nav .navbar-nav a:first-child,
-nav .navbar-nav button:first-child {
-  margin: 0;
-}
-
 nav .navbar-nav .nav-item {
   text-align: center;
   width: 100%;
 }
 
-nav .navbar-nav .nav-item form button {
+nav .navbar-nav .nav-item form {
   font-size: 1rem;
+  padding: 5px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+nav .navbar-nav .nav-item form button {
+  margin: 0 auto;
+  width: 100%;
   padding: 0;
 }
 

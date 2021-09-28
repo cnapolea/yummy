@@ -22,7 +22,6 @@ const routeGuard = require('../../middleware/route-guard');
 
 // GET request to display restaurants (divided into sections)
 router.get('/', (req, res, next) => {
-  // console.log(req.query);
   Restaurant.find()
     .limit(10)
     .sort({
@@ -37,18 +36,17 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  const { searchedText, city, rating, price } = req.body;
+  console.log(req.body);
+  const { search, city, rating, price } = req.body;
 
   Restaurant.find({
-    city,
-    rating,
-    price,
     $text: {
-      $search: searchedText
-    }
+      $search: search
+    },
+    city
   })
     .then((restaurants) => {
-      res.render('restaurants', {
+      res.render('restaurant/search-restaurants', {
         restaurants
       });
     })
@@ -65,7 +63,6 @@ router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
   const { name, address1, postalCode, city, country, cousine, price, rating } =
     req.body;
   let image;
-  console.log(req.file);
   if (req.file) {
     image = req.file.path;
   }
@@ -90,7 +87,7 @@ router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
     })
     .then((restaurant) => {
       restaurantID = restaurant._id;
-      console.log(restaurantID);
+
       return User.findByIdAndUpdate(
         req.user._id,
         {
@@ -100,11 +97,9 @@ router.post('/create', routeGuard, upload.single('image'), (req, res, next) => {
       );
     })
     .then((creator) => {
-      console.log(creator);
       res.redirect('/restaurants');
     })
     .catch((error) => {
-      console.log(error);
       next(error);
     });
 });
@@ -125,7 +120,6 @@ router.get('/location', (req, res, next) => {
   })
     .then((restaurants) => {
       // Adding distance from user location in order to sort data and send it to client side
-      console.log(restaurants);
       res.json(restaurantsSorted(restaurants, lon, lat));
       // res.end();
     })
@@ -166,7 +160,6 @@ router.post(
     })
       .then((review) => {
         newReview = review;
-        console.log(review);
         return Restaurant.findByIdAndUpdate(
           id,
           {

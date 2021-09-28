@@ -84,12 +84,15 @@ const restaurantSchema = new mongoose.Schema(
 
 const Restaurant = mongoose.model('restaurant', restaurantSchema);
 
-Restaurant.createIndexes({
+Restaurant.ensureIndexes({
+  position: '2dsphere'
+});
+
+restaurantSchema.index({
   name: 'text',
   menu: 'text',
   cousine: 'text'
 });
 
-Restaurant.ensureIndexes({ position: '2dsphere' });
-
+Restaurant.createIndexes();
 module.exports = Restaurant;

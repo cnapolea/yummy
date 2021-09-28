@@ -1,0 +1,24 @@
+<div class='cards-container glider'>
+  {{#each restaurants}}
+    <div class='restaurant-card'>
+      <img src='{{image}}' alt='{{name}}' />
+      <div class='restaurant-information'>
+        <h3>{{name}}</h3>
+        <small class='rating'>{{rating}}
+          <img
+            class='rating-img'
+            src='/images/star.svg'
+            alt='rating star'
+          /></small>
+        <div class='restaurant-details'>
+
+          <small>{{price}}</small>
+
+        </div>
+        <form action='/restaurants/restaurant/{{_id}}'><button
+            class='btn-lightgrey btn-no-mg-left'
+          >View details</button></form>
+      </div>
+    </div>
+  {{/each}}
+</div>
