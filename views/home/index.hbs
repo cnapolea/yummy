@@ -1,9 +1,17 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to {{title}}</p> --}}
 
-<img src='images/yummy.png' alt='Logo of Yummy' />
+<section id='title'>
+  <img class='main-page-img' src='images/yummy.png' alt='Logo of Yummy' />
+</section>
 
-<div>
+<section id='description'>
+  <h2>Built by the community</h2>
+  <p>Be the first to discover a restaurant and be part of a user currated
+    variety of restaurant</p>
+</section>
+
+{{! <div>
   <form action='/search-restaurant' method='post'>
 
     <div>
@@ -31,7 +39,7 @@
       <button class='btn-pink'>Search</button>
     </div>
   </form>
-</div>
+</div> }}
 
 <div>
   {{#if user}}

@@ -674,4 +674,34 @@ nav .navbar-nav .nav-item form button {
   padding: 0;
 }
 
+nav .navbar-nav nav-brand {
+  font-family: 'Thirsty Rough Reg';
+}
+
+#title .main-page-img {
+  width: 16rem;
+  height: 15rem;
+  border-radius: 100%;
+}
+
+#title,
+#description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+#description h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+#description p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
 /*# sourceMappingURL=style.css.map */
