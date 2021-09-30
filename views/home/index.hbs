@@ -11,43 +11,19 @@
     variety of restaurant</p>
 </section>
 
-{{! <div>
+<section id='main-search-form'>
+
+  <h2>Discover Other User's Finds</h2>
   <form action='/search-restaurant' method='post'>
-
-    <div>
-      <label for='search-selector'></label>
-      <select name='search-selector' id='search-selector'>
-        <option value='restaurant-name'>Restaurant</option>
-        <option value='restaurant-culinary'>Culinary</option>
-        <option value='restaurant-food'>Food</option>
-      </select>
-    </div>
-
-    <div>
+    <div class='input-fields'>
       <input
         type='text'
         name=''
         id=''
-        placeholder='Hamburgers, Fast Food, On Swaan'
+        placeholder='Cousine, Fast Food, On Swaan'
       />
-      <input
-        type='text'
-        name='location'
-        id='location'
-        placeholder='City. ex: Lisbon'
-      />
-      <button class='btn-pink'>Search</button>
+      <input type='text' name='location' id='location' placeholder='Lisbon' />
     </div>
+    <button class='btn-pink'>Search</button>
   </form>
-</div> }}
-
-<div>
-  {{#if user}}
-    <form action='/explore-users'>
-      <button class='btn-pink'>Explore other users</button>
-    </form>
-  {{/if}}
-  <section id='recommendations'></section>
-  <section id='top-restaurants'></section>
-  <section id='top-user-choices'></section>
-</div>
+</section>

@@ -10,7 +10,15 @@
       aria-expanded='false'
       aria-label='Toggle navigation'
     >
-      <span class='navbar-toggler-icon'></span>
+      {{#if user}}
+        <img
+          class='nav-profile-img'
+          src='{{user.profilePicture}}'
+          alt='user profile picture'
+        />
+      {{else}}
+        <span class='navbar-toggler-icon'></span>
+      {{/if}}
     </button>
     <div class='collapse navbar-collapse' id='navbarNav'>
       <ul class='navbar-nav'>
@@ -23,6 +31,11 @@
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='/restaurants'>Discover</a>
+          </li>
+          <li class='nav-item'>
+            <form action='/explore-users'>
+              <button class='btn-pink'>Explore other users</button>
+            </form>
           </li>
           <li class='nav-item'>
             <form action='/authentication/sign-out' method='POST'>

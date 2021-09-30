@@ -7,7 +7,7 @@ body {
   padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Source Sans Pro", Helvetica, Arial, sans-serif;
   line-height: 2;
   color: #333333;
   overflow-x: hidden;
@@ -656,6 +656,23 @@ nav .navbar-nav .nav-item a {
   font-size: 1.3rem;
 }
 
+nav .navbar-nav .nav-item:nth-child(4) {
+  display: flex;
+  justify-content: center;
+}
+
+nav .navbar-nav .nav-item:nth-child(4) form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav .navbar-nav .nav-item:nth-child(4) form button {
+  background-color: inherit;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.55);
+}
+
 nav .navbar-nav .nav-item {
   text-align: center;
   width: 100%;
@@ -674,8 +691,36 @@ nav .navbar-nav .nav-item form button {
   padding: 0;
 }
 
-nav .navbar-nav nav-brand {
-  font-family: 'Thirsty Rough Reg';
+nav .navbar-brand {
+  font-family: 'Thirsty Rough', 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+}
+
+nav .navbar-toggler {
+  border: 1px solid black !important;
+  border-radius: 100%;
+  height: 2.3rem;
+  margin: 0px;
+  padding: 0;
+  width: 2.3rem;
+  font-size: 0;
+  line-height: 0;
+}
+
+nav .navbar-toggler .nav-profile-img {
+  border-radius: 100%;
+  width: 100%;
+}
+
+nav .navbar-toggler-icon {
+  font-size: 15px;
+}
+
+nav .navbar-toggler:focus,
+nav .navbar-toggler:active,
+nav .navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 #title .main-page-img {
@@ -685,23 +730,93 @@ nav .navbar-nav nav-brand {
 }
 
 #title,
-#description {
+#description,
+#main-search-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
-#description h2 {
+#title h2,
+#description h2,
+#main-search-form h2 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 #description p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 1px;
+}
+
+#main-search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-search-form form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#main-search-form form button {
+  width: 30%;
+  height: 2rem;
+  padding: 0;
+  transition: width 0.2s ease-in;
+}
+
+#main-search-form form button:hover {
+  width: 60%;
+}
+
+#main-search-form .input-fields {
+  display: flex;
+}
+
+#main-search-form .input-fields input {
+  border-radius: 50px;
+  border-color: #ff7457;
+  color: black;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  width: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+#main-search-form .input-fields input:focus {
+  border-width: 2px;
+  outline: #ff7457;
+}
+
+#main-search-form .input-fields input:first-child:focus {
+  border-right-color: #ff7457;
+}
+
+#main-search-form .input-fields input:last-child:focus {
+  border-left-width: 2px;
+}
+
+#main-search-form .input-fields input:first-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-color: #ff8f5845;
+  width: 70%;
+}
+
+#main-search-form .input-fields input:last-child {
+  border-bottom-left-radius: 0;
+  border-left-width: 0px;
+  border-top-left-radius: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
