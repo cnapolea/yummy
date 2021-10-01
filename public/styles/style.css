@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;0,900;1,400;1,600&display=swap");
+html {
+  width: 100%;
+  height: 100%;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -699,10 +704,10 @@ nav .navbar-brand {
 nav .navbar-toggler {
   border: 1px solid black !important;
   border-radius: 100%;
-  height: 2.3rem;
+  height: 2.5rem;
   margin: 0px;
   padding: 0;
-  width: 2.3rem;
+  width: 10%;
   font-size: 0;
   line-height: 0;
 }
@@ -710,6 +715,8 @@ nav .navbar-toggler {
 nav .navbar-toggler .nav-profile-img {
   border-radius: 100%;
   width: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 nav .navbar-toggler-icon {
