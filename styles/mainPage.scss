@@ -94,3 +94,34 @@
     }
   }
 }
+
+#scn-main-membership-info {
+  padding-top: 1em;
+}
+
+#p-coming-soon {
+  text-align: center;
+  -webkit-animation: blinking 1s infinite;
+  border: 4px solid;
+  border-radius: 5px;
+  margin-top: 2em;
+}
+
+@-webkit-keyframes blinking {
+  0% {
+    border-color: white;
+  }
+  50% {
+    border-color: #f8514c;
+  }
+  100% {
+    border-color: white;
+  }
+}
+
+#btn-main-registration {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

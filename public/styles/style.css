@@ -706,14 +706,17 @@ h3 {
   height: 350px;
   border-radius: 20px;
   margin-right: 5em;
+  margin-bottom: 2em;
 }
 
 #scn-restaurant-details-intro {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 3em;
+  font-size: smaller;
+  line-height: 0.8;
+  margin-bottom: 2em;
 }
 
 #scn-restaurant-details-intro #find-discoveries-near {
@@ -721,16 +724,24 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: inherit;
+  margin-bottom: 3em;
 }
 
-#scn-restaurant-details-intro #find-discoveries-near p {
+#scn-restaurant-details-intro #find-discoveries-near #find-discoveries-near {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+}
+
+#scn-restaurant-details-intro #find-discoveries-near #find-discoveries-near p {
   background-color: #d3d3d347;
   padding: 2% 4%;
   font-weight: 402;
   color: #f8514c;
 }
 
-#scn-restaurant-details-intro #find-discoveries-near button {
+#scn-restaurant-details-intro #find-discoveries-near #find-discoveries-near button {
   margin: 0;
   width: 100%;
 }
@@ -745,6 +756,31 @@ h3 {
 
 .location-access-denied {
   display: none;
+#scn-restaurant-details-intro #find-discoveries-near .hide {
+  display: none !important;
+}
+
+#scn-restaurant-details-intro #find-discoveries-near .show {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  #scn-restaurant-details-intro #scn-restaurant-details-intro {
+    flex-direction: row;
+    margin-bottom: 3em;
+    font-size: inherit;
+    line-height: 1;
+  }
+  #scn-restaurant-details-intro #scn-restaurant-details-intro button {
+    margin: 0;
+    width: 100%;
+  }
+  #scn-restaurant-details-intro .hide {
+    display: none !important;
+  }
+  #scn-restaurant-details-intro .show {
+    display: block;
+  }
 }
 
 .navbar {
@@ -933,12 +969,62 @@ h3 {
   border-top-left-radius: 0;
 }
 
+#scn-main-membership-info {
+  padding-top: 1em;
+}
+
+#p-coming-soon {
+  text-align: center;
+  -webkit-animation: blinking 1s infinite;
+  border: 4px solid;
+  border-radius: 5px;
+  margin-top: 2em;
+}
+
+@-webkit-keyframes blinking {
+  0% {
+    border-color: white;
+  }
+  50% {
+    border-color: #f8514c;
+  }
+  100% {
+    border-color: white;
+  }
+}
+
+#btn-main-registration {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #form-create-new-review {
   border: 1px solid #e6e6e6;
   border-radius: 20px;
   padding: 1em;
   background-color: rgba(248, 82, 76, 0.2);
   margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+#form-create-new-review textarea {
+  width: 100%;
+}
+
+.span-rating-label {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .span-rating-label {
+    display: inline;
+  }
 }
 
 #form-create-new-review textarea {
@@ -948,16 +1034,16 @@ h3 {
 .div-restaurant-rating,
 .div-restaurant-pricing {
   float: left;
-  height: 46px;
+  height: min-content;
   padding: 0 10px;
 }
 
-.div-restaurant-rating:not(:checked) > input {
+.div-restaurant-rating:not(:checked) > div > input {
   position: absolute;
   top: -9999px;
 }
 
-.div-restaurant-rating:not(:checked) > label {
+.div-restaurant-rating:not(:checked) > div > label {
   float: right;
   width: 1em;
   overflow: hidden;
@@ -967,24 +1053,24 @@ h3 {
   color: #ccc;
 }
 
-.div-restaurant-rating:not(:checked) > label:before {
+.div-restaurant-rating:not(:checked) > div > label:before {
   content: '★ ';
 }
 
-.div-restaurant-rating > input:checked ~ label {
+.div-restaurant-rating > div > input:checked ~ label {
   color: #f8514c;
 }
 
-.div-restaurant-rating:not(:checked) > label:hover,
-.div-restaurant-rating:not(:checked) > label:hover ~ label {
+.div-restaurant-rating:not(:checked) > div > label:hover,
+.div-restaurant-rating:not(:checked) > div > label:hover ~ label {
   color: #f5716d;
 }
 
-.div-restaurant-rating > input:checked + label:hover,
-.div-restaurant-rating > input:checked + label:hover ~ label,
-.div-restaurant-rating > input:checked ~ label:hover,
-.div-restaurant-rating > input:checked ~ label:hover ~ label,
-.div-restaurant-rating > label:hover ~ input:checked ~ label {
+.div-restaurant-rating > div > input:checked + label:hover,
+.div-restaurant-rating > div > input:checked + label:hover ~ label,
+.div-restaurant-rating > div > input:checked ~ label:hover,
+.div-restaurant-rating > div > input:checked ~ label:hover ~ label,
+.div-restaurant-rating > div > label:hover ~ input:checked ~ label {
   color: #cc504c;
 }
 
@@ -1024,14 +1110,6 @@ h3 {
   color: #cc504c;
 }
 
-/*
-.div-restaurant-rating,
-.div-restaurant-pricing {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}*/
 .div-restaurant-pricing > label:last-of-type,
 .div-restaurant-rating > label:last-of-type {
   margin-left: 2em;
@@ -1042,7 +1120,7 @@ h3 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 10%;
+  line-height: 0.8;
 }
 
 footer h2 {

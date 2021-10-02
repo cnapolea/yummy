@@ -7,8 +7,8 @@
   />
   <div>
     <p><strong>Cuisine: </strong><span>{{restaurant.cousine}}</span></p>
-    <p><strong>$ </strong><strong>{{restaurant.pricing}}</strong></p>
     <p><span>★ </span><strong>{{restaurant.rating}}</strong></p>
+    <p><strong>$ </strong><strong>{{restaurant.pricing}}</strong></p>
     <p><strong>{{numberOfReviews}}</strong><span> reviews</span></p>
   </div>
 </section>
@@ -44,6 +44,7 @@
 {{else}}
   <p class='centering-container'>No reviews yet.</p>
 {{/if}}
+<h3>Reviews</h3>
 
 <form
   action='/restaurants/restaurant/{{restaurant._id}}/review'
@@ -64,28 +65,55 @@
   ></textarea>
 
   <div class='div-restaurant-rating'>
-    <span>How would you rate this place?</span>
-    <input
-      type='radio'
-      id='star5'
-      class='input-rating'
-      name='rate'
-      value='5'
-      required='required'
-    />
-    <label class='label-rating' for='star5' title='text'>5 stars</label>
-    <input type='radio' id='star4' class='input-rating' name='rate' value='4' />
-    <label class='label-rating' for='star4' title='text'>4 stars</label>
-    <input type='radio' id='star3' class='input-rating' name='rate' value='3' />
-    <label class='label-rating' for='star3' title='text'>3 stars</label>
-    <input type='radio' id='star2' class='input-rating' name='rate' value='2' />
-    <label class='label-rating' for='star2' title='text'>2 stars</label>
-    <input type='radio' id='star1' class='input-rating' name='rate' value='1' />
-    <label class='label-rating' for='star1' title='text'>1 star</label>
+    <span class='span-rating-label'>How would you rate this place?</span>
+    <div>
+      <input
+        type='radio'
+        id='star5'
+        class='input-rating'
+        name='rate'
+        value='5'
+        required='required'
+      />
+      <label class='label-rating' for='star5' title='text'>5 stars</label>
+      <input
+        type='radio'
+        id='star4'
+        class='input-rating'
+        name='rate'
+        value='4'
+      />
+      <label class='label-rating' for='star4' title='text'>4 stars</label>
+      <input
+        type='radio'
+        id='star3'
+        class='input-rating'
+        name='rate'
+        value='3'
+      />
+      <label class='label-rating' for='star3' title='text'>3 stars</label>
+      <input
+        type='radio'
+        id='star2'
+        class='input-rating'
+        name='rate'
+        value='2'
+      />
+      <label class='label-rating' for='star2' title='text'>2 stars</label>
+      <input
+        type='radio'
+        id='star1'
+        class='input-rating'
+        name='rate'
+        value='1'
+      />
+      <label class='label-rating' for='star1' title='text'>1 star</label>
+    </div>
+
   </div>
 
   <div class='div-restaurant-pricing'>
-    <span>How expensive is this this place?</span>
+    <span class='span-rating-label'>How expensive is this this place?</span>
     <input
       type='radio'
       id='price5'
@@ -131,3 +159,34 @@
 
   <button class='btn-no-mg-left btn-pink'>Send your Review</button>
 </form>
+
+{{#if restaurant.reviews}}
+  {{#each restaurant.reviews}}
+    <div class='div-restaurant-review'>
+      <p class='p-review-ratings'><article>★
+          <strong>{{rating}}</strong>
+
+        </article><article><strong>$ {{pricing}}</strong></article></p>
+      <p><big><i>" {{content}} "</i></big></p>
+      <small><span>Posted by </span>
+        <strong>{{creator.name.firstName}} {{creator.name.lastName}}</strong>
+        at
+        {{created_at}}</small>
+      <!--
+      <form action='' method='POST'>
+        <button>Like</button>
+      </form>
+      -->
+      <form action='/review/{{_id}}/like' method='POST'>
+        <span><strong>{{likes}} </strong>
+          like(s)
+          <button class='btn-pink'>Like</button>
+        </span>
+
+      </form>
+    </div>
+
+  {{/each}}
+{{else}}
+  <p>No reviews yet.</p>
+{{/if}}

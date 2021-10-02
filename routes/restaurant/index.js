@@ -9,6 +9,7 @@ const router = Router();
 const upload = require('../../middleware/file-upload');
 const axios = require('axios');
 const routeGuardMiddleware = require('../../middleware/route-guard');
+const mongoose = require('mongoose');
 
 // Function that formats GEOCODING URL
 const GEOCODING_URL = require('./getLngLat');
@@ -135,6 +136,11 @@ router.get('/restaurant/:id', (req, res, next) => {
     .populate({ path: 'reviews', populate: { path: 'creator' } })
     .then((restaurant) => {
       let numberOfReviews = restaurant.reviews.length;
+      /*restaurant.aggregate([
+        { $unwind: '$reviews' },
+        { $sort: { 'reviews.likes': -1 } },
+        { $group: { _id: '$_id', reviews: { $push: '$reviews' } } }
+      ]);*/
       res.render('restaurant/restaurant', {
         restaurant,
         numberOfReviews

@@ -11,8 +11,8 @@
       <div>
         <div class='div-img-circle'>
           <img
-            src='{{user.profilePicture}}'
-            alt='{{user.name.firstName}} {{user.name.lastName}}'
+            src='{{userProfile.profilePicture}}'
+            alt='{{userProfile.name.firstName}} {{userProfile.name.lastName}}'
             class='img-rounded-edges'
           />
         </div>
@@ -32,11 +32,7 @@
 
             {{userProfile.name.firstName}}
             {{userProfile.name.lastName}}
-            <img
-              class='img-icon'
-              src='/icons/guarantee.png'
-              alt='Location Icon'
-            /></h1>
+          </h1>
         {{/if}}
 
         <div>

@@ -28,3 +28,23 @@
   </form>
 </section>
 {{>footer}}
+
+<section id='scn-main-membership-info'>
+  <h2>Join our YUMMY community</h2>
+
+  <p>We love yummy food, kind people and honesty. As a YUMMY member you can
+    <ul>
+      <li>add your own YUMMY discoveries</li>
+      <li>review YUMMY discoveries</li>
+      <li>interact with other YUMMY users</li>
+    </ul></p>
+
+  {{#unless user}}
+    <form action='/authentication/register' id='btn-main-registration'>
+      <button class='btn-pink'>Register</button>
+    </form>
+  {{/unless}}
+  <p id='p-coming-soon'><strong>COMING SOON: </strong>Win YUMMY restaurant
+    discout codes by adding new discoveries and reviews.</p>
+
+</section>
