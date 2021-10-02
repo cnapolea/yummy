@@ -33,7 +33,8 @@
 }
 
 #top-rated,
-#near-you {
+#near-you,
+#find-discoveries-near {
   h2 {
     font-size: 1.3rem;
     margin: 0;
@@ -166,4 +167,26 @@
   .glider-dot.active {
     background: #f8514c;
   }
+}
+
+#find-discoveries-near {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+
+  p {
+    background-color: #d3d3d347;
+    padding: 2% 4%;
+    font-weight: 402;
+    color: #f8514c;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block;
 }

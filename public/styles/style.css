@@ -485,7 +485,8 @@ h3 {
 }
 
 #top-rated h2,
-#near-you h2 {
+#near-you h2,
+#find-discoveries-near h2 {
   font-size: 1.3rem;
   margin: 0;
 }
@@ -653,6 +654,28 @@ h3 {
   background: #f8514c;
 }
 
+#find-discoveries-near {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+}
+
+#find-discoveries-near p {
+  background-color: #d3d3d347;
+  padding: 2% 4%;
+  font-weight: 402;
+  color: #f8514c;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
 nav .navbar-nav {
   align-items: center;
 }
@@ -704,7 +727,6 @@ nav .navbar-brand {
 nav .navbar-toggler {
   border: 1px solid black !important;
   border-radius: 100%;
-  height: 2.5rem;
   margin: 0px;
   padding: 0;
   width: 10%;
