@@ -1002,6 +1002,16 @@ h3 {
   align-items: center;
 }
 
+#scn-main-membership-info h2 {
+  margin: 0;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+#scn-main-membership-info ul {
+  list-style-type: none;
+}
+
 #form-create-new-review {
   border: 1px solid #e6e6e6;
   border-radius: 20px;
