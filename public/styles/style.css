@@ -746,6 +746,10 @@ h3 {
   width: 100%;
 }
 
+#scn-restaurant-details-intro #find-discoveries-near .hide {
+  display: none !important;
+}
+
 #near-you {
   display: none;
 }
@@ -756,29 +760,27 @@ h3 {
 
 .location-access-denied {
   display: none;
-#scn-restaurant-details-intro #find-discoveries-near .hide {
-  display: none !important;
 }
 
-#scn-restaurant-details-intro #find-discoveries-near .show {
+.location-access-denied .show {
   display: block;
 }
 
 @media (min-width: 600px) {
-  #scn-restaurant-details-intro #scn-restaurant-details-intro {
+  #scn-restaurant-details-intro {
     flex-direction: row;
     margin-bottom: 3em;
     font-size: inherit;
     line-height: 1;
   }
-  #scn-restaurant-details-intro #scn-restaurant-details-intro button {
+  #scn-restaurant-details-intro button {
     margin: 0;
     width: 100%;
   }
-  #scn-restaurant-details-intro .hide {
+  .hide {
     display: none !important;
   }
-  #scn-restaurant-details-intro .show {
+  .show {
     display: block;
   }
 }
