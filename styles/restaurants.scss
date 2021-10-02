@@ -195,7 +195,6 @@
   }
 }
 
-<<<<<<< HEAD
 #img-restaurant-detail {
   max-width: 500px;
   height: 350px;
@@ -209,31 +208,30 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 3em;
-=======
-#find-discoveries-near {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: inherit;
+  #find-discoveries-near {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: inherit;
 
-  p {
-    background-color: #d3d3d347;
-    padding: 2% 4%;
-    font-weight: 402;
-    color: #f8514c;
+    p {
+      background-color: #d3d3d347;
+      padding: 2% 4%;
+      font-weight: 402;
+      color: #f8514c;
+    }
+
+    button {
+      margin: 0;
+      width: 100%;
+    }
   }
 
-  button {
-    margin: 0;
-    width: 100%;
+  .hide {
+    display: none !important;
   }
-}
 
-.hide {
-  display: none !important;
-}
-
-.show {
-  display: block;
->>>>>>> 30f9db183683060256ddd79a9049b9973b4baaf2
+  .show {
+    display: block;
+  }
 }
