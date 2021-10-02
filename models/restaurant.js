@@ -42,18 +42,21 @@ const restaurantSchema = new mongoose.Schema(
       type: [String]
     },
 
+    /*
+
     price: {
       type: String,
       enum: ['$', '$$', '$$$', '$$$$', '$$$$$'],
       required: true
     },
 
+
     rate: {
       type: Number,
       max: 5,
       min: 1
     },
-
+*/
     creator: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
@@ -74,6 +77,17 @@ const restaurantSchema = new mongoose.Schema(
 
     rating: {
       type: Number,
+      max: 5,
+      min: 0,
+      default: 0,
+      required: true
+    },
+
+    pricing: {
+      type: Number,
+      max: 5,
+      min: 0,
+      default: 0,
       required: true
     }
   },

@@ -1,0 +1,100 @@
+#form-create-new-review {
+  border: 1px solid $grey;
+  border-radius: 20px;
+  padding: 1em;
+  background-color: rgba(248, 82, 76, 0.2);
+  margin-bottom: 3em;
+}
+
+#form-create-new-review textarea {
+  background-color: white;
+}
+
+.div-restaurant-rating,
+.div-restaurant-pricing {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.div-restaurant-rating:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.div-restaurant-rating:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.div-restaurant-rating:not(:checked) > label:before {
+  content: '★ ';
+}
+.div-restaurant-rating > input:checked ~ label {
+  color: $pink;
+}
+.div-restaurant-rating:not(:checked) > label:hover,
+.div-restaurant-rating:not(:checked) > label:hover ~ label {
+  color: rgb(245, 113, 109);
+}
+.div-restaurant-rating > input:checked + label:hover,
+.div-restaurant-rating > input:checked + label:hover ~ label,
+.div-restaurant-rating > input:checked ~ label:hover,
+.div-restaurant-rating > input:checked ~ label:hover ~ label,
+.div-restaurant-rating > label:hover ~ input:checked ~ label {
+  color: rgb(204, 80, 76);
+}
+
+.div-restaurant-pricing:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.div-restaurant-pricing:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.div-restaurant-pricing:not(:checked) > label:before {
+  content: '$';
+}
+.div-restaurant-pricing > input:checked ~ label {
+  color: $pink;
+}
+.div-restaurant-pricing:not(:checked) > label:hover,
+.div-restaurant-pricing:not(:checked) > label:hover ~ label {
+  color: rgb(245, 113, 109);
+}
+.div-restaurant-pricing > input:checked + label:hover,
+.div-restaurant-pricing > input:checked + label:hover ~ label,
+.div-restaurant-pricing > input:checked ~ label:hover,
+.div-restaurant-pricing > input:checked ~ label:hover ~ label,
+.div-restaurant-pricing > label:hover ~ input:checked ~ label {
+  color: rgb(204, 80, 76);
+}
+/*
+.div-restaurant-rating,
+.div-restaurant-pricing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}*/
+
+.div-restaurant-pricing > label:last-of-type,
+.div-restaurant-rating > label:last-of-type {
+  margin-left: 2em;
+}
+
+.p-review-ratings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
+}

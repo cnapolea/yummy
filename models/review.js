@@ -14,6 +14,16 @@ const reviewSchema = new mongoose.Schema(
       ref: 'restaurant',
       required: true
     },
+    rating: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    pricing: {
+      type: Number,
+      default: 0,
+      required: true
+    },
     content: {
       type: String,
       required: true,

@@ -1,22 +1,43 @@
 <h1>{{restaurant.name}}</h1>
-<img src='{{restaurant.image}}' alt='Image of {{restaurant.name}}' />
-<p><strong>Cuisine: </strong><span>{{restaurant.cousine}}</span></p>
-<p><strong>Price: </strong><span>{{restaurant.price}}</span></p>
-<p><strong>3</strong><span> likes, </span><strong
-  >{{numberOfReviews}}</strong><span> reviews</span></p>
-<!-- all previous reviews here -->
+<section id='scn-restaurant-details-intro'>
+  <img
+    src='{{restaurant.image}}'
+    alt='Image of {{restaurant.name}}'
+    id='img-restaurant-detail'
+  />
+  <div>
+    <p><strong>Cuisine: </strong><span>{{restaurant.cousine}}</span></p>
+    <p><strong>$ </strong><strong>{{restaurant.pricing}}</strong></p>
+    <p><span>★ </span><strong>{{restaurant.rating}}</strong></p>
+    <p><strong>{{numberOfReviews}}</strong><span> reviews</span></p>
+  </div>
+</section>
 
 <h3>Reviews</h3>
 {{#if restaurant.reviews}}
   {{#each restaurant.reviews}}
     <div class='div-restaurant-review'>
+      <p class='p-review-ratings'><span>★
+          <strong>{{rating}}</strong>
+
+        </span><span>$ <strong>{{pricing}}</strong></span></p>
       <p>{{content}}</p>
-      <p><span>Posted by </span> <strong>A person</strong> at {{created_at}}</p>
+      <small><span>Posted by </span>
+        <strong>{{creator.name.firstName}} {{creator.name.lastName}}</strong>
+        at
+        {{created_at}}</small>
       <!--
       <form action='' method='POST'>
         <button>Like</button>
       </form>
       -->
+      <form action='/review/{{_id}}/like' method='POST'>
+        <span><strong>{{likes}} </strong>
+          like(s)
+          <button class='btn-pink'>Like</button>
+        </span>
+
+      </form>
     </div>
 
   {{/each}}
@@ -24,40 +45,88 @@
   <p>No reviews yet.</p>
 {{/if}}
 
-<form action='/restaurants/restaurant/{{restaurant._id}}/review' method='POST'>
-  <div id='rater'></div>
+<form
+  action='/restaurants/restaurant/{{restaurant._id}}/review'
+  method='POST'
+  id='form-create-new-review'
+>
   <label for='input-review-restaurant'>How was your experience in this
     restaurant?</label>
-  <input
-    type='text'
+  <textarea
     name='reviewRestaurant'
     id='input-review-restaurant'
-    placeholder='Type your review here...'
+    cols='30'
+    rows='3'
+    minlength='3'
+    placeholder='Write your review here...'
     required
-  />
+  ></textarea>
 
-  <label for='input-restaurant-rating' class='form-label'>How would you rate
-    this place?</label>
-  <input
-    type='range'
-    class='form-range'
-    min='1'
-    max='5'
-    step='1'
-    id='input-restaurant-rating'
-    required
-  />
+  <div class='div-restaurant-rating'>
+    <span>How would you rate this place?</span>
+    <input
+      type='radio'
+      id='star5'
+      class='input-rating'
+      name='rate'
+      value='5'
+      required='required'
+    />
+    <label class='label-rating' for='star5' title='text'>5 stars</label>
+    <input type='radio' id='star4' class='input-rating' name='rate' value='4' />
+    <label class='label-rating' for='star4' title='text'>4 stars</label>
+    <input type='radio' id='star3' class='input-rating' name='rate' value='3' />
+    <label class='label-rating' for='star3' title='text'>3 stars</label>
+    <input type='radio' id='star2' class='input-rating' name='rate' value='2' />
+    <label class='label-rating' for='star2' title='text'>2 stars</label>
+    <input type='radio' id='star1' class='input-rating' name='rate' value='1' />
+    <label class='label-rating' for='star1' title='text'>1 star</label>
+  </div>
 
-  <label for='input-restaurant-price' class='form-label'>How expensive is this
-    place?</label>
-  <input
-    type='range'
-    class='form-range'
-    min='1'
-    max='5'
-    step='1'
-    id='input-restaurant-price'
-    required
-  />
-  <button class='btn-no-mg-left'>Send your Review</button>
+  <div class='div-restaurant-pricing'>
+    <span>How expensive is this this place?</span>
+    <input
+      type='radio'
+      id='price5'
+      class='input-pricing'
+      name='price'
+      value='5'
+      required='required'
+    />
+    <label class='label-rating' for='price5' title='text'></label>
+    <input
+      type='radio'
+      id='price4'
+      class='input-pricing'
+      name='price'
+      value='4'
+    />
+    <label class='label-rating' for='price4' title='text'></label>
+    <input
+      type='radio'
+      id='price3'
+      class='input-pricing'
+      name='price'
+      value='3'
+    />
+    <label class='label-rating' for='price3' title='text'></label>
+    <input
+      type='radio'
+      id='price2'
+      class='input-pricing'
+      name='price'
+      value='2'
+    />
+    <label class='label-rating' for='price2' title='text'></label>
+    <input
+      type='radio'
+      id='price1'
+      class='input-pricing'
+      name='price'
+      value='1'
+    />
+    <label class='label-rating' for='price1' title='text'></label>
+  </div>
+
+  <button class='btn-no-mg-left btn-pink'>Send your Review</button>
 </form>

@@ -95,7 +95,7 @@ textarea {
   resize: vertical;
 }
 
-label {
+label:not(.label-rating) {
   margin-bottom: 0.5em;
 }
 
@@ -128,3 +128,4 @@ button {
 @import 'restaurants';
 @import 'navbar';
 @import 'mainPage';
+@import 'review';
