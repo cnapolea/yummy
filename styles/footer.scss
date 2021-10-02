@@ -1,0 +1,24 @@
+footer {
+  background-color: #000;
+
+  .contacts-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .socials {
+      ul {
+        list-style-type: none;
+
+        li img {
+          width: 20%;
+        }
+      }
+    }
+
+    .contacts {
+    }
+  }
+
+  .copyright {
+  }
+}
