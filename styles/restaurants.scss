@@ -255,30 +255,29 @@
 .location-access-denied {
   display: none;
 
-    .show {
-      display: block;
+  .show {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  #scn-restaurant-details-intro {
+    flex-direction: row;
+    margin-bottom: 3em;
+    font-size: inherit;
+    line-height: 1;
+
+    button {
+      margin: 0;
+      width: 100%;
     }
   }
 
-  @media (min-width: 600px) {
-    #scn-restaurant-details-intro {
-      flex-direction: row;
-      margin-bottom: 3em;
-      font-size: inherit;
-      line-height: 1;
+  .hide {
+    display: none !important;
+  }
 
-      button {
-        margin: 0;
-        width: 100%;
-      }
-    }
-
-    .hide {
-      display: none !important;
-    }
-
-    .show {
-      display: block;
-    }
+  .show {
+    display: block;
   }
 }
