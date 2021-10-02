@@ -195,45 +195,56 @@
   }
 }
 
-<<<<<<< HEAD
 #img-restaurant-detail {
   max-width: 500px;
   height: 350px;
   border-radius: 20px;
   margin-right: 5em;
+  margin-bottom: 2em;
 }
 
 #scn-restaurant-details-intro {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 3em;
-=======
-#find-discoveries-near {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: inherit;
+  font-size: smaller;
+  line-height: 0.8;
+  margin-bottom: 2em;
 
-  p {
-    background-color: #d3d3d347;
-    padding: 2% 4%;
-    font-weight: 402;
-    color: #f8514c;
+  #find-discoveries-near {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: inherit;
+
+    p {
+      background-color: #d3d3d347;
+      padding: 2% 4%;
+      font-weight: 402;
+      color: #f8514c;
+    }
+
+    button {
+      margin: 0;
+      width: 100%;
+    }
   }
 
-  button {
-    margin: 0;
-    width: 100%;
+  .hide {
+    display: none !important;
+  }
+
+  .show {
+    display: block;
   }
 }
 
-.hide {
-  display: none !important;
-}
-
-.show {
-  display: block;
->>>>>>> 30f9db183683060256ddd79a9049b9973b4baaf2
+@media (min-width: 600px) {
+  #scn-restaurant-details-intro {
+    flex-direction: row;
+    margin-bottom: 3em;
+    font-size: inherit;
+    line-height: 1;
+  }
 }

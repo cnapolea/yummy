@@ -689,39 +689,53 @@ h3 {
   height: 350px;
   border-radius: 20px;
   margin-right: 5em;
+  margin-bottom: 2em;
 }
 
 #scn-restaurant-details-intro {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 3em;
-#find-discoveries-near {
+  font-size: smaller;
+  line-height: 0.8;
+  margin-bottom: 2em;
+}
+
+#scn-restaurant-details-intro #find-discoveries-near {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: inherit;
 }
 
-#find-discoveries-near p {
+#scn-restaurant-details-intro #find-discoveries-near p {
   background-color: #d3d3d347;
   padding: 2% 4%;
   font-weight: 402;
   color: #f8514c;
 }
 
-#find-discoveries-near button {
+#scn-restaurant-details-intro #find-discoveries-near button {
   margin: 0;
   width: 100%;
 }
 
-.hide {
+#scn-restaurant-details-intro .hide {
   display: none !important;
 }
 
-.show {
+#scn-restaurant-details-intro .show {
   display: block;
+}
+
+@media (min-width: 600px) {
+  #scn-restaurant-details-intro {
+    flex-direction: row;
+    margin-bottom: 3em;
+    font-size: inherit;
+    line-height: 1;
+  }
 }
 
 nav .navbar-nav {
@@ -831,116 +845,6 @@ nav .navbar-toggler-icon:focus {
   letter-spacing: 1px;
 }
 
-#form-create-new-review {
-  border: 1px solid #e6e6e6;
-  border-radius: 20px;
-  padding: 1em;
-  background-color: rgba(248, 82, 76, 0.2);
-  margin-bottom: 3em;
-}
-
-#form-create-new-review textarea {
-  background-color: white;
-}
-
-.div-restaurant-rating,
-.div-restaurant-pricing {
-  float: left;
-  height: 46px;
-  padding: 0 10px;
-}
-
-.div-restaurant-rating:not(:checked) > input {
-  position: absolute;
-  top: -9999px;
-}
-
-.div-restaurant-rating:not(:checked) > label {
-  float: right;
-  width: 1em;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 30px;
-  color: #ccc;
-}
-
-.div-restaurant-rating:not(:checked) > label:before {
-  content: '★ ';
-}
-
-.div-restaurant-rating > input:checked ~ label {
-  color: #f8514c;
-}
-
-.div-restaurant-rating:not(:checked) > label:hover,
-.div-restaurant-rating:not(:checked) > label:hover ~ label {
-  color: #f5716d;
-}
-
-.div-restaurant-rating > input:checked + label:hover,
-.div-restaurant-rating > input:checked + label:hover ~ label,
-.div-restaurant-rating > input:checked ~ label:hover,
-.div-restaurant-rating > input:checked ~ label:hover ~ label,
-.div-restaurant-rating > label:hover ~ input:checked ~ label {
-  color: #cc504c;
-}
-
-.div-restaurant-pricing:not(:checked) > input {
-  position: absolute;
-  top: -9999px;
-}
-
-.div-restaurant-pricing:not(:checked) > label {
-  float: right;
-  width: 1em;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 30px;
-  color: #ccc;
-}
-
-.div-restaurant-pricing:not(:checked) > label:before {
-  content: '$';
-}
-
-.div-restaurant-pricing > input:checked ~ label {
-  color: #f8514c;
-}
-
-.div-restaurant-pricing:not(:checked) > label:hover,
-.div-restaurant-pricing:not(:checked) > label:hover ~ label {
-  color: #f5716d;
-}
-
-.div-restaurant-pricing > input:checked + label:hover,
-.div-restaurant-pricing > input:checked + label:hover ~ label,
-.div-restaurant-pricing > input:checked ~ label:hover,
-.div-restaurant-pricing > input:checked ~ label:hover ~ label,
-.div-restaurant-pricing > label:hover ~ input:checked ~ label {
-  color: #cc504c;
-}
-
-/*
-.div-restaurant-rating,
-.div-restaurant-pricing {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}*/
-.div-restaurant-pricing > label:last-of-type,
-.div-restaurant-rating > label:last-of-type {
-  margin-left: 2em;
-}
-
-.p-review-ratings {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 10%;
 #main-search-form {
   display: flex;
   flex-direction: column;
@@ -1008,6 +912,129 @@ nav .navbar-toggler-icon:focus {
   border-top-left-radius: 0;
 }
 
+#form-create-new-review {
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+  padding: 1em;
+  background-color: rgba(248, 82, 76, 0.2);
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+#form-create-new-review textarea {
+  width: 100%;
+}
+
+.span-rating-label {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .span-rating-label {
+    display: inline;
+  }
+}
+
+#form-create-new-review textarea {
+  background-color: white;
+}
+
+.div-restaurant-rating,
+.div-restaurant-pricing {
+  float: left;
+  height: min-content;
+  padding: 0 10px;
+}
+
+.div-restaurant-rating:not(:checked) > div > input {
+  position: absolute;
+  top: -9999px;
+}
+
+.div-restaurant-rating:not(:checked) > div > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.div-restaurant-rating:not(:checked) > div > label:before {
+  content: '★ ';
+}
+
+.div-restaurant-rating > div > input:checked ~ label {
+  color: #f8514c;
+}
+
+.div-restaurant-rating:not(:checked) > div > label:hover,
+.div-restaurant-rating:not(:checked) > div > label:hover ~ label {
+  color: #f5716d;
+}
+
+.div-restaurant-rating > div > input:checked + label:hover,
+.div-restaurant-rating > div > input:checked + label:hover ~ label,
+.div-restaurant-rating > div > input:checked ~ label:hover,
+.div-restaurant-rating > div > input:checked ~ label:hover ~ label,
+.div-restaurant-rating > div > label:hover ~ input:checked ~ label {
+  color: #cc504c;
+}
+
+.div-restaurant-pricing:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+
+.div-restaurant-pricing:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.div-restaurant-pricing:not(:checked) > label:before {
+  content: '$';
+}
+
+.div-restaurant-pricing > input:checked ~ label {
+  color: #f8514c;
+}
+
+.div-restaurant-pricing:not(:checked) > label:hover,
+.div-restaurant-pricing:not(:checked) > label:hover ~ label {
+  color: #f5716d;
+}
+
+.div-restaurant-pricing > input:checked + label:hover,
+.div-restaurant-pricing > input:checked + label:hover ~ label,
+.div-restaurant-pricing > input:checked ~ label:hover,
+.div-restaurant-pricing > input:checked ~ label:hover ~ label,
+.div-restaurant-pricing > label:hover ~ input:checked ~ label {
+  color: #cc504c;
+}
+
+.div-restaurant-pricing > label:last-of-type,
+.div-restaurant-rating > label:last-of-type {
+  margin-left: 2em;
+}
+
+.p-review-ratings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 0.8;
+}
+
 footer {
   background-color: #000;
 }
@@ -1015,10 +1042,15 @@ footer {
 footer .contacts-us {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 footer .contacts-us .socials ul {
   list-style-type: none;
+}
+
+footer .contacts-us .socials ul li img {
+  width: 20%;
 }
 
 /*# sourceMappingURL=style.css.map */
