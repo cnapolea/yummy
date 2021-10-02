@@ -11,6 +11,8 @@ function createRestaurantCard(restaurant) {
   const smallPriceElement = document.createElement('small');
   const smallDistanceElement = document.createElement('small');
   const distanceSpanElement = document.createElement('span');
+  const formElement = document.createElement('form');
+  const formBtn = document.createElement('button');
 
   const restaurantObj = restaurant[0];
   const restaurantDistance = restaurant[1];
@@ -30,6 +32,8 @@ function createRestaurantCard(restaurant) {
   restautantCardElement.className = 'restaurant-card';
   restaurantInformationElement.className = 'restaurant-information';
   restaurantDetailsElement.className = 'restaurant-details';
+  formBtn.className = 'btn-lightgrey btn-no-mg-left';
+  formElement.action = `/restaurants/restaurant/{{restaurantObj._id}}`;
 
   ratingImageElement.className = 'rating-img';
 
@@ -42,10 +46,12 @@ function createRestaurantCard(restaurant) {
   restautantCardElement.appendChild(restaurantImageElement);
   restautantCardElement.appendChild(restaurantInformationElement);
 
+  formElement.appendChild(formBtn);
   restaurantInformationElement.appendChild(h3NameElement);
   restaurantInformationElement.appendChild(smallRatingElement);
   restaurantInformationElement.appendChild(smallDistanceElement);
   restaurantInformationElement.appendChild(restaurantDetailsElement);
+  restaurantInformationElement.appendChild(formElement);
 
   smallDistanceElement.appendChild(distanceSpanElement);
 
