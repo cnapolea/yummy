@@ -218,6 +218,13 @@
     justify-content: center;
     align-items: inherit;
 
+  margin-bottom: 3em;
+  #find-discoveries-near {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: inherit;
+
     p {
       background-color: #d3d3d347;
       padding: 2% 4%;
@@ -246,5 +253,18 @@
     margin-bottom: 3em;
     font-size: inherit;
     line-height: 1;
+
+    button {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .show {
+    display: block;
   }
 }
