@@ -73,6 +73,8 @@ img {
 }
 
 form {
+  padding: 0 1em;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -127,6 +129,10 @@ button {
 .centering-container {
   padding: 0 1em;
   margin: 0 auto;
+}
+
+.hide-element {
+  display: none;
 }
 
 #scn-profile {
@@ -317,6 +323,14 @@ h2 {
 
 .img-reviews-card {
   filter: brightness(0.25);
+}
+
+.row {
+  width: inherit;
+}
+
+.explore-header {
+  margin: 20px 0 0px;
 }
 
 .div-overview-profile {
@@ -721,12 +735,16 @@ h3 {
   width: 100%;
 }
 
-#scn-restaurant-details-intro .hide {
-  display: none !important;
+#near-you {
+  display: none;
 }
 
-#scn-restaurant-details-intro .show {
+.show {
   display: block;
+}
+
+.location-access-denied {
+  display: none;
 }
 
 .navbar {
@@ -1076,7 +1094,7 @@ footer .copyright {
   color: #fff;
   font-size: 0.8rem;
   box-shadow: #5b5b5bd6 0 1px 18px 0px;
-  padding: 1% 0;
+  padding: 2% 0;
 }
 
 /*# sourceMappingURL=style.css.map */

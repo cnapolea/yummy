@@ -1,5 +1,5 @@
-<h1>{{restaurant.name}}</h1>
-<section id='scn-restaurant-details-intro'>
+<h1 class='restaurant-title centering-container'>{{restaurant.name}}</h1>
+<section id='scn-restaurant-details-intro' class='centering-container'>
   <img
     src='{{restaurant.image}}'
     alt='Image of {{restaurant.name}}'
@@ -13,10 +13,10 @@
   </div>
 </section>
 
-<h3>Reviews</h3>
+<h3 class='centering-container'></h3>Reviews</h3>
 {{#if restaurant.reviews}}
   {{#each restaurant.reviews}}
-    <div class='div-restaurant-review'>
+    <div class='div-restaurant-review centering-container'>
       <p class='p-review-ratings'><span>★
           <strong>{{rating}}</strong>
 
@@ -42,13 +42,14 @@
 
   {{/each}}
 {{else}}
-  <p>No reviews yet.</p>
+  <p class='centering-container'>No reviews yet.</p>
 {{/if}}
 
 <form
   action='/restaurants/restaurant/{{restaurant._id}}/review'
   method='POST'
   id='form-create-new-review'
+  class='centering-container'
 >
   <label for='input-review-restaurant'>How was your experience in this
     restaurant?</label>

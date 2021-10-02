@@ -77,6 +77,8 @@ img {
 }
 
 form {
+  padding: 0 1em;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -131,6 +133,10 @@ button {
 .centering-container {
   padding: 0 1em;
   margin: 0 auto;
+}
+
+.hide-element {
+  display: none;
 }
 
 @import 'userProfile';

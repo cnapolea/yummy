@@ -226,12 +226,16 @@
       width: 100%;
     }
   }
+}
 
-  .hide {
-    display: none !important;
-  }
+#near-you {
+  display: none;
+}
 
-  .show {
-    display: block;
-  }
+.show {
+  display: block;
+}
+
+.location-access-denied {
+  display: none;
 }

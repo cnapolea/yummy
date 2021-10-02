@@ -17,8 +17,6 @@
         });
 
       allowLocationAccessBtn.addEventListener('click', () => {
-        findNearDivElement.className = 'hide';
-
         getPosition()
           .then((location) => {
             userLocation = location;
@@ -41,7 +39,9 @@
             const nearYouGliderElement = document.getElementById('glider-2');
             nearYouSection.appendChild(dotsDivElement);
 
-            nearYouSection.className = 'show';
+            findNearDivElement.style.display = 'none';
+            nearYouSection.className = 'centering-container';
+            nearYouSection.style.display = 'block';
 
             new Glider(nearYouGliderElement, {
               slidesToShow: 1,
@@ -55,9 +55,10 @@
             });
           })
           .catch((error) => {
-            findNearDivElement.className = 'show';
-            findNearDivElement.children[1].className = 'hide';
-            findNearDivElement.children[2].className = 'show';
+            findNearDivElement.className = 'show centering-container';
+            findNearDivElement.children[1].className =
+              'hide-element centering-container';
+            findNearDivElement.children[2].style.display = 'block';
           });
       });
     },

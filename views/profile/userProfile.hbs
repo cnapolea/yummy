@@ -1,4 +1,4 @@
-<section section id='scn-profile'>
+<section section id='scn-profile' class='centering-container'>
   <div id='div-header'>
     <div id='div-banner'>
       {{#if ownProfile}}
@@ -56,7 +56,7 @@
   </div>
 </section>
 
-<section id='scn-own-discoveries'>
+<section id='scn-own-discoveries' class='centering-container'>
   {{#if ownProfile}}
     <h2>Your Yummy Discoveries</h2>
   {{else}}
@@ -103,12 +103,12 @@
 </section>
 
 {{#if ownProfile}}
-  <form action='/restaurants/create'>
+  <form action='/restaurants/create' class='centering-container'>
     <button id='btn-add' class='btn-pink'>Add new discovery</button>
   </form>
 {{/if}}
 
-<section id='scn-own-reviews'>
+<section id='scn-own-reviews' class='centering-container'>
   {{#if ownProfile}}
     <h2>Your Yummy Reviews</h2>
   {{else}}
@@ -156,7 +156,7 @@
   true, arrows: { prev: '.glider-prev', next: '.glider-next' } });
 </script>
 
-<div>Icons made by
+<div class='centering-container'>Icons made by
   <a href='https://www.freepik.com' title='Freepik'>Freepik</a>
   from
   <a

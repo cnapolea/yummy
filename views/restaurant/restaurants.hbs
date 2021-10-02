@@ -1,27 +1,28 @@
 {{!-- <h1 id='restaurants-title'>Yummy In Your Tummy!</h1> --}}
-<section id='search-form'>
+<section id='search-form' class='centering-container'>
   <img class="form-img" src="images/yummy.png" alt="">
   {{>searchRestaurantForm}}
 </section>
 
-<section id='top-rated'>
+<section id='top-rated' class='centering-container'>
   <h2>Top Rated Discoveries</h2>
   {{>restaurantCaroussel}}
   <div class="dots"></div>
 </section>
 
-<div id="find-discoveries-near">
+<div id="find-discoveries-near" class='centering-container'>
   <h2>Discoveries Near You</h2>
   <button class="find-near-btn">Find Discoveries Near You</button>
-  <p class="hide">Allow location access on your browser to see discoveries near you.</p> 
+  <p class="location-access-denied">Allow location access on your browser to see discoveries near you.</p> 
 </div>
 
-<section id='near-you' class="hide">
+<section id='near-you' class="centering-container">
   <h2>Discoveries Near You</h2>
   <div id='glider-2' class='cards-container glider'>
   </div>
 </section>
-<div class='btn-center'>
+
+<div class='btn-center centering-container'>
   <form action='/restaurants/create'>
     <button id='btn-add' class='btn-pink'>Add new discovery</button>
   </form>
