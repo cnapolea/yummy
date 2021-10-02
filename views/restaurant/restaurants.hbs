@@ -1,5 +1,6 @@
-<h1 id='restaurants-title'>Yummy In Your Tummy!</h1>
+{{!-- <h1 id='restaurants-title'>Yummy In Your Tummy!</h1> --}}
 <section id='search-form'>
+  <img class="form-img" src="images/yummy.png" alt="">
   {{>searchRestaurantForm}}
 </section>
 
@@ -9,7 +10,13 @@
   <div class="dots"></div>
 </section>
 
-<section id='near-you'>
+<div id="find-discoveries-near">
+  <h2>Discoveries Near You</h2>
+  <button class="find-near-btn">Find Discoveries Near You</button>
+  <p class="hide">Allow location access on your browser to see discoveries near you.</p> 
+</div>
+
+<section id='near-you' class="hide">
   <h2>Discoveries Near You</h2>
   <div id='glider-2' class='cards-container glider'>
   </div>
