@@ -21,8 +21,8 @@ body {
 }
 
 body {
-  padding: 0 1em;
-  margin: 0 auto;
+  // padding: 0 1em;
+  // margin: 0 auto;
   font-family: sans-serif;
   font-family: $font-sans;
   line-height: 2;
@@ -126,6 +126,11 @@ button {
 
 .btn-transparent {
   background-color: transparent;
+}
+
+.centering-container {
+  padding: 0 1em;
+  margin: 0 auto;
 }
 
 @import 'userProfile';

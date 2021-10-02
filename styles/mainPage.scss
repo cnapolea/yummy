@@ -33,6 +33,11 @@
   justify-content: center;
   align-items: center;
 
+  background: #f8514c;
+  color: #fff;
+  padding: 25px 0;
+  margin-bottom: 0;
+
   form {
     align-items: center;
     display: flex;
@@ -40,6 +45,9 @@
     justify-content: center;
 
     button {
+      background: black;
+      color: #fff;
+      font-weight: 500;
       width: 30%;
       height: 2rem;
       padding: 0;
@@ -55,24 +63,17 @@
     display: flex;
 
     input {
+      background-color: #fff;
       border-radius: 50px;
-      border-color: #ff7457;
-      color: black;
+      border-color: #fff;
+      color: #000;
+      font-weight: 500;
       font-size: 0.8rem;
       margin: 0;
       padding: 5px;
       text-align: center;
       width: 50%;
       transition: all 0.2s ease-in-out;
-    }
-
-    input:focus {
-      border-width: 2px;
-      outline: #ff7457;
-    }
-
-    input:first-child:focus {
-      border-right-color: #ff7457;
     }
 
     input:last-child:focus {
