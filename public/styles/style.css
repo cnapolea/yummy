@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;0,900;1,400;1,600&display=swap");
-html {
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -455,14 +456,39 @@ h3 {
   text-align: center;
 }
 
-#restaurants-form {
+#search-form,
+#top-rated,
+#find-discoveries-near,
+#near-you {
+  margin: 10% 0;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#search-form h2 {
+  width: 100%;
+}
+
+#search-form .form-img {
+  width: 45%;
+  margin-bottom: 3%;
+  height: 10rem;
+}
+
+#search-form #restaurants-form {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
-#restaurants-form input[type='text'] {
+#search-form #restaurants-form input[type='text'] {
   border-radius: 50px;
   font-size: 1.05rem;
   height: 40px;
@@ -471,12 +497,12 @@ h3 {
   transition: outline 0.2s ease-out;
 }
 
-#restaurants-form input[type='text']:focus {
+#search-form #restaurants-form input[type='text']:focus {
   border-color: transparent;
   outline: #f8514c solid 2px !important;
 }
 
-#restaurants-form button {
+#search-form #restaurants-form button {
   color: #fff;
   background-color: #f8514c;
   font-size: 1.05rem;
@@ -484,6 +510,7 @@ h3 {
   width: 50%;
 }
 
+#search-form h2,
 #top-rated h2,
 #near-you h2,
 #find-discoveries-near h2 {
@@ -725,24 +752,24 @@ nav .navbar-brand {
 }
 
 nav .navbar-toggler {
-  border: 1px solid black !important;
+  border: none !important;
   border-radius: 100%;
-  margin: 0px;
+  width: 40px;
+  height: 40px;
   padding: 0;
-  width: 10%;
-  font-size: 0;
-  line-height: 0;
 }
 
 nav .navbar-toggler .nav-profile-img {
+  border: 3px solid #ff5757 !important;
   border-radius: 100%;
-  width: 100%;
-  max-height: 100%;
-  max-width: 100%;
+  height: inherit;
+  width: inherit;
 }
 
 nav .navbar-toggler-icon {
   font-size: 15px;
+  width: 2em;
+  height: 2em;
 }
 
 nav .navbar-toggler:focus,
@@ -752,7 +779,8 @@ nav .navbar-toggler-icon:focus {
   box-shadow: none;
 }
 
-#title .main-page-img {
+.main-page-img,
+.form-img {
   width: 16rem;
   height: 15rem;
   border-radius: 100%;

@@ -3,35 +3,61 @@
   text-align: center;
 }
 
-#restaurants-form {
-  align-items: center;
+#search-form,
+#top-rated,
+#find-discoveries-near,
+#near-you {
+  margin: 10% 0;
+}
+
+#search-form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-  input[type='text'] {
-    border-radius: 50px;
-    font-size: 1.05rem;
-    height: 40px;
-    margin-bottom: 10px;
+  h2 {
     width: 100%;
-    transition: outline 0.2s ease-out;
   }
 
-  input[type='text']:focus {
-    border-color: transparent;
-    outline: #f8514c solid 2px !important;
+  .form-img {
+    width: 45%;
+    margin-bottom: 3%;
+    height: 10rem;
   }
 
-  button {
-    color: #fff;
-    background-color: #f8514c;
-    font-size: 1.05rem;
-    margin: 10px 0 0;
-    width: 50%;
+  #restaurants-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    input[type='text'] {
+      border-radius: 50px;
+      font-size: 1.05rem;
+      height: 40px;
+      margin-bottom: 10px;
+      width: 100%;
+      transition: outline 0.2s ease-out;
+    }
+
+    input[type='text']:focus {
+      border-color: transparent;
+      outline: #f8514c solid 2px !important;
+    }
+
+    button {
+      color: #fff;
+      background-color: #f8514c;
+      font-size: 1.05rem;
+      margin: 10px 0 0;
+      width: 50%;
+    }
   }
 }
 
+#search-form,
 #top-rated,
 #near-you,
 #find-discoveries-near {
