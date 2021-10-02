@@ -700,30 +700,32 @@ h3 {
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 3em;
-#find-discoveries-near {
+}
+
+#scn-restaurant-details-intro #find-discoveries-near {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: inherit;
 }
 
-#find-discoveries-near p {
+#scn-restaurant-details-intro #find-discoveries-near p {
   background-color: #d3d3d347;
   padding: 2% 4%;
   font-weight: 402;
   color: #f8514c;
 }
 
-#find-discoveries-near button {
+#scn-restaurant-details-intro #find-discoveries-near button {
   margin: 0;
   width: 100%;
 }
 
-.hide {
+#scn-restaurant-details-intro .hide {
   display: none !important;
 }
 
-.show {
+#scn-restaurant-details-intro .show {
   display: block;
 }
 
@@ -846,6 +848,73 @@ h3 {
   letter-spacing: 1px;
 }
 
+#main-search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8514c;
+  color: #fff;
+  padding: 25px 0;
+  margin-bottom: 0;
+}
+
+#main-search-form form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#main-search-form form button {
+  background: black;
+  color: #fff;
+  font-weight: 500;
+  width: 30%;
+  height: 2rem;
+  padding: 0;
+  transition: width 0.2s ease-in;
+}
+
+#main-search-form form button:hover {
+  width: 60%;
+}
+
+#main-search-form .input-fields {
+  display: flex;
+}
+
+#main-search-form .input-fields input {
+  background-color: #fff;
+  border-radius: 50px;
+  border-color: #fff;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  width: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+#main-search-form .input-fields input:last-child:focus {
+  border-left-width: 2px;
+}
+
+#main-search-form .input-fields input:first-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-color: #ff8f5845;
+  width: 70%;
+}
+
+#main-search-form .input-fields input:last-child {
+  border-bottom-left-radius: 0;
+  border-left-width: 0px;
+  border-top-left-radius: 0;
+}
+
 #form-create-new-review {
   border: 1px solid #e6e6e6;
   border-radius: 20px;
@@ -956,71 +1025,6 @@ h3 {
   align-items: center;
   justify-content: space-between;
   width: 10%;
-#main-search-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #f8514c;
-  color: #fff;
-  padding: 25px 0;
-  margin-bottom: 0;
-}
-
-#main-search-form form {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#main-search-form form button {
-  background: black;
-  color: #fff;
-  font-weight: 500;
-  width: 30%;
-  height: 2rem;
-  padding: 0;
-  transition: width 0.2s ease-in;
-}
-
-#main-search-form form button:hover {
-  width: 60%;
-}
-
-#main-search-form .input-fields {
-  display: flex;
-}
-
-#main-search-form .input-fields input {
-  background-color: #fff;
-  border-radius: 50px;
-  border-color: #fff;
-  color: #000;
-  font-weight: 500;
-  font-size: 0.8rem;
-  margin: 0;
-  padding: 5px;
-  text-align: center;
-  width: 50%;
-  transition: all 0.2s ease-in-out;
-}
-
-#main-search-form .input-fields input:last-child:focus {
-  border-left-width: 2px;
-}
-
-#main-search-form .input-fields input:first-child {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  border-right-color: #ff8f5845;
-  width: 70%;
-}
-
-#main-search-form .input-fields input:last-child {
-  border-bottom-left-radius: 0;
-  border-left-width: 0px;
-  border-top-left-radius: 0;
 }
 
 footer h2 {
