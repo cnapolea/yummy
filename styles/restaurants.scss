@@ -218,53 +218,54 @@
     justify-content: center;
     align-items: inherit;
 
-  margin-bottom: 3em;
-  #find-discoveries-near {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: inherit;
-
-    p {
-      background-color: #d3d3d347;
-      padding: 2% 4%;
-      font-weight: 402;
-      color: #f8514c;
-    }
-
-    button {
-      margin: 0;
-      width: 100%;
-    }
-  }
-
-  .hide {
-    display: none !important;
-  }
-
-  .show {
-    display: block;
-  }
-}
-
-@media (min-width: 600px) {
-  #scn-restaurant-details-intro {
-    flex-direction: row;
     margin-bottom: 3em;
-    font-size: inherit;
-    line-height: 1;
+    #find-discoveries-near {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: inherit;
 
-    button {
-      margin: 0;
-      width: 100%;
+      p {
+        background-color: #d3d3d347;
+        padding: 2% 4%;
+        font-weight: 402;
+        color: #f8514c;
+      }
+
+      button {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    .show {
+      display: block;
     }
   }
 
-  .hide {
-    display: none !important;
-  }
+  @media (min-width: 600px) {
+    #scn-restaurant-details-intro {
+      flex-direction: row;
+      margin-bottom: 3em;
+      font-size: inherit;
+      line-height: 1;
 
-  .show {
-    display: block;
+      button {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    .show {
+      display: block;
+    }
   }
 }
