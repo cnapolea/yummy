@@ -195,6 +195,21 @@
   }
 }
 
+<<<<<<< HEAD
+#img-restaurant-detail {
+  max-width: 500px;
+  height: 350px;
+  border-radius: 20px;
+  margin-right: 5em;
+}
+
+#scn-restaurant-details-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 3em;
+=======
 #find-discoveries-near {
   display: flex;
   flex-direction: column;
@@ -220,4 +235,5 @@
 
 .show {
   display: block;
+>>>>>>> 30f9db183683060256ddd79a9049b9973b4baaf2
 }

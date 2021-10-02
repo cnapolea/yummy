@@ -2,10 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const routeGuard = require('../../middleware/route-guard');
+const routeGuardMiddleware = require('../../middleware/route-guard');
 const User = require('../../models/user'); //provides user model
-
-// Importing restaurant model in order to perform CRUD operations
+const Review = require('../../models/review');
 const Restaurant = require('../../models/restaurant');
 
 router.get('/', (req, res, next) => {
@@ -24,11 +23,11 @@ router.post('/', (req, res, next) => {
   res.render('home/index', { title: 'Yummy In My Tummy!' });
 });
 
-router.get('/private', routeGuard, (req, res, next) => {
+router.get('/private', routeGuardMiddleware, (req, res, next) => {
   res.render('home/index');
 });
 
-router.get('/explore-users', routeGuard, (req, res, next) => {
+router.get('/explore-users', routeGuardMiddleware, (req, res, next) => {
   User.find({})
     .then((users) => {
       res.render('home/exploreUsers', { users });
@@ -37,5 +36,21 @@ router.get('/explore-users', routeGuard, (req, res, next) => {
       next(error);
     });
 });
+
+//Functioinality when liking a review
+router.post(
+  '/review/:reviewID/like',
+  routeGuardMiddleware,
+  (req, res, next) => {
+    const reviewID = req.params.reviewID;
+
+    Review.findByIdAndUpdate(reviewID, { $inc: { likes: 1 } }, { new: true })
+      .populate('restaurant')
+      .then((document) =>
+        res.redirect(`/restaurants/restaurant/${document.restaurant._id}`)
+      )
+      .catch((error) => next(error));
+  }
+);
 
 module.exports = router;

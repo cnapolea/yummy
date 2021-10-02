@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;0,900;1,400;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html,
@@ -96,7 +97,7 @@ textarea {
   resize: vertical;
 }
 
-label {
+label:not(.label-rating) {
   margin-bottom: 0.5em;
 }
 
@@ -283,7 +284,8 @@ button {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: 'Bebas Neue';
 }
 
@@ -685,6 +687,19 @@ h3 {
   background: #f8514c;
 }
 
+#img-restaurant-detail {
+  max-width: 500px;
+  height: 350px;
+  border-radius: 20px;
+  margin-right: 5em;
+}
+
+#scn-restaurant-details-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 3em;
 #find-discoveries-near {
   display: flex;
   flex-direction: column;
@@ -831,6 +846,116 @@ h3 {
   letter-spacing: 1px;
 }
 
+#form-create-new-review {
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+  padding: 1em;
+  background-color: rgba(248, 82, 76, 0.2);
+  margin-bottom: 3em;
+}
+
+#form-create-new-review textarea {
+  background-color: white;
+}
+
+.div-restaurant-rating,
+.div-restaurant-pricing {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+
+.div-restaurant-rating:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+
+.div-restaurant-rating:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.div-restaurant-rating:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.div-restaurant-rating > input:checked ~ label {
+  color: #f8514c;
+}
+
+.div-restaurant-rating:not(:checked) > label:hover,
+.div-restaurant-rating:not(:checked) > label:hover ~ label {
+  color: #f5716d;
+}
+
+.div-restaurant-rating > input:checked + label:hover,
+.div-restaurant-rating > input:checked + label:hover ~ label,
+.div-restaurant-rating > input:checked ~ label:hover,
+.div-restaurant-rating > input:checked ~ label:hover ~ label,
+.div-restaurant-rating > label:hover ~ input:checked ~ label {
+  color: #cc504c;
+}
+
+.div-restaurant-pricing:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+
+.div-restaurant-pricing:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.div-restaurant-pricing:not(:checked) > label:before {
+  content: '$';
+}
+
+.div-restaurant-pricing > input:checked ~ label {
+  color: #f8514c;
+}
+
+.div-restaurant-pricing:not(:checked) > label:hover,
+.div-restaurant-pricing:not(:checked) > label:hover ~ label {
+  color: #f5716d;
+}
+
+.div-restaurant-pricing > input:checked + label:hover,
+.div-restaurant-pricing > input:checked + label:hover ~ label,
+.div-restaurant-pricing > input:checked ~ label:hover,
+.div-restaurant-pricing > input:checked ~ label:hover ~ label,
+.div-restaurant-pricing > label:hover ~ input:checked ~ label {
+  color: #cc504c;
+}
+
+/*
+.div-restaurant-rating,
+.div-restaurant-pricing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}*/
+.div-restaurant-pricing > label:last-of-type,
+.div-restaurant-rating > label:last-of-type {
+  margin-left: 2em;
+}
+
+.p-review-ratings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
 #main-search-form {
   display: flex;
   flex-direction: column;

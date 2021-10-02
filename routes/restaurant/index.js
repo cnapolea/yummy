@@ -132,7 +132,7 @@ router.get('/restaurant/:id', (req, res, next) => {
   const { id } = req.params;
   let numberOfReviews;
   Restaurant.findById(id)
-    .populate('reviews')
+    .populate({ path: 'reviews', populate: { path: 'creator' } })
     .then((restaurant) => {
       let numberOfReviews = restaurant.reviews.length;
       res.render('restaurant/restaurant', {
@@ -151,9 +151,19 @@ router.post(
     const { id } = req.params;
     let creator = req.user.id;
     let newReview;
+    const reviewRating = req.body.rate;
+    const reviewPricing = req.body.price;
+    let numberOfReviews;
+    let ratingAverage = 0;
+    let pricingAverage = 0;
+    let promises = [];
+
+    console.log(req.body);
 
     Review.create({
       content: req.body.reviewRestaurant,
+      rating: reviewRating,
+      pricing: reviewPricing,
       restaurant: id,
       creator: creator,
       likes: 0
@@ -164,6 +174,31 @@ router.post(
           id,
           {
             $push: { reviews: review }
+          },
+          { new: true }
+        );
+      })
+
+      .then((newRestaurant) => {
+        numberOfReviews = newRestaurant.reviews.length;
+
+        newRestaurant.reviews.forEach((singleReview) => {
+          promises.push(
+            Review.findById(singleReview).then((document) => {
+              ratingAverage = ratingAverage + document.rating / numberOfReviews;
+              pricingAverage =
+                pricingAverage + document.pricing / numberOfReviews;
+            })
+          );
+        });
+        return Promise.all(promises);
+      })
+      .then(() => {
+        return Restaurant.findByIdAndUpdate(
+          id,
+          {
+            rating: Number.parseFloat(ratingAverage).toFixed(1),
+            pricing: Number.parseFloat(pricingAverage).toFixed(1)
           },
           { new: true }
         );
