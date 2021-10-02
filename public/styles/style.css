@@ -1010,6 +1010,8 @@ h3 {
 
 #scn-main-membership-info ul {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 #form-create-new-review {
