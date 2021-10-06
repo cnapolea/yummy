@@ -31,20 +31,18 @@
 <section id='scn-main-membership-info' class="centering-container">
   <h2>Join our YUMMY community</h2>
 
-  <p><span>We love yummy food, kind people and honesty. As a YUMMY member you can</span> We love yummy food, kind people and honesty. As a YUMMY member you can
-    <ul>
+  <p>Discover and provide honest reviews to restaurants, connect with other explorer and have the best restaurant experiences.
+    {{!-- <ul>
       <li>&#127858; Add your own YUMMY discoveries</li>
       <li>&#9997; Review YUMMY discoveries</li>
       <li>&#128172; Interact with other YUMMY users</li>
-    </ul></p>
+    </ul> --}}
+    </p>
 
   {{#unless user}}
     <form action='/authentication/register' id='btn-main-registration'>
       <button class='btn-pink'>Register</button>
     </form>
   {{/unless}}
-  <p id='p-coming-soon'><strong>COMING SOON: </strong>Win YUMMY restaurant
-    discout codes by adding new discoveries and reviews.</p>
-
 </section>
 {{>footer}}

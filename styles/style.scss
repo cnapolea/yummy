@@ -5,6 +5,7 @@ $grey: hsl(0, 0, 90%);
 $pink: rgb(248, 81, 76);
 $yellow: rgba(255, 205, 95, 0.8);
 $orange: rgba(248, 150, 93, 0.8);
+$mainColor: #f8514c;
 
 html,
 body {
@@ -21,9 +22,6 @@ body {
 }
 
 body {
-  // padding: 0 1em;
-  // margin: 0 auto;
-  font-family: sans-serif;
   font-family: $font-sans;
   line-height: 2;
   color: #333333;

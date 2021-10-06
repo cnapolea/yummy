@@ -127,6 +127,12 @@
 }
 
 #scn-main-membership-info {
+  @include display-flex-center;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 5%;
+
   h2 {
     margin: 0;
     font-size: 1.7rem;
@@ -137,6 +143,15 @@
     padding: 0;
     margin: 0;
   }
-  p {
+  form {
+    button {
+      width: 30%;
+      padding: 0;
+      transition: 0.2s all ease-in-out;
+    }
+
+    button:hover {
+      width: 60%;
+    }
   }
 }

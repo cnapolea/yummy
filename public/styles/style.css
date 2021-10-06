@@ -12,7 +12,6 @@ body {
 }
 
 body {
-  font-family: sans-serif;
   font-family: "Montserrat", "Source Sans Pro", Helvetica, Arial, sans-serif;
   line-height: 2;
   color: #333333;
@@ -200,7 +199,6 @@ button {
 }
 
 #div-profile-header {
-  /*@include display-flex-center;*/
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -1002,6 +1000,15 @@ h3 {
   align-items: center;
 }
 
+#scn-main-membership-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 5%;
+}
+
 #scn-main-membership-info h2 {
   margin: 0;
   font-size: 1.7rem;
@@ -1012,6 +1019,16 @@ h3 {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+#scn-main-membership-info form button {
+  width: 30%;
+  padding: 0;
+  transition: 0.2s all ease-in-out;
+}
+
+#scn-main-membership-info form button:hover {
+  width: 60%;
 }
 
 #form-create-new-review {
@@ -1137,56 +1154,86 @@ h3 {
   line-height: 0.8;
 }
 
-footer h2 {
-  margin: 15px 0 0 0px !important;
-  font-size: 1.7rem;
-  text-align: center;
+footer {
+  background-color: black;
+  color: #fff;
+  padding: 5% 0 5% 2%;
 }
 
-footer .contacts-us {
+footer .footer-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0% 5% 3%;
   margin: 0 15px;
 }
 
-footer .contacts-us .socials {
-  width: 40%;
+footer .footer-section .information {
+  width: 100%;
 }
 
-footer .contacts-us .socials ul {
+footer .footer-section .information ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: space-around;
 }
 
-footer .contacts-us .socials ul li img {
-  width: 2.2rem;
+footer .footer-section .information ul li {
+  width: 100%;
+}
+
+footer .footer-section .information ul li:nth-child(5) {
+  text-align: end;
+}
+
+footer .footer-section .information ul li a {
+  transition: 0.4s all ease-in-out;
+}
+
+footer .footer-section .information ul li a:hover {
+  color: #f8514c;
+}
+
+footer .footer-section .information ul li img {
+  width: 1.7rem;
   border-radius: 100%;
+  margin-right: 2%;
 }
 
-footer .contacts-us .contacts {
+footer .footer-section .contacts {
   width: 60%;
   text-align: end;
 }
 
-footer .contacts-us .contacts ul {
+footer .footer-section .contacts ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   font-weight: 500;
 }
 
-footer .copyright {
-  background-color: #000000;
-  text-align: center;
-  color: #fff;
+footer .copyright-section {
+  margin: 0 15px;
+}
+
+footer .copyright-section .copyright {
   font-size: 0.8rem;
-  box-shadow: #5b5b5bd6 0 1px 18px 0px;
-  padding: 2% 0;
+  padding: 0;
+  margin: 2% 0 0 0;
+}
+
+footer .copyright-section ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .copyright-section ul li a {
+  transition: 0.4s all ease-in-out;
+  text-decoration: underline;
+}
+
+footer .copyright-section ul li a:hover {
+  color: #f8514c;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -78,7 +78,6 @@ $medium-space: 3em;
 }
 
 #div-profile-header {
-  /*@include display-flex-center;*/
   @include display-flex-center;
   flex-direction: column;
   justify-content: flex-start;

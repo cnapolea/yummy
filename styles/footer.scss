@@ -1,29 +1,40 @@
 footer {
-  h2 {
-    margin: 15px 0 0 0px !important;
-    font-size: 1.7rem;
-    text-align: center;
-  }
+  background-color: black;
+  color: #fff;
+  padding: 5% 0 5% 2%;
 
-  .contacts-us {
+  .footer-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0% 5% 3%;
     margin: 0 15px;
 
-    .socials {
-      width: 40%;
+    .information {
+      width: 100%;
       ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        justify-content: space-around;
+        li {
+          width: 100%;
+        }
+
+        li:nth-child(5) {
+          text-align: end;
+        }
+
+        li a {
+          transition: 0.4s all ease-in-out;
+        }
+
+        li a:hover {
+          color: $mainColor;
+        }
 
         li img {
-          width: 2.2rem;
+          width: 1.7rem;
           border-radius: 100%;
+          margin-right: 2%;
         }
       }
     }
@@ -41,12 +52,27 @@ footer {
     }
   }
 
-  .copyright {
-    background-color: #000000;
-    text-align: center;
-    color: #fff;
-    font-size: 0.8rem;
-    box-shadow: #5b5b5bd6 0 1px 18px 0px;
-    padding: 2% 0;
+  .copyright-section {
+    margin: 0 15px;
+    .copyright {
+      font-size: 0.8rem;
+      padding: 0;
+      margin: 2% 0 0 0;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li a {
+        transition: 0.4s all ease-in-out;
+        text-decoration: underline;
+      }
+
+      li a:hover {
+        color: $mainColor;
+      }
+    }
   }
 }
