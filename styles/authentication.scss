@@ -1,0 +1,39 @@
+.no-show {
+  display: none;
+}
+
+ul.show,
+p.show {
+  display: block;
+  margin: 0;
+  padding: 0 0 1% 2%;
+  list-style-type: none;
+  font-size: 13px;
+  color: #ff5c5c;
+  font-weight: 600;
+
+  li {
+    font-size: 13px;
+    color: #ff5c5c;
+    font-weight: 600;
+  }
+}
+
+.show-password-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  label,
+  input {
+    margin: 0;
+    padding: 0;
+  }
+
+  label {
+    margin-left: 5px;
+  }
+}
+
+#input-password {
+  margin-bottom: 0.5rem;
+}

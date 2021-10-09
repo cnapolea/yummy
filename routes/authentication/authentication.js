@@ -34,17 +34,6 @@ router.post('/register', upload.single('profilePicture'), (req, res, next) => {
   let verificationCode = String(Math.random()).replace('.', '');
   //let verificationCodeHash;
 
-  /*bcryptjs
-    generate hashed verification code for user
-    .hash(verificationCode, 10)
-    .then((verificationHash) => {
-      verificationCodeHash = verificationHash;
-      next();
-    })
-    .catch((error) => {
-      next(error);
-    });*/
-
   bcryptjs
     .hash(password, 10)
     .then((hash) => {
@@ -115,6 +104,21 @@ router.post('/sign-out', routeGuardMiddleware, (req, res, next) => {
   req.session.destroy();
   res.clearCookie('connect.sid', { path: '/' }); //removes cookie from browser history
   res.redirect('/');
+});
+
+router.post('/email-check', (req, res, next) => {
+  const { email } = req.query;
+  User.find({ email })
+    .then((documents) => {
+      if (documents.length > 0) {
+        res.json({ exists: true });
+      } else {
+        res.json({ exists: false });
+      }
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 module.exports = router;

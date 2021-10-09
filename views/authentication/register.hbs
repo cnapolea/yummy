@@ -2,7 +2,7 @@
   action='/authentication/register'
   method='POST'
   enctype='multipart/form-data'
-  class='centering-container'
+  class='centering-container register-form'
 >
 
   <label for='input-first-name'>First Name</label>
@@ -27,18 +27,12 @@
   <input
     type='email'
     id='input-email'
+    class='register'
     name='email'
     placeholder='Your Email'
     required
   />
-
-  <label for='input-phone'>Phone number</label>
-  <input
-    type='tel'
-    id='input-phone'
-    name='phoneNumber'
-    placeholder='Your Phone Number'
-  />
+  <p class='no-show email-status'></p>
 
   <label for='input-password'>Password</label>
   <input
@@ -47,8 +41,20 @@
     name='password'
     placeholder='A Strong Password'
     required
-    minlength='5'
+    minlength='10'
+    class='register'
   />
+
+  <div class='show-password-container'>
+    <input type='checkbox' name='show-password' id='show-password' />
+    <label for='show-password'>Show Password</label>
+  </div>
+  <ul class='no-show password-check'>
+    <li>Must contain at least one upper and one lower case letter</li>
+    <li>Must contain at least one "!@#$&*"</li>
+    <li>Must containe at leat one number</li>
+    <li>Cannot be shorter than 8 characters</li>
+  </ul>
 
   <label for='input-picture'>Profile Picture</label>
   <input
@@ -58,5 +64,5 @@
     accept='image/*'
   />
 
-  <button>Join the Yummy Community</button>
+  <button disabled>Join the Yummy Community</button>
 </form>

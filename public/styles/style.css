@@ -1236,4 +1236,46 @@ footer .copyright-section ul li a:hover {
   color: #f8514c;
 }
 
+.no-show {
+  display: none;
+}
+
+ul.show,
+p.show {
+  display: block;
+  margin: 0;
+  padding: 0 0 1% 2%;
+  list-style-type: none;
+  font-size: 13px;
+  color: #ff5c5c;
+  font-weight: 600;
+}
+
+ul.show li,
+p.show li {
+  font-size: 13px;
+  color: #ff5c5c;
+  font-weight: 600;
+}
+
+.show-password-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.show-password-container label,
+.show-password-container input {
+  margin: 0;
+  padding: 0;
+}
+
+.show-password-container label {
+  margin-left: 5px;
+}
+
+#input-password {
+  margin-bottom: 0.5rem;
+}
+
 /*# sourceMappingURL=style.css.map */

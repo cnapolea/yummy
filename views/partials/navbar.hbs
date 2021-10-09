@@ -22,6 +22,15 @@
     </button>
     <div class='collapse navbar-collapse' id='navbarNav'>
       <ul class='navbar-nav'>
+
+        {{#unless user}}
+          <li class='nav-item'>
+            <a href='/authentication/sign-in'>Sign In</a>
+          </li>
+          <li class='nav-item'>
+            <a href='/authentication/register'>Register</a>
+          </li>
+        {{/unless}}
         <li class='nav-item'>
           <a class='nav-link active' aria-current='page' href='/'>Home</a>
         </li>
@@ -31,23 +40,16 @@
         <li class='nav-item'>
           <a class='nav-link' href='/restaurants'>Announcements</a>
         </li>
+        <li class='nav-item'>
+          <form action='/explore-users'>
+            <button class='btn-pink'>Explore Users</button>
+          </form>
+        </li>
         {{#if user}}
-          <li class='nav-item'>
-            <form action='/explore-users'>
-              <button class='btn-pink'>Explore Other Users</button>
-            </form>
-          </li>
           <li class='nav-item'>
             <form action='/authentication/sign-out' method='POST'>
               <button class='btn-pink'>Sign Out</button>
             </form>
-          </li>
-        {{else}}
-          <li class='nav-item'>
-            <a href='/authentication/sign-in'>Sign In</a>
-          </li>
-          <li class='nav-item'>
-            <a href='/authentication/register'>Register</a>
           </li>
         {{/if}}
       </ul>
